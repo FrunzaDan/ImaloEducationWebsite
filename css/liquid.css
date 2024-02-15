@@ -1,0 +1,101 @@
+/* test */
+
+.liquid-shape-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-90deg, rgba(255, 111, 169, 0.75) 0%, rgb(0, 172, 185, 0.65) 100%);
+    border-radius: 31% 69% 30% 70% / 70% 40% 60% 30%;
+    animation: liquid-1 6s linear infinite;
+}
+
+@keyframes liquid-1 {
+    0% {
+        border-radius: 31% 69% 30% 70% / 70% 40% 60% 30%;
+        background-size: 100% 100%;
+    }
+
+    25% {
+        border-radius: 44% 56% 45% 55% / 48% 59% 41% 52%;
+        background-size: 280% 150%;
+    }
+
+    50% {
+        border-radius: 62% 38% 59% 41% / 38% 68% 32% 62%;
+        background-size: 100% 100%;
+    }
+
+    75% {
+        border-radius: 44% 56% 45% 55% / 48% 59% 41% 52%;
+        background-size: 280% 150%;
+    }
+
+    100% {
+        border-radius: 31% 69% 30% 70% / 70% 40% 60% 30%;
+        background-size: 100% 100%;
+    }
+}
+
+.liquid-shape-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 172, 185, 0.55) 0%, rgb(255, 111, 169, 0.85) 100%);
+    border-radius: 68% 44% 63% 47% / 44% 74% 38% 70%;
+    animation: liquid-2 7s linear infinite;
+}
+
+@keyframes liquid-2 {
+    0% {
+        border-radius: 68% 44% 63% 47% / 44% 74% 38% 70%;
+        background-size: 100% 100%;
+    }
+
+    25% {
+        border-radius: 50% 64% 61% 61% / 54% 65% 47% 58%;
+        background-size: 300% 150%;
+    }
+
+    50% {
+        border-radius: 36% 74% 36% 76% / 76% 46% 66% 36%;
+        background-size: 100% 100%;
+    }
+
+    75% {
+        border-radius: 50% 64% 61% 61% / 54% 65% 47% 58%;
+        background-size: 300% 150%;
+    }
+
+    100% {
+        border-radius: 68% 44% 63% 47% / 44% 74% 38% 70%;
+        background-size: 100% 100%;
+    }
+}
+
+.liquid-shape-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(var(--main-first-color-for-alpha), 0.55) 0%,
+            rgba(var(--main-fifth-color-for-alpha), 0.85) 100%);
+    border-radius: 68% 44% 63% 47% / 44% 74% 38% 70%;
+    animation: liquid-2 7s linear infinite;
+}
+
+.liquid-shape-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(var(--main-third-color-for-alpha), 0.55) 0%,
+            rgba(var(--main-fourth-color-for-alpha), 0.85) 100%);
+    border-radius: 68% 44% 63% 47% / 44% 74% 38% 70%;
+    animation: liquid-2 7s linear infinite;
+}

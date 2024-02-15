@@ -1,0 +1,75 @@
+.contactIconsCard {
+    color: var(--main-light-color) !important;
+}
+
+#googleMapsIframe {
+    height: 300px;
+    width: 100%;
+    position: relative;
+}
+
+.whoAmIImageCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-light-color) !important;
+    padding: 2rem;
+}
+
+.mapsCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-light-color) !important;
+}
+
+#imgWhoAmI {
+    display: block;
+    border-radius: 50%;
+    background-image: linear-gradient(-45deg, rgba(255, 111, 169, 0.3), rgba(0, 172, 185, 0.3)), url(/assets/images/Maria_Solomon_Profile_Pic.png);
+    width: 300px;
+    height: 300px;
+    top: 0;
+    left: 0;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 300px 300px;
+    -webkit-filter: drop-shadow(4px 4px 0px var(--main-first-color)) drop-shadow(4px 4px 0px var(--main-third-color));
+    filter: drop-shadow(4px 4px 0px var(--main-first-color)) drop-shadow(4px 4px 0px var(--main-third-color));
+    transition: all .2s;
+    transform-origin: 50% 50%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1120px) {
+    #imgWhoAmI {
+        width: 160px;
+        height: 160px;
+        background-size: 160px 160px;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 768px) {
+    #imgWhoAmI {
+        width: 150px;
+        height: 150px;
+        background-size: 150px 150px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 650px) {
+    #imgWhoAmI {
+        width: 130px;
+        height: 130px;
+        background-size: 130px 130px;
+        -webkit-filter: drop-shadow(4px 4px 0px var(--main-first-color)) drop-shadow(-4px -4px 0px var(--main-third-color));
+        filter: drop-shadow(4px 4px 0px var(--main-first-color)) drop-shadow(-4px -4px 0px var(--main-third-color));
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #imgWhoAmI {
+        width: 200px;
+        height: 200px;
+        background-size: 200px 200px;
+    }
+}

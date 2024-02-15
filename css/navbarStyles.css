@@ -1,0 +1,137 @@
+.nav-link {
+    font-weight: bold;
+    color: var(--main-second-color);
+    text-shadow: 2px 2px var(--main-third-color);
+    text-align: center;
+    font-size: 300%;
+    position: relative;
+    transition: all .2s;
+    transform-origin: 50% 50%;
+}
+
+.nav-link:active {
+    color: var(--main-second-color);
+}
+
+.nav-link:visited {
+    color: var(--main-second-color);
+}
+
+.imaloTextNav {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: var(--main-first-color);
+    text-align: center;
+    font-size: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-toggler-icon {
+    font-size: 30px;
+}
+
+.navbar-toggler {
+    justify-content: center;
+}
+
+.logoColor {
+    filter: invert(55%) sepia(14%) saturate(1763%) hue-rotate(309deg) brightness(105%) contrast(89%);
+}
+
+#logo {
+    width: 80px;
+}
+
+.logoContainer {
+    width: 80px;
+}
+
+/* VERY LARGE SCREENS: */
+@media only screen and (min-width: 1100px) {
+    .nav-link {
+        font-size: 380%;
+    }
+}
+
+/* LARGE SCREENS: */
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+    .nav-link {
+        font-size: 280%;
+    }
+}
+
+/* SMALL SCREENS: */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .nav-link {
+        font-size: 320%;
+    }
+}
+
+/* VERY SMALL SCREENS: */
+@media only screen and (max-width: 576px) {
+    #logo {
+        width: 50px;
+    }
+
+    .nav-link {
+        font-size: 320%;
+    }
+}
+
+/* Define the shape and color of the hamburger lines */
+.navbar-toggler span {
+    display: block;
+    background-color: var(--main-first-color);
+    /* height: 3px;
+    width: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px; */
+    height: 4px;
+    width: 120px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    left: 0;
+    opacity: 1;
+    transition: all 0.35s ease-out;
+    transform-origin: center left;
+}
+
+.navbar-toggler span:nth-child(1) {
+    margin-top: 0.3em;
+}
+
+/* Animate collapse into X. */
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+    width: 60px;
+    transform: translate(65%, -160%) rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+    width: 60px;
+    transform: translate(65%, 160%) rotate(-45deg);
+}
+
+/* Animate collapse open into hamburger menu */
+
+.navbar-toggler span:nth-child(1) {
+    transform: translate(0%, 0%) rotate(0deg);
+}
+
+.navbar-toggler span:nth-child(2) {
+    opacity: 1;
+}
+
+.navbar-toggler span:nth-child(3) {
+    transform: translate(0%, 0%) rotate(0deg);
+}

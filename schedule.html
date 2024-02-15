@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- BOOTSTRAP 5.3-->
+  <link href="./css/bootstrap.min.css" rel="stylesheet" />
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-- BOOTSTRAP 5.3-->
+  <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/hover.css" rel="stylesheet" type="text/css" />
+  <link href="./css/navbarStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/footerStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/contactStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/scheduleStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/liquid.css" rel="stylesheet" />
+  <link href="./css/getCourseModal.css" rel="stylesheet" />
+  <link href="./css/cardStyles.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="/assets/images/logo/imalo_icon.ico">
+
+  <!-- SCRIPTS -->
+  <script src="./jQuery/jquery-3.6.4.min.js"></script>
+  <script src="./js/navbar-component.js"></script>
+  <script src="./js/footer-component.js"></script>
+  <script defer src="./js/scrollToTop.js"></script>
+  <script defer src="./js/getCourseModal.js"></script>
+
+  <title>Program</title>
+</head>
+
+<body ontouchstart="">
+  <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">&#8593;</button>
+
+  <div class="scrollWrapper" id="scrollWrapper">
+    <div id="navbar-placeholder">
+    </div>
+
+    <div class="genericPageContainer">
+      <div class="row fullRow my-2 genericRowPadding">
+        <div class="container-fluid d-flex justify-content-center align-items-center my-2">
+          <div class="subtitle1Text">
+            Când ne găsiți?
+          </div>
+        </div>
+      </div>
+      <div class="row fullRow my-2 diagonal1 genericRowPadding">
+        <div class="col-sm-4 fillCol">
+          <div class="card scheduleContent m-2">
+            Luni - Vineri: <br>
+            11:30 - 17:30
+          </div>
+          <div class="card scheduleContent m-2">
+            Sâmbătă - Duminică: <br>
+            închis
+          </div>
+        </div>
+        <div class="col-sm-8 fillCol">
+          <div class="card cardWithLiquid cardFillHeight100 m-2">
+            <div class="liquid-shape-1">
+              <div class="descriptionInsideCard">
+                <p>
+                  În cadrul orelor de desfășurare a activității, vor fi preluați de la școală. După sosirea la sediu
+                  se a servi masa în regim cathering, iar apoi copiii vor fi asistați la temele de la școală. Până la
+                  ora 17:30 copiii vor fi preluați de către părinți.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row fullRow my-2 genericRowPadding">
+        <div class="container-fluid d-flex justify-content-center align-items-center my-2">
+          <div class="subtitle1Text">
+            Costuri?
+          </div>
+        </div>
+      </div>
+
+      <div class="row fullRow diagonal2 genericRowPadding">
+        <div class="col-sm-6 priceCardContainer">
+          <div class="card priceCard card-mainGradientColor">
+            <div class="container priceContainer p-4">
+              <div class="circle">xyzz RON</div>
+              <div class="packageTitle">
+                Pachet Basic
+              </div>
+            </div>
+            <div class="packageDescription">
+              <ul class="packageItemList">
+                <li>
+                  Fără preluare
+                </li>
+                <li>
+                  Masa nu este inclusă
+                </li>
+                <li>
+                  Program tip "afterschool"
+                </li>
+              </ul>
+            </div>
+            <div class="insidePriceCard pt-4 px-4 pb-4">
+              <button data-modal-target="#getCourseModal" class="genericButton">Aplică
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 priceCardContainer">
+          <div class="card priceCard card-mainGradientColor">
+            <div class="container priceContainer p-4">
+              <div class="circle">xyzz RON</div>
+              <div class="packageTitle">
+                Pachet Transport
+              </div>
+            </div>
+            <div class="packageDescription">
+              <ul class="packageItemList">
+                <li>
+                  Preluare
+                </li>
+                <li>
+                  Masa nu este inclusă
+                </li>
+                <li>
+                  Program tip "afterschool"
+                </li>
+              </ul>
+            </div>
+            <div class="insidePriceCard pt-4 px-4 pb-4">
+              <button data-modal-target="#getCourseModal" class="genericButton">Aplică
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row fullRow diagonal1 genericRowPadding">
+        <div class="col-sm-6 priceCardContainer">
+          <div class="card priceCard card-mainGradientColor">
+            <div class="container priceContainer p-4">
+              <div class="circle">xyzz RON</div>
+              <div class="packageTitle">
+                Pachet Masă
+              </div>
+            </div>
+            <div class="packageDescription">
+              <ul class="packageItemList">
+                <li>
+                  Fără preluare
+                </li>
+                <li>
+                  Masă inclusă
+                </li>
+                <li>
+                  Program tip "afterschool"
+                </li>
+              </ul>
+            </div>
+            <div class="insidePriceCard pt-4 px-4 pb-4">
+              <button data-modal-target="#getCourseModal" class="genericButton">Aplică
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 priceCardContainer">
+          <div class="card priceCard card-mainGradientColor">
+            <div class="container priceContainer p-4">
+              <div class="circle">xyzz RON</div>
+              <div class="packageTitle">
+                Pachet Full
+              </div>
+            </div>
+            <div class="packageDescription">
+              <ul class="packageItemList">
+                <li>
+                  Preluare
+                </li>
+                <li>
+                  Masă inclusă
+                </li>
+                <li>
+                  Program tip "afterschool"
+                </li>
+              </ul>
+            </div>
+            <div class="insidePriceCard pt-4 px-4 pb-4">
+              <button data-modal-target="#getCourseModal" class="genericButton">Aplică
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="footer-placeholder"></div>
+  </div>
+
+  <div class="customModal" id="getCourseModal">
+    <div class="customModal-header">
+      <div class="title">Vrei să aplici pentru acest pachet?</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="customModal-body">
+      <div class="row modalRow">
+        Alege cum să mă contactezi:
+      </div>
+      <div class="row modalRow">
+        <div class="col-sm-6 modalCol">
+          <a class="fullSpaceHref" href="tel:+40744210017">
+            <button class="genericButton">Sună-mă</button>
+          </a>
+        </div>
+        <div class="col-sm-6 modalCol">
+          <a class="fullSpaceHref" href="mailto:imaloeducation@gmail.com">
+            <button class="genericButton">Scrie-mi un E-mail</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="overlay"></div>
+</body>
+
+</html>

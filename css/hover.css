@@ -1,0 +1,170 @@
+.hoverlink {
+    position: relative;
+    transition: all .2s;
+    transform-origin: 50% 50%;
+}
+
+.hovericon {
+    position: relative;
+    transition: all .2s;
+    transform-origin: 50% 50%;
+}
+
+
+.hoveritem {
+    position: relative;
+    transition: all .2s;
+    transform-origin: 50% 50%;
+}
+
+@media (pointer: fine) {
+    .hoverlink:hover {
+        transform: scale(1.1);
+        color: var(--main-second-color);
+    }
+
+    .hovericon:hover {
+        transform: scale(1.1);
+        color: var(--main-second-color);
+    }
+
+    .hoveritem:hover {
+        transform: scale(1.1);
+    }
+
+    .circle:hover {
+        transform: scale(1.06);
+    }
+
+    #imgWhoAmI:hover {
+        transform: scale(1.06);
+        -webkit-filter: drop-shadow(6px 6px 0px var(--main-first-color)) drop-shadow(6px 6px 0px var(--main-third-color));
+        filter: drop-shadow(6px 6px 0px var(--main-first-color)) drop-shadow(6px 6px 0px var(--main-third-color));
+    }
+
+    .borderOfCaterpillar:hover {
+        -webkit-filter: drop-shadow(6px 6px 1px var(--main-first-color)) drop-shadow(-6px -6px 1px var(--main-third-color));
+        filter: drop-shadow(6px 6px 1px var(--main-first-color)) drop-shadow(-6px -6px 1px var(--main-third-color));
+    }
+
+    .nav-link:hover {
+        transform: scale(1.1);
+        text-shadow: 4px 4px var(--main-third-color);
+        color: var(--main-second-color);
+    }
+
+    .galleryNavigationButton:hover {
+        border: 1px solid var(--main-light-color);
+        background-color: var(--main-second-color);
+        color: var(--main-light-color);
+        transform: scale(1.02);
+    }
+
+    .galleryNavigationButton:active {
+        border: 1px solid var(--main-second-color);
+        background-color: var(--main-light-color);
+        color: var(--main-second-color);
+        transform: scale(1.04);
+    }
+
+    .wrapperDeveloped:hover {
+        cursor: pointer;
+    }
+
+    .genericButton:hover {
+        background-color: var(--main-light-color);
+        border-color: var(--main-first-color);
+        color: var(--main-first-color);
+        transform: scale(1.01);
+    }
+
+    .genericButton:active {
+        background-color: var(--main-first-color);
+        border-color: var(--main-light-color);
+        color: var(--main-light-color);
+        transform: scale(1.02);
+    }
+
+    .card:hover {
+        transform: scale(1.02);
+        box-shadow: rgba(50, 50, 93, 0.5) 20px 70px 120px -40px, rgba(0, 0, 0, 0.3) 20px 50px 80px -50px;
+    }
+
+    .fullCardImg:hover {
+        cursor: pointer;
+        filter: brightness(90%);
+        transform: scale(1.04);
+        -webkit-filter: drop-shadow(6px 6px 0px var(--main-first-color)) drop-shadow(6px 6px 0px var(--main-third-color));
+        filter: drop-shadow(6px 6px 0px var(--main-first-color)) drop-shadow(6px 6px 0px var(--main-third-color));
+    }
+}
+
+@media (hover: none),
+(pointer: coarse),
+(pointer: none) {
+    .hoverlink:active {
+        transform: scale(1.1);
+        color: var(--main-second-color);
+    }
+
+    .hovericon:active {
+        transform: scale(1.1);
+        color: var(--main-second-color);
+    }
+
+    .hoveritem:active {
+        transform: scale(1.1);
+    }
+
+    .circle:active {
+        transform: scale(1.06);
+    }
+
+    #imgWhoAmI:active {
+        transform: scale(1.06);
+        -webkit-filter: drop-shadow(6px 6px 0px var(--main-first-color)) drop-shadow(6px 6px 0px var(--main-third-color));
+        filter: drop-shadow(6px 6px 0px var(--main-first-color)) drop-shadow(6px 6px 0px var(--main-third-color));
+    }
+
+    .borderOfCaterpillar:active {
+        -webkit-filter: drop-shadow(6px 6px 1px var(--main-first-color)) drop-shadow(-6px -6px 1px var(--main-third-color));
+        filter: drop-shadow(6px 6px 1px var(--main-first-color)) drop-shadow(-6px -6px 1px var(--main-third-color));
+    }
+
+    .nav-link:active {
+        transform: scale(1.1);
+        text-shadow: 4px 4px var(--main-third-color);
+        color: var(--main-second-color);
+    }
+
+    .galleryNavigationButton:active {
+        border: 1px solid var(--main-light-color);
+        background-color: var(--main-second-color);
+        color: var(--main-light-color);
+        transform: scale(1.02);
+    }
+
+    .wrapperDeveloped:active {
+        cursor: pointer;
+    }
+
+    .genericButton:active {
+        background-color: var(--main-light-color);
+        border-color: var(--main-first-color);
+        color: var(--main-first-color);
+        transform: scale(1.02);
+    }
+
+    .card:active {
+        transform: scale(1.02);
+        box-shadow: rgba(50, 50, 93, 0.5) 20px 70px 120px -40px, rgba(0, 0, 0, 0.3) 20px 50px 80px -50px;
+    }
+
+    .fullCardImg:active {
+        cursor: pointer;
+        filter: brightness(90%);
+        transform: scale(1.04);
+        -webkit-filter: drop-shadow(6px 6px 0px var(--main-first-color)) drop-shadow(6px 6px 0px var(--main-third-color));
+        filter: drop-shadow(6px 6px 0px var(--main-first-color)) drop-shadow(6px 6px 0px var(--main-third-color));
+    }
+}

@@ -1,0 +1,146 @@
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--main-light-color);
+    border-radius: 50%;
+    color: var(--main-second-color);
+    font-size: 2.5rem;
+    position: relative;
+    transition: all .2s;
+    transform-origin: 50% 50%;
+}
+
+.scheduleContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: var(--main-dark-color);
+    height: 50%;
+    font-size: 1.4rem;
+    background-color: var(--main-light-color) !important;
+}
+
+.priceCard {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 30rem;
+}
+
+.priceContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.insidePriceCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.packageTitle {
+    font-size: 1.875rem;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: var(--main-light-color);
+    text-align: center;
+}
+
+.packageDescription {
+    display: flex;
+    justify-content: left;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--main-light-color);
+}
+
+/* VERY LARGE SCREENS: */
+@media only screen and (min-width: 992px) {
+    .circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .priceCard {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+}
+
+/* LARGE SCREENS: */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .circle {
+        width: 180px;
+        height: 180px;
+    }
+
+    .priceCard {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/* SMALL SCREENS: */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .priceCard {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .packageTitle {
+        font-size: 1.4rem;
+    }
+
+    .scheduleContent {
+        font-size: 1rem;
+    }
+}
+
+/* VERY SMALL SCREENS: */
+@media only screen and (min-width: 271px) and (max-width: 576px) {
+    .circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .priceCard {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .scheduleContent {
+        font-size: 1rem;
+    }
+}
+
+/* VERY SMALL SCREENS: */
+@media only screen and (max-width: 270px) {
+    .circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .priceCard {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .scheduleContent {
+        font-size: 1rem;
+    }
+}

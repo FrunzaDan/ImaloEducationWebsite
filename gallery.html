@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- BOOTSTRAP 5.3-->
+  <link href="./css/bootstrap.min.css" rel="stylesheet" />
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-- BOOTSTRAP 5.3-->
+  <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/hover.css" rel="stylesheet" type="text/css" />
+  <link href="./css/navbarStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/footerStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/galleryStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/cardStyles.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="/assets/images/logo/imalo_icon.ico">
+
+  <!-- SCRIPTS -->
+  <script src="./jQuery/jquery-3.6.4.min.js"></script>
+  <script defer src="./js/fullscreen_img.js"></script>
+  <script src="./js/navbar-component.js"></script>
+  <script src="./js/footer-component.js"></script>
+  <script defer src="./js/scrollToTop.js"></script>
+
+  <title>Gallery</title>
+</head>
+
+<body ontouchstart="">
+  <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">&#8593;</button>
+  <div class="scrollWrapper" id="scrollWrapper">
+    <div id="navbar-placeholder">
+    </div>
+
+    <div class="container-fluid galleryContainer">
+    </div>
+
+    <!-- Social Media: -->
+    <div class="genericPageContainer">
+      <div class="row fullRow d-flex justify-content-center align-items-center my-2">
+        <div class="subtitle1Text">
+          Vrei să vezi mai multe poze și să afli mai multe noutăți?
+        </div>
+      </div>
+      <div class="row fullRow py-2 my-4 diagonal2 genericRowPadding">
+        <div class="col-sm-6 fillCol my-2">
+          <div class="card socialMediaGalleryCard mb-2">
+            <div class="row fullRow">
+              <div class="col-sm-4 gallerySocialMediaIconColumn">
+                <img class="gallerySocialMediaIcon" src="/assets/images/social media/Facebook_svg.svg" alt="Facebook">
+              </div>
+              <div class="col-sm-8">
+                <div class="gallerySocialMediaText">
+                  <p class="cyanTextWithShadow text-padding-1rem">
+                    Nu uitați să ne dați like pe Facebook!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 fillCol my-2">
+          <div class="card socialMediaGalleryCard mb-2">
+            <div class="row fullRow">
+              <div class="col-sm-8">
+                <div class="gallerySocialMediaText">
+                  <p class="cyanTextWithShadow text-padding-1rem">
+                    Și pe Instagram!
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-4 gallerySocialMediaIconColumn">
+                <img class="gallerySocialMediaIcon" src="/assets/images/social media/Instagram_svg.svg" alt="Instagram">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer-placeholder"></div>
+  </div>
+
+  <div id="FullImageView">
+    <img id="FullImage" />
+    <span id="CloseButton" class="grow-to-bottom-right" onclick="CloseFullView()">&times;</span>
+    <button type="button" class="galleryNavigationButton" id="prev-button">&rarr;</button>
+    <button type="button" class="galleryNavigationButton" id="next-button">&rarr; </button>
+  </div>
+</body>
+
+</html>

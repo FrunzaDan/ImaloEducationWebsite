@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- BOOTSTRAP 5.3-->
+  <link href="./css/bootstrap.min.css" rel="stylesheet" />
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-- BOOTSTRAP 5.3-->
+  <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/hover.css" rel="stylesheet" type="text/css" />
+  <link href="./css/navbarStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/footerStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/contactStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/loader1.css" rel="stylesheet" />
+  <link href="./css/loader2.css" rel="stylesheet" />
+  <link href="./css/liquid.css" rel="stylesheet" />
+  <link href="./css/cardStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/popup.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/assets/images/logo/imalo_icon.ico">
+
+  <!-- SCRIPTS -->
+  <script src="./jQuery/jquery-3.6.4.min.js"></script>
+  <script src="./js/navbar-component.js"></script>
+  <script src="./js/footer-component.js"></script>
+  <script defer src="./js/scrollToTop.js"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script defer src="./js/sendEmail.js"></script>
+
+  <title>Contact</title>
+</head>
+
+<body ontouchstart="">
+  <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">&#8593;</button>
+  <div class="scrollWrapper" id="scrollWrapper">
+    <div id="navbar-placeholder">
+    </div>
+
+    <div class="genericPageContainer">
+      <div class="row fullRow d-flex justify-content-center align-items-center my-2 genericRowPadding">
+        <div class="container-fluid d-flex justify-content-center align-items-center my-2">
+          <div class="subtitle1Text">
+            Cum ne puteți contacta?
+          </div>
+        </div>
+      </div>
+      <div class="row fullRow my-2 diagonal1 genericRowPadding">
+        <div class="col-md-8 fillCol my-2">
+          <div class="card writeMeCard my-2">
+            <div class="card-body">
+              <div class="d-flex justify-content-center">
+                <div class="loader2 mb-2"></div>
+              </div>
+              <form id="contactForm" onsubmit="sendEmail(); reset(); return false">
+                <div class="mb-3">
+                  <label for="from_name" class="form-label">Nume:</label>
+                  <input class="form-control transparentItem" id="from_name" type="text" placeholder="Numele tău"
+                    required />
+                </div>
+                <div class="mb-3">
+                  <label for="from_email" class="form-label">Adresă de E-mail:</label>
+                  <input class="form-control transparentItem" id="from_email" type="email"
+                    placeholder="Adresa ta de E-mail" required />
+                </div>
+                <div class="mb-3">
+                  <label for="from_tel" class="form-label">Număr de telefon:</label>
+                  <input class="form-control transparentItem" id="from_tel" type="tel"
+                    placeholder="Numărul tău de telefon" required />
+                </div>
+                <div class="mb-3">
+                  <label for="from_message" class="form-label">Mesaj:</label>
+                  <textarea class="form-control transparentItem" id="from_message" type="text" placeholder="Mesajul tău"
+                    required style="height: 10rem"></textarea>
+                </div>
+                <div class="d-grid">
+                  <button class="genericButton" type="submit">Trimite</button>
+                </div>
+              </form>
+            </div>
+            <div class="popupBox" id="popupEmail">
+              <h2 id="emailPopupTextHeader"></h2>
+              <p id="emailPopupTextParagraph"></p>
+              <button type="submit" class="genericButton" onclick="closePopup()">OK</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 fillCol my-2">
+          <div class="card contactCard my-2">
+            <div class="card-body">
+              <h5 class="card-title cardContactText mb-4">Detalii contact:</h5>
+              <i class="bi bi-envelope contactIconsCard me-2"></i><span
+                class="card-subtitle mb-2 cardContactText">Email:</span>
+              <p class="card-text cardContactText">test</p>
+              <i class="bi bi-telephone contactIconsCard me-2"></i><span
+                class="card-subtitle mb-2 cardContactText">Telefon:</span>
+              <p class="card-text cardContactText">test</p>
+              <i class="bi bi-facebook contactIconsCard me-2"></i><span
+                class="card-subtitle mb-2 cardContactText">Facebook:</span>
+              <p class="card-text cardContactText">test</p>
+              <i class="bi bi-instagram contactIconsCard me-2"></i><span
+                class="card-subtitle mb-2 cardContactText">Instagram:</span>
+              <p class="card-text cardContactText">test</p>
+              <i class="bi bi-linkedin contactIconsCard me-2"></i><span
+                class="card-subtitle mb-2 cardContactText">LinkedIn:</span>
+              <p class="card-text cardContactText">test</p>
+            </div>
+            <div>
+              <div class="container d-flex justify-content-center align-items-center p-4">
+                <div class="loader1 my-2 p-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row fullRow d-flex justify-content-center align-items-center my-2 genericRowPadding">
+        <div class="container-fluid d-flex justify-content-center align-items-center my-2">
+          <div class="subtitle1Text">
+            Cine sunt?
+          </div>
+        </div>
+      </div>
+
+      <div class="row fullRow my-2 diagonal2 genericRowPadding">
+        <div class="col-sm-4 fillCol my-2">
+          <div class="card whoAmIImageCard cardFillHeight100 my-2">
+            <div id="imgWhoAmI">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-8 fillCol my-2">
+          <div class="card cardWithLiquid cardFillHeight100 my-2">
+            <div class="liquid-shape-1">
+              <div class="descriptionInsideCard">
+                <p>
+                  Hallo, sunt Maria și am început acest proiect din pasiune și drag de copii. Cu o experiență
+                  profesională de peste 5 ani în domeniul educațional, studii academice atât în domeniul germanistic
+                  și pedagogic, vreau să mă dedic total dezvoltării intelectuale și recreaționale ale micuților. Prin
+                  intermediul unor activități interactive și diversificate, copiiilor le va face plăcere să descopere
+                  limba germană sub toate formele ei.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row fullRow d-flex justify-content-center align-items-center my-2 genericRowPadding">
+        <div class="container-fluid d-flex justify-content-center align-items-center my-2">
+          <div class="subtitle1Text">
+            Unde ne găsești?
+          </div>
+        </div>
+      </div>
+
+      <div class="row fullRow d-flex justify-content-center align-items-center my-2 diagonal1 genericRowPadding">
+        <div class="col my-2">
+          <div class="card mapsCard my-2">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.8950607378274!2d24.147966499999995!3d45.81335999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474c67c61d428fe7%3A0x16659ae345f874a9!2sStrada%20Gutuilor%206%2C%20Sibiu!5e0!3m2!1sro!2sro!4v1697390170478!5m2!1sro!2sro"
+              id="googleMapsIframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              class="card-img-top">
+            </iframe>
+            <div class="card-body">
+              <p class="card-text">Google maps location.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="footer-placeholder"></div>
+  </div>
+</body>
+
+</html>

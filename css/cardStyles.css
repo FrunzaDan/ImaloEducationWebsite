@@ -1,0 +1,93 @@
+.card-img-caption {
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+}
+
+.card-img-caption .card-img-text {
+  color: var(--main-first-color);
+  font-weight: bold;
+  font-size: 300%;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
+  width: 100%;
+  margin: 30% 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.card {
+  transition: all .2s;
+  background-color: transparent;
+  box-shadow: rgba(50, 50, 93, 0.2) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.card-mainGradientColor {
+  background: linear-gradient(135deg, var(--main-first-color), var(--main-third-color));
+}
+
+.cardContactText {
+  color: var(--main-light-color);
+}
+
+.contactCard {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  background: linear-gradient(135deg, var(--main-first-color), var(--main-third-color));
+  height: 100%;
+  width: 100%;
+}
+
+.writeMeCard {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  background-color: var(--main-light-color) !important;
+  height: 100%;
+  width: 100%;
+}
+
+.fullCardImg {
+  border-radius: 0.4rem;
+  transition: all .2s;
+  border: 1px solid rgba(74, 97, 99, 0.2);
+  margin: 20px;
+  max-width: 300px;
+  -webkit-filter: drop-shadow(4px 4px 0px var(--main-first-color)) drop-shadow(4px 4px 0px var(--main-third-color));
+  filter: drop-shadow(4px 4px 0px var(--main-first-color)) drop-shadow(4px 4px 0px var(--main-third-color));
+}
+
+.priceCardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* LARGE SCREENS: */
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+  .fullCardImg {
+    margin: 20px;
+    max-width: 200px;
+  }
+}
+
+/* SMALL SCREENS: */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .fullCardImg {
+    margin: 16px;
+    max-width: 180px;
+  }
+}
+
+/* VERY SMALL SCREENS: */
+@media only screen and (max-width: 576px) {
+  .priceCardContainer {
+    padding: 30px;
+  }
+
+  .fullCardImg {
+    margin: 10px;
+    max-width: 140px;
+  }
+}
