@@ -40,6 +40,10 @@
     transform-origin: 50% 50%;
 }
 
+#who-am-I-Section {
+    scroll-behavior: smooth;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1120px) {
     #imgWhoAmI {
         width: 160px;

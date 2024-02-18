@@ -19,7 +19,7 @@
   <link rel="icon" type="image/png" href="/assets/images/logo/imalo_icon.ico">
 
   <!-- SCRIPTS -->
-  <script src="./jQuery/jquery-3.6.4.min.js"></script>
+  <script src="./jQuery/jquery-3.7.1.min.js"></script>
   <script src="./js/navbar-component.js"></script>
   <script src="./js/footer-component.js"></script>
   <script src="./js/animate_header.js"></script>
@@ -28,7 +28,7 @@
   <title>Home</title>
 </head>
 
-<body ontouchstart="">
+<body ontouchstart="" data-bs-smooth-scroll="true">
   <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">&#8593;</button>
   <div class="scrollWrapper" id="scrollWrapper">
     <div class="emptyDivTop">
@@ -125,8 +125,16 @@
             alt="Caterpillar">
         </div>
       </div>
-      <div class="row fullRow d-flex justify-content-center align-items-center my-2 genericRowPadding">
-        test1
+      <div class="row fullRow d-flex justify-content-center align-items-center my-2 genericRowPadding"
+        id="mainScrollSpy">
+        <div class="d-flex justify-content-center align-items-center">
+          <span>Pentru ofertele noastre, dați click <a href="./schedule.html#price-Cards-Section"
+              data-bs-target="#price-Cards-Section">aici</a>.</span>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <span>Iar pentru a afla mai multe despre mine, dați click <a href="./contact.html#who-am-I-Section"
+              data-bs-target="#who-am-I-Section">aici</a>.</span>
+        </div>
       </div>
       <div class="row fullRow d-flex justify-content-center align-items-center my-2 genericRowPadding">
         test2

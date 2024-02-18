@@ -63,6 +63,10 @@
     color: var(--main-light-color);
 }
 
+#price-Cards-Section {
+    scroll-behavior: smooth;
+}
+
 /* VERY LARGE SCREENS: */
 @media only screen and (min-width: 992px) {
     .circle {

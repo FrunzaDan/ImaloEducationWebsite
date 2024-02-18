@@ -22,10 +22,11 @@
   <link rel="icon" type="image/png" href="/assets/images/logo/imalo_icon.ico">
 
   <!-- SCRIPTS -->
-  <script src="./jQuery/jquery-3.6.4.min.js"></script>
+  <script src="./jQuery/jquery-3.7.1.min.js"></script>
   <script src="./js/navbar-component.js"></script>
   <script src="./js/footer-component.js"></script>
   <script defer src="./js/scrollToTop.js"></script>
+  <script defer src="./js/scrollIntoView.js"></script>
 
   <!-- EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -34,7 +35,7 @@
   <title>Contact</title>
 </head>
 
-<body ontouchstart="">
+<body ontouchstart="" data-bs-spy="scroll" data-bs-target="#mainScrollSpy" data-bs-smooth-scroll="true">
   <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">&#8593;</button>
   <div class="scrollWrapper" id="scrollWrapper">
     <div id="navbar-placeholder">
@@ -118,7 +119,7 @@
       </div>
       <div class="row fullRow d-flex justify-content-center align-items-center my-2 genericRowPadding">
         <div class="container-fluid d-flex justify-content-center align-items-center my-2">
-          <div class="subtitle1Text">
+          <div class="subtitle1Text" id="who-am-I-Section">
             Cine sunt?
           </div>
         </div>
