@@ -149,7 +149,8 @@ h1 h2 h3 h4 h5 h6 {
   padding: 0px;
   height: 100dvh;
   overflow-x: hidden;
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 .fillCol {
