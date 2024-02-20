@@ -44,12 +44,12 @@
 }
 
 .wrapperDeveloped {
-  margin-top: 20px;
-  margin-bottom: 20px;
   display: flex;
   align-items: center;
   text-align: center;
   line-height: 1;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .danfrunzaIcon {
