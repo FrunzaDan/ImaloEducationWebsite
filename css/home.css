@@ -103,6 +103,120 @@
   font-size: 1.25rem;
 }
 
+.motto-container {
+  position: relative;
+  width: 40rem;
+  height: 20rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.motto-text {
+  font-size: 6rem;
+  color: var(--main-light-color);
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: -1px 0 var(--main-second-color), 0 1px var(--main-second-color), 1px 0 var(--main-second-color), 0 -1px var(--main-second-color);
+}
+
+#upper-text-motto {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-90%, -114%);
+  z-index: 15;
+}
+
+#middle-text-motto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 14;
+}
+
+#lower-text-motto {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(-10%, 14%);
+  z-index: 13;
+}
+
+#upper-layer-motto {
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  z-index: 12;
+}
+
+#middle-layer-motto {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 11;
+}
+
+#lower-layer-motto {
+  position: absolute;
+  top: -20px;
+  left: -60px;
+  z-index: 10;
+}
+
+/* LARGE SCREENS: */
+@media only screen and (min-width: 768px) {
+  .WelcomeTextHome {
+    font-size: 4rem;
+  }
+
+  #input-cursor {
+    height: 50px;
+  }
+}
+
+@keyframes blinkCursor {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* SMALL SCREENS: */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .WelcomeTextHome {
+    font-size: 3rem;
+  }
+
+  #input-cursor {
+    height: 40px;
+  }
+
+  .textInsideHomePage {
+    font-size: 1rem;
+  }
+
+  .motto-container {
+    position: relative;
+    width: 26rem;
+    height: 13rem;
+  }
+
+  .motto-text {
+    font-size: 4rem;
+  }
+}
 
 /* VERY SMALL SCREENS: */
 @media only screen and (max-width: 576px) {
@@ -137,48 +251,31 @@
   .textInsideHomePage {
     font-size: 1rem;
   }
-}
 
-/* SMALL SCREENS: */
-@media only screen and (min-width: 576px) and (max-width: 768px) {
-  .WelcomeTextHome {
-    font-size: 3rem;
+  #upper-layer-motto {
+    top: 20px;
+    left: 20px;
   }
 
-  #input-cursor {
-    height: 40px;
+  #lower-layer-motto {
+    top: -20px;
+    left: -20px;
   }
 
-  .textInsideHomePage {
-    font-size: 1rem;
-  }
-}
-
-/* LARGE SCREENS: */
-@media only screen and (min-width: 768px) {
-  .WelcomeTextHome {
-    font-size: 4rem;
+  #upper-text-motto {
+    transform: translate(-90%, -134%);
   }
 
-  #input-cursor {
-    height: 50px;
-  }
-}
-
-@keyframes blinkCursor {
-  0% {
-    opacity: 1;
+  #lower-text-motto {
+    transform: translate(-10%, 34%);
   }
 
-  40% {
-    opacity: 1;
+  .motto-container {
+    width: 20rem;
+    height: 10rem;
   }
 
-  60% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
+  .motto-text {
+    font-size: 2.5rem;
   }
 }

@@ -105,6 +105,10 @@ h1 h2 h3 h4 h5 h6 {
   color: var(--main-dark-color) !important;
 }
 
+.position-absolute {
+  position: absolute;
+}
+
 #scrollToTopBtn {
   /* font-family: var(--primary-font); */
   display: block;
@@ -204,6 +208,16 @@ h1 h2 h3 h4 h5 h6 {
   color: var(--main-first-color);
   text-shadow: 2px 2px var(--main-third-color);
   font-size: 3.4rem;
+  padding: 1rem;
+}
+
+.subtitle2Text {
+  text-align: center;
+  color: var(--main-first-color);
+  text-shadow: 1px 1px var(--main-third-color);
+  font-size: 2.6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .fullSpaceHref {
@@ -305,7 +319,13 @@ h1 h2 h3 h4 h5 h6 {
 @media only screen and (min-width: 576px) and (max-width: 768px) {
   .subtitle1Text {
     font-size: 2.2rem;
-    padding: 6px;
+    padding: 0.4rem;
+  }
+
+  .subtitle2Text {
+    font-size: 2rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
   }
 
   .descriptionInsideCard {
@@ -333,7 +353,13 @@ h1 h2 h3 h4 h5 h6 {
 
   .subtitle1Text {
     font-size: 2rem;
-    padding: 8px;
+    padding: 0.4rem;
+  }
+
+  .subtitle2Text {
+    font-size: 1.4rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
   }
 
   .descriptionInsideCard {
