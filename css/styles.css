@@ -182,13 +182,13 @@ h1 h2 h3 h4 h5 h6 {
   width: 100%;
 }
 
-.descriptionInsideCard {
+.description-inside-card {
   position: relative;
   text-align: justify;
   font-size: 1.4rem;
 }
 
-.fixedSizeContainer400x300 {
+.fixed-Size-Container-600x300 {
   max-width: 600px;
   max-height: 300px;
 }
@@ -315,6 +315,14 @@ h1 h2 h3 h4 h5 h6 {
   margin-bottom: 2rem;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.overlapping-text {
+  position: relative;
+}
+
 /* SMALL SCREENS: */
 @media only screen and (min-width: 576px) and (max-width: 768px) {
   .subtitle1Text {
@@ -328,7 +336,7 @@ h1 h2 h3 h4 h5 h6 {
     padding-right: 0.4rem;
   }
 
-  .descriptionInsideCard {
+  .description-inside-card {
     font-size: 1rem;
   }
 
@@ -362,7 +370,7 @@ h1 h2 h3 h4 h5 h6 {
     padding-right: 0.4rem;
   }
 
-  .descriptionInsideCard {
+  .description-inside-card {
     font-size: 1rem;
   }
 

@@ -16,6 +16,7 @@
   <link href="./css/home.css" rel="stylesheet" />
   <link href="./css/liquid.css" rel="stylesheet" />
   <link href="./css/cardStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/language.css" rel="stylesheet" type="text/css" />
   <link rel="icon" type="image/png" href="/assets/images/logo/imalo_icon.ico">
 
   <!-- SCRIPTS -->
@@ -23,6 +24,7 @@
   <script src="./js/navbar-component.js"></script>
   <script src="./js/footer-component.js"></script>
   <script src="./js/animate_header.js"></script>
+  <script defer src="./js/change_Language.js"></script>
   <script defer src="./js/scrollToTop.js"></script>
 
   <title>Home</title>
@@ -60,21 +62,27 @@
       </div>
       <div class="row fullRow d-flex justify-content-center align-items-center my-2 diagonal1 genericRowPadding">
         <div class="col-sm-8 d-flex justify-content-center align-items-center block1 my-2">
-          <div class="fixedSizeContainer400x300">
-            <div class="liquid-shape-3">
-              <div class="textInsideHomePage">
-                <p>
-                  Imalo Education este locul unde copilul Dvs. va fi întâmpinat cu toată căldura și atenția noastră.
-                  Acesta va fi încurajat să se exprime și să se manifeste liber și cel mai important, în limba germană.
-                  Activitățile se desfășoară exclusiv în limba germană, pentru a-i îmbogăți vocabularul și exprimarea.
-                </p>
-              </div>
+          <div class="liquid-shape-3">
+            <div class="textInsideHomePage cursor-pointer" onclick="changeLanguage(1)">
+              <p class="overlapping-text" id="paragraph-ro-1">
+                Imalo Education este locul unde copilul Dvs. va fi întâmpinat cu toată căldura și atenția noastră.
+                Acesta va fi încurajat să se exprime și să se manifeste liber și cel mai important, în limba germană.
+                Activitățile se desfășoară exclusiv în limba germană, pentru a-i îmbogăți vocabularul și exprimarea.
+              </p>
+              <p class="overlapping-text" id="paragraph-de-1">
+                Imalo Education ist der Ort, an dem Ihr Kind mit all unserer Herzlichkeit und Aufmerksamkeit empfangen
+                wird.
+                Es wird ermutigt, sich frei und vor allem auf Deutsch auszudrücken und sich zu äußern.
+                Die Aktivitäten sind ausschließlich auf Deutsch, um ihren Wortschatz und ihre Ausdrucksfähigkeit zu
+                erweitern.
+              </p>
             </div>
           </div>
         </div>
         <div class="col-sm-4 d-flex justify-content-center align-items-center block2 my-2">
           <img class="borderOfCaterpillar" id="caterpillar_1" src="assets/images/caterpillars/caterpillar_1.png"
             alt="Caterpillar">
+          <p class="triangle-right">Apasă pe text pentru germană!</p>
         </div>
       </div>
       <div class="row fullRow d-flex justify-content-center align-items-center my-2 diagonal2 genericRowPadding">
@@ -83,15 +91,22 @@
             alt="Caterpillar">
         </div>
         <div class="col-sm-8 d-flex justify-content-center align-items-center block4 my-2">
-          <div class="fixedSizeContainer400x300">
+          <div class="fixed-Size-Container-600x300">
             <div class="liquid-shape-4">
-              <div class="textInsideHomePage">
-                <p>
-                  Pe lângă accentul pus pe limba germană, Imalo Education oferă:<br />
-                  - cursuri de engleză,<br />
-                  - ateliere creative și culinare<br />
-                  - excursii în aer liber<br />
-                  - dans și pictură<br />
+              <div class="textInsideHomePage cursor-pointer" onclick="changeLanguage(2)">
+                <p class="overlapping-text" id="paragraph-ro-2">
+                  Pe lângă accentul pus pe limba germană, Imalo Education oferă:<br>
+                  - cursuri de engleză<br>
+                  - ateliere creative și culinare<br>
+                  - excursii în aer liber<br>
+                  - dans și pictură<br>
+                </p>
+                <p class="overlapping-text" id="paragraph-de-2">
+                  Zusätzlich zu seinem Schwerpunkt Deutsch bietet Imalo Education:<br>
+                  - Englischkurse<br>
+                  - kreative und kulinarische Workshops<br>
+                  - Ausflüge in die Natur<br>
+                  - Tanz und Malerei<br>
                 </p>
               </div>
             </div>
@@ -100,12 +115,16 @@
       </div>
       <div class="row fullRow d-flex justify-content-center align-items-center my-2 diagonal1 genericRowPadding">
         <div class="col-sm-8 d-flex justify-content-center align-items-center my-2">
-          <div class="fixedSizeContainer400x300">
+          <div class="fixed-Size-Container-600x300">
             <div class="liquid-shape-3">
-              <div class="textInsideHomePage">
-                <p>
+              <div class="textInsideHomePage cursor-pointer" onclick="changeLanguage(3)">
+                <p class="overlapping-text" id="paragraph-ro-3">
                   După realizarea temelor, avem un colț dedicat lecturii. Copiii pot de asemenea să învețe prin joacă cu
                   ajutorul tablei noastre interactive. Implicarea și energia lor este răsplata noastră! :D
+                </p>
+                <p class="overlapping-text" id="paragraph-de-3">
+                  Nach den Hausaufgaben haben wir eine Leseecke. Die Kinder können auch spielerisch lernen mit
+                  unserem interaktiven Whiteboard. Ihr Engagement und ihre Energie sind unsere Belohnung! :D
                 </p>
               </div>
             </div>
@@ -140,7 +159,7 @@
       </div>
       <div class="row fullRow d-flex justify-content-center align-items-center my-2 diagonal2 genericRowPadding"
         id="mainScrollSpy">
-        <div class="fixedSizeContainer400x300">
+        <div class="fixed-Size-Container-600x300">
           <div class="d-flex justify-content-center align-items-center">
             <span>Pentru ofertele noastre, dați click <a href="./schedule.html#price-Cards-Section"
                 data-bs-target="#price-Cards-Section">aici</a>.</span>
