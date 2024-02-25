@@ -101,6 +101,7 @@
   text-align: center;
   color: var(--main-dark-color);
   font-size: 1.25rem;
+  position: relative;
 }
 
 .motto-container {

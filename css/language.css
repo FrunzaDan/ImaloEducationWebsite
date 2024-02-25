@@ -1,4 +1,4 @@
-#paragraph-ro-1 {
+/* #paragraph-ro-1 {
     display: block;
 }
 
@@ -19,5 +19,13 @@
 }
 
 #paragraph-de-3 {
+    display: none;
+} */
+
+.paragraph-ro {
+    display: block;
+}
+
+.paragraph-de {
     display: none;
 }

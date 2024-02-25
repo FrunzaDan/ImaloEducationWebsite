@@ -26,7 +26,7 @@
   <script src="./js/navbar-component.js"></script>
   <script src="./js/footer-component.js"></script>
   <script src="./js/animate_header.js"></script>
-  <script defer src="./js/change_Language.js"></script>
+  <script defer src="./js/changeLanguage.js"></script>
   <script defer src="./js/scrollToTop.js"></script>
 
   <title>Home</title>
@@ -65,13 +65,13 @@
       <div class="row fullRow d-flex justify-content-center align-items-center my-2 diagonal1 genericRowPadding">
         <div class="col-sm-8 d-flex justify-content-center align-items-center block1 my-2">
           <div class="liquid-shape-3">
-            <div class="textInsideHomePage cursor-pointer" onclick="changeLanguage(1)">
-              <p class="overlapping-text" id="paragraph-ro-1">
+            <div class="textInsideHomePage cursor-pointer" onclick="changeLanguage()">
+              <p class="overlapping-text paragraph-ro">
                 Imalo Education este locul unde copilul Dvs. va fi întâmpinat cu toată căldura și atenția noastră.
                 Acesta va fi încurajat să se exprime și să se manifeste liber și cel mai important, în limba germană.
                 Activitățile se desfășoară exclusiv în limba germană, pentru a-i îmbogăți vocabularul și exprimarea.
               </p>
-              <p class="overlapping-text" id="paragraph-de-1">
+              <p class="overlapping-text paragraph-de">
                 Imalo Education ist der Ort, an dem Ihr Kind mit all unserer Herzlichkeit und Aufmerksamkeit empfangen
                 wird.
                 Es wird ermutigt, sich frei und vor allem auf Deutsch auszudrücken und sich zu äußern.
@@ -95,15 +95,15 @@
         <div class="col-sm-8 d-flex justify-content-center align-items-center block4 my-2">
           <div class="fixed-Size-Container-600x300">
             <div class="liquid-shape-4">
-              <div class="textInsideHomePage cursor-pointer" onclick="changeLanguage(2)">
-                <p class="overlapping-text" id="paragraph-ro-2">
+              <div class="textInsideHomePage cursor-pointer" onclick="changeLanguage()">
+                <p class="overlapping-text paragraph-ro">
                   Pe lângă accentul pus pe limba germană, Imalo Education oferă:<br>
                   - cursuri de engleză<br>
                   - ateliere creative și culinare<br>
                   - excursii în aer liber<br>
                   - dans și pictură<br>
                 </p>
-                <p class="overlapping-text" id="paragraph-de-2">
+                <p class="overlapping-text paragraph-de">
                   Zusätzlich zu seinem Schwerpunkt Deutsch bietet Imalo Education:<br>
                   - Englischkurse<br>
                   - kreative und kulinarische Workshops<br>
@@ -119,12 +119,12 @@
         <div class="col-sm-8 d-flex justify-content-center align-items-center my-2">
           <div class="fixed-Size-Container-600x300">
             <div class="liquid-shape-3">
-              <div class="textInsideHomePage cursor-pointer" onclick="changeLanguage(3)">
-                <p class="overlapping-text" id="paragraph-ro-3">
+              <div class="textInsideHomePage cursor-pointer" onclick="changeLanguage()">
+                <p class="overlapping-text paragraph-ro">
                   După realizarea temelor, avem un colț dedicat lecturii. Copiii pot de asemenea să învețe prin joacă cu
                   ajutorul tablei noastre interactive. Implicarea și energia lor este răsplata noastră! :D
                 </p>
-                <p class="overlapping-text" id="paragraph-de-3">
+                <p class="overlapping-text paragraph-de">
                   Nach den Hausaufgaben haben wir eine Leseecke. Die Kinder können auch spielerisch lernen mit
                   unserem interaktiven Whiteboard. Ihr Engagement und ihre Energie sind unsere Belohnung! :D
                 </p>
@@ -159,37 +159,19 @@
           este motto-ul nostru <br>și credem cu tărie că putem oferi <br>copilului Dumneavoastră ce este mai bun!
         </div>
       </div>
-      <div class="row fullRow d-flex justify-content-center align-items-center my-2 diagonal2 genericRowPadding"
-        id="mainScrollSpy">
-        <div class="fixed-Size-Container-600x300">
-          <div class="d-flex justify-content-center align-items-center">
+      <div class="row fullRow py-2 my-4 diagonal2 genericRowPadding" id="mainScrollSpy">
+        <div class="col-sm-6 fillCol my-2">
+          <div class="card justify-content-center align-items-center cardFillHeight100 text-center p-4 my-2">
             <span>Pentru ofertele noastre, dați click <a href="./schedule.html#price-Cards-Section"
                 data-bs-target="#price-Cards-Section">aici</a>.</span>
           </div>
-          <div class="d-flex justify-content-center align-items-center">
-            <span>Pentru ofertele noastre, dați click <a href="./schedule.html#price-Cards-Section"
-                data-bs-target="#price-Cards-Section">aici</a>.</span>
-          </div>
-          <div class="d-flex justify-content-center align-items-center">
-            <span>Pentru ofertele noastre, dați click <a href="./schedule.html#price-Cards-Section"
-                data-bs-target="#price-Cards-Section">aici</a>.</span>
-          </div>
-          <div class="d-flex justify-content-center align-items-center">
-            <span>Iar pentru a afla mai multe despre mine, dați click <a href="./contact.html#who-am-I-Section"
-                data-bs-target="#who-am-I-Section">aici</a>.</span>
-          </div>
-          <div class="d-flex justify-content-center align-items-center">
-            <span>Iar pentru a afla mai multe despre mine, dați click <a href="./contact.html#who-am-I-Section"
-                data-bs-target="#who-am-I-Section">aici</a>.</span>
-          </div>
-          <div class="d-flex justify-content-center align-items-center">
+        </div>
+        <div class="col-sm-6 fillCol my-2">
+          <div class="card justify-content-center align-items-center cardFillHeight100 text-center p-4 my-2">
             <span>Iar pentru a afla mai multe despre mine, dați click <a href="./contact.html#who-am-I-Section"
                 data-bs-target="#who-am-I-Section">aici</a>.</span>
           </div>
         </div>
-      </div>
-      <div class="row fullRow d-flex justify-content-center align-items-center my-2 genericRowPadding">
-        test3
       </div>
     </div>
     <div id="footer-placeholder"></div>
