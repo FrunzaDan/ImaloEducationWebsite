@@ -8,26 +8,26 @@
   <meta name="description" content="The Website of the afterschool program, named Imalo, located in Romania.">
 
   <!-- BOOTSTRAP 5.3-->
-  <link href="./css/bootstrap.min.css" rel="stylesheet" />
-  <script src="./js/bootstrap.bundle.min.js"></script>
+  <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
   <!-- BOOTSTRAP 5.3-->
-  <link href="./css/styles.css" rel="stylesheet" />
-  <link href="./css/hover.css" rel="stylesheet" />
-  <link href="./css/navbarStyles.css" rel="stylesheet" />
-  <link href="./css/footerStyles.css" rel="stylesheet" />
-  <link href="./css/home.css" rel="stylesheet" />
-  <link href="./css/liquid.css" rel="stylesheet" />
+  <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/hover.css" rel="stylesheet" type="text/css" />
+  <link href="./css/navbarStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/footerStyles.css" rel="stylesheet" type="text/css" />
+  <link href="./css/home.css" rel="stylesheet" type="text/css" />
+  <link href="./css/liquid.css" rel="stylesheet" type="text/css" />
   <link href="./css/cardStyles.css" rel="stylesheet" type="text/css" />
   <link href="./css/language.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/png" href="/assets/images/logo/imalo_icon.ico">
+  <link rel="icon" type="image/png" href="/assets/images/logo/favicon.ico">
 
   <!-- SCRIPTS -->
-  <script src="./jQuery/jquery-3.7.1.min.js"></script>
-  <script src="./js/navbar-component.js"></script>
-  <script src="./js/footer-component.js"></script>
-  <script src="./js/animate_header.js"></script>
-  <script defer src="./js/changeLanguage.js"></script>
-  <script defer src="./js/scrollToTop.js"></script>
+  <script type="text/javascript" src="./jQuery/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="./js/navbar-component.js"></script>
+  <script type="text/javascript" src="./js/footer-component.js"></script>
+  <script defer type="text/javascript" src="./js/animateHeader.js"></script>
+  <script defer type="text/javascript" src="./js/changeLanguage.js"></script>
+  <script defer type="text/javascript" src="./js/scrollToTop.js"></script>
 
   <title>Home</title>
 </head>
@@ -59,7 +59,7 @@
           </div>
         </div>
       </div>
-      <div class="row fullRow d-flex justify-content-center align-items-center my-2 genericRowPadding">
+      <div class="row fullRow d-flex justify-content-center align-items-center text-center my-2 genericRowPadding">
         - Acest site este încă în construcție. -
       </div>
       <div class="row fullRow d-flex justify-content-center align-items-center my-2 diagonal1 genericRowPadding">
@@ -161,22 +161,26 @@
       </div>
       <div class="row fullRow py-2 my-4 diagonal2 genericRowPadding" id="mainScrollSpy">
         <div class="col-sm-6 fillCol my-2">
-          <div class="card justify-content-center align-items-center cardFillHeight100 text-center p-4 my-2">
-            <span>Pentru ofertele noastre, dați click <a href="./schedule.html#price-Cards-Section"
-                data-bs-target="#price-Cards-Section">aici</a>.</span>
-          </div>
+          <a href="./schedule.html#price-Cards-Section" class="cardFillHeight100" data-bs-target="#price-Cards-Section">
+            <div
+              class="card justify-content-center align-items-center cardFillHeight100 text-center seccondary-custom-text p-4 my-2">
+              <p>Pentru ofertele noastre, dați click aici.</p>
+            </div>
+          </a>
         </div>
         <div class="col-sm-6 fillCol my-2">
-          <div class="card justify-content-center align-items-center cardFillHeight100 text-center p-4 my-2">
-            <span>Iar pentru a afla mai multe despre mine, dați click <a href="./contact.html#who-am-I-Section"
-                data-bs-target="#who-am-I-Section">aici</a>.</span>
-          </div>
+          <a href="./contact.html#who-am-I-Section" class="cardFillHeight100" data-bs-target="#who-am-I-Section">
+            <div
+              class="card justify-content-center align-items-center cardFillHeight100 text-center seccondary-custom-text p-4 my-2">
+              <p>Iar pentru a afla mai multe despre mine, dați click aici.</p>
+            </div>
+          </a>
         </div>
       </div>
     </div>
     <div id="footer-placeholder"></div>
   </div>
-  <script type="module">
+  <script async type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
