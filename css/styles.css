@@ -322,11 +322,7 @@ h1 h2 h3 h4 h5 h6 {
   cursor: pointer;
 }
 
-.overlapping-text {
-  position: relative;
-}
-
-.seccondary-custom-text {
+.secondary-custom-text {
   font-size: 1.6rem;
 }
 
@@ -359,7 +355,7 @@ h1 h2 h3 h4 h5 h6 {
     transform: skewY(10deg);
   }
 
-  .seccondary-custom-text {
+  .secondary-custom-text {
     font-size: 1.2rem;
   }
 }
@@ -397,7 +393,7 @@ h1 h2 h3 h4 h5 h6 {
     transform: skewY(15deg);
   }
 
-  .seccondary-custom-text {
+  .secondary-custom-text {
     font-size: 1rem;
   }
 }

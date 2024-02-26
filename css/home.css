@@ -35,7 +35,7 @@
   font-weight: bold;
   letter-spacing: -1px;
   line-height: 1.2;
-  color: var(--main-second-color);
+  color: var(--main-first-color);
   transform: translateX(-50%);
   margin-left: auto;
   margin-right: auto;
@@ -46,7 +46,7 @@
 #input-cursor {
   display: inline-block;
   width: 5px;
-  background-color: var(--main-second-color);
+  background-color: var(--main-first-color);
   margin-left: 8px;
   animation: blinkCursor .4s linear infinite alternate;
 }

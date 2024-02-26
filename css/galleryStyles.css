@@ -16,8 +16,8 @@
 #FullImage {
     margin-left: auto;
     margin-right: auto;
-    max-width: 98%;
-    max-height: 98%;
+    max-width: 96%;
+    max-height: 96%;
     border: 0.5rem solid var(--main-light-color);
 }
 

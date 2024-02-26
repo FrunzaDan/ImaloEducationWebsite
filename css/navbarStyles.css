@@ -1,6 +1,6 @@
 .nav-link {
     font-weight: bold;
-    color: var(--main-second-color);
+    color: var(--main-first-color);
     text-shadow: 2px 2px var(--main-third-color);
     text-align: center;
     font-size: 300%;
@@ -10,11 +10,11 @@
 }
 
 .nav-link:active {
-    color: var(--main-second-color);
+    color: var(--main-first-color);
 }
 
 .nav-link:visited {
-    color: var(--main-second-color);
+    color: var(--main-first-color);
 }
 
 .imaloTextNav {
@@ -54,21 +54,21 @@
 /* VERY LARGE SCREENS: */
 @media only screen and (min-width: 1100px) {
     .nav-link {
-        font-size: 380%;
+        font-size: 4rem;
     }
 }
 
 /* LARGE SCREENS: */
 @media only screen and (min-width: 768px) and (max-width: 1100px) {
     .nav-link {
-        font-size: 280%;
+        font-size: 3rem;
     }
 }
 
 /* SMALL SCREENS: */
 @media only screen and (min-width: 576px) and (max-width: 768px) {
     .nav-link {
-        font-size: 320%;
+        font-size: 2rem;
     }
 }
 
@@ -79,7 +79,7 @@
     }
 
     .nav-link {
-        font-size: 320%;
+        font-size: 3rem;
     }
 }
 
@@ -87,10 +87,6 @@
 .navbar-toggler span {
     display: block;
     background-color: var(--main-first-color);
-    /* height: 3px;
-    width: 25px;
-    margin-top: 5px;
-    margin-bottom: 5px; */
     height: 4px;
     width: 120px;
     margin-top: 10px;
