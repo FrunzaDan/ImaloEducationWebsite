@@ -257,7 +257,7 @@ h1 h2 h3 h4 h5 h6 {
 .genericButton {
   background-color: var(--main-first-color);
   border: 0.1px solid var(--main-first-color);
-  color: var(--main-light-color);
+  color: var(--main-light-color) !important;
   transition: all .2s;
   width: 100%;
   height: 100%;
@@ -265,6 +265,10 @@ h1 h2 h3 h4 h5 h6 {
   padding: 16px;
   transform-origin: 50% 50%;
   font-size: large;
+}
+
+.white-icon {
+  color: inherit;
 }
 
 .cyanTextWithShadow {
