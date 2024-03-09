@@ -23,7 +23,7 @@ function fetchData() {
                 imagesArray.push(item.imagePath);
 
                 galleryContainer.innerHTML += `
-                    <img src="${item.imagePath}" id="img_${index}" 
+                    <img src="${item.imagePath}" alt="Gallery Image" id="img_${index}" 
                     class="fullCardImg" onclick="FullView('${item.imagePath}', ${index})">
                 `;
             });
