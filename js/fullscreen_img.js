@@ -7,30 +7,35 @@ const nextImgButton = document.getElementById('next-button');
 
 const imagesArray = [];
 
-window.onload = fetchData();
+loadGallery();
 
-function fetchData() {
-    fetch(galleryImagesJson)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error ${response.status}`);
-            }
-            return response.json();
-        })
+async function loadGallery() {
+    images = await fetchImages();
+    if (images) {
+        images.forEach((item, index) => {
+            imagesArray.push(item.imagePath);
 
-        .then(data => {
-            data.forEach((item, index) => {
-                imagesArray.push(item.imagePath);
-
-                galleryContainer.innerHTML += `
+            galleryContainer.innerHTML += `
                     <img src="${item.imagePath}" alt="Gallery Image" id="img_${index}" 
                     class="fullCardImg" onclick="FullView('${item.imagePath}', ${index})">
                 `;
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching or parsing the JSON file:', error);
         });
+    }
+    deleteLoading();
+}
+
+function deleteLoading() {
+    loadingOverlay = document.getElementById("loading-overlay");
+    loadingOverlay.style.opacity = 0;
+    setTimeout(() => {
+        loadingOverlay.style.display = "none";
+    }, 1000);
+}
+
+async function fetchImages() {
+    const response = await fetch(galleryImagesJson);
+    const data = await response.json();
+    return data;
 }
 
 if (prevImgButton) {

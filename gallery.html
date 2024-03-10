@@ -11,7 +11,6 @@
   <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
   <!-- BOOTSTRAP 5.3-->
   <link href="./css/styles.css" rel="stylesheet" type="text/css" />
-  <link href="./css/hover.css" rel="stylesheet" type="text/css" />
   <link href="./css/navbarStyles.css" rel="stylesheet" type="text/css" />
   <link href="./css/footerStyles.css" rel="stylesheet" type="text/css" />
   <link href="./css/galleryStyles.css" rel="stylesheet" type="text/css" />
@@ -20,8 +19,7 @@
 
   <!-- SCRIPTS -->
   <script type="text/javascript" src="./jQuery/jquery-3.7.1.min.js"></script>
-  <script type="text/javascript" src="./js/navbar-component.js"></script>
-  <script type="text/javascript" src="./js/footer-component.js"></script>
+  <script type="text/javascript" src="./js/loadHeaderFoter.js"></script>
   <script defer type="text/javascript" src="./js/fullscreen_img.js"></script>
   <script defer type="text/javascript" src="./js/scrollToTop.js"></script>
 
@@ -29,6 +27,11 @@
 </head>
 
 <body ontouchstart="">
+  <div id="loading-overlay">
+    <div class="text-center" id="loading-overlay-content">
+      Galeria se încarcă...
+    </div>
+  </div>
   <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">&#8593;</button>
   <div class="scrollWrapper" id="scrollWrapper">
     <div id="navbar-placeholder">
