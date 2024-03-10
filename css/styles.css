@@ -209,7 +209,7 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 .card {
-  background-color: var(--main-light-color);
+  background-color: var(--main-light-color) !important;
 }
 
 .cardFillHeight100 {
