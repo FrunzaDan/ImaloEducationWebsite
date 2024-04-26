@@ -1,0 +1,100 @@
+.whoAmIImageCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-main-color) !important;
+    padding: 1rem;
+}
+
+#imgWhoAreWe {
+    display: block;
+    border-radius: 50%;
+    background-image: url(../../../assets/images/Imalo_education.webp);
+    width: 300px;
+    height: 300px;
+    top: 0;
+    left: 0;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 300px 300px;
+    transition: all .2s;
+    transform-origin: 50% 50%;
+    border: 0.2rem solid var(--cyan-main-color);
+}
+
+#imgWhoAmI {
+    display: block;
+    border-radius: 50%;
+    background-image: url(../../../assets/images/Maria_Solomon_Profile_Pic.webp);
+    width: 300px;
+    height: 300px;
+    top: 0;
+    left: 0;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 300px 300px;
+    transition: all .2s;
+    transform-origin: 50% 50%;
+    border: 0.2rem solid var(--cyan-main-color);
+}
+
+#who-am-I-Section {
+    scroll-behavior: smooth;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1150px) {
+
+    #imgWhoAreWe {
+        width: 160px;
+        height: 160px;
+        background-size: 160px 160px;
+    }
+
+    #imgWhoAmI {
+        width: 160px;
+        height: 160px;
+        background-size: 160px 160px;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 768px) {
+    #imgWhoAreWe {
+        width: 150px;
+        height: 150px;
+        background-size: 150px 150px;
+    }
+
+    #imgWhoAmI {
+        width: 150px;
+        height: 150px;
+        background-size: 150px 150px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 650px) {
+    #imgWhoAreWe {
+        width: 130px;
+        height: 130px;
+        background-size: 130px 130px;
+    }
+
+    #imgWhoAmI {
+        width: 130px;
+        height: 130px;
+        background-size: 130px 130px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #imgWhoAreWe {
+        width: 200px;
+        height: 200px;
+        background-size: 200px 200px;
+    }
+
+    #imgWhoAmI {
+        width: 200px;
+        height: 200px;
+        background-size: 200px 200px;
+    }
+}
