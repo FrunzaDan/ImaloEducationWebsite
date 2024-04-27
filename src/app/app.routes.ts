@@ -12,41 +12,47 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    title: 'Oferte',
   },
   {
     path: '',
     component: HomeComponent,
+    title: 'Home',
   },
   {
     path: 'gallery',
     component: GalleryComponent,
+    title: 'Galerie',
   },
   {
     path: 'contact',
     component: ContactComponent,
+    title: 'Contact',
   },
   {
     path: 'schedule',
     component: ScheduleComponent,
+    title: 'Program',
   },
   {
     path: 'offers',
     component: OffersComponent,
+    title: 'Oferte',
   },
   {
     path: 'about-us',
     component: AboutUsComponent,
+    title: 'Despre Noi',
   },
   {
     path: 'privacy',
     component: PrivacyComponent,
+    title: 'Politica confidentialitate',
   },
   {
     path: '**',
     pathMatch: 'full',
     component: PageNotFoundComponent,
-    data: {
-      title: '404',
-    },
+    title: '404',
   },
 ];
