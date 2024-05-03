@@ -12,6 +12,7 @@ import { transformIn, transformOut } from '../../animations';
 import { ContactMeForm } from '../../interfaces/contact-me-form';
 import { LanguageService } from '../../services/language.service';
 import { SendEmailService } from '../../services/send-email.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -29,7 +30,8 @@ export class ContactComponent implements OnInit {
   emailPopUpParagraph!: string;
   constructor(
     private sendEmailService: SendEmailService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private meta: Meta
   ) {}
 
   submitted = false;
@@ -37,13 +39,13 @@ export class ContactComponent implements OnInit {
   isEmailModalOpen: boolean = false;
 
   contactMeForm = new FormGroup({
-    from_name: new FormControl('', [Validators.required]),
-    from_email: new FormControl('', [Validators.required, Validators.email]),
-    from_tel: new FormControl('', [
+    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', [
       Validators.required,
       Validators.pattern('^[0-9]{9,12}$'),
     ]),
-    from_message: new FormControl('', [Validators.required]),
+    message: new FormControl('', [Validators.required]),
   });
 
   get f() {
@@ -51,6 +53,11 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.meta.updateTag({
+      name: 'description',
+      content: 'The contact info of Imalo Education Sibiu',
+    });
+
     this.languageService.currentROLanguage$.subscribe((currentLang) => {
       this.languageRO = currentLang;
       this.languageDE = !currentLang;
@@ -65,7 +72,7 @@ export class ContactComponent implements OnInit {
 
     this.isEmailModalOpen = true;
 
-    this.emailPopUpHeader = 'Bună, ' + this.contactMeForm.value.from_name;
+    this.emailPopUpHeader = 'Bună, ' + this.contactMeForm.value.name;
     this.emailPopUpParagraph = 'Se trimite...';
 
     let responseCodePromise: Promise<number> =
@@ -75,10 +82,10 @@ export class ContactComponent implements OnInit {
     responseCodePromise.then((responseCode) => {
       if (responseCode === 200) {
         this.contactMeForm.reset();
-        this.contactMeForm.controls.from_name.setErrors(null);
-        this.contactMeForm.controls.from_email.setErrors(null);
-        this.contactMeForm.controls.from_tel.setErrors(null);
-        this.contactMeForm.controls.from_message.setErrors(null);
+        this.contactMeForm.controls.name.setErrors(null);
+        this.contactMeForm.controls.email.setErrors(null);
+        this.contactMeForm.controls.phone.setErrors(null);
+        this.contactMeForm.controls.message.setErrors(null);
         this.emailPopUpParagraph = 'Mesajul tău a fost trimis cu succes! ';
       } else {
         this.emailPopUpParagraph =

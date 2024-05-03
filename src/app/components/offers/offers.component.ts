@@ -2,6 +2,7 @@ import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { transformIn, transformOut } from '../../animations';
 import { LanguageService } from '../../services/language.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-offers',
@@ -18,10 +19,15 @@ export class OffersComponent implements OnInit {
 
   constructor(
     private languageService: LanguageService,
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+    private meta: Meta
   ) {}
 
   ngOnInit(): void {
+    this.meta.updateTag({
+      name: 'description',
+      content: 'The offers of Imalo Education Sibiu',
+    });
     this.languageService.currentROLanguage$.subscribe((currentLang) => {
       this.languageRO = currentLang;
       this.languageDE = !currentLang;

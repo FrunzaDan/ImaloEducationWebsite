@@ -12,10 +12,10 @@ export class SendEmailService {
   sendEmailJS(contactMeForm: ContactMeForm): Promise<number> {
     let responseCode = 500;
     var params = {
-      from_name: contactMeForm.from_name,
-      from_email: contactMeForm.from_email,
-      from_tel: contactMeForm.from_tel,
-      from_message: contactMeForm.from_message,
+      name: contactMeForm.name,
+      email: contactMeForm.email,
+      phone: contactMeForm.phone,
+      message: contactMeForm.message,
     };
 
     return emailjs

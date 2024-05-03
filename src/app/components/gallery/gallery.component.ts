@@ -4,6 +4,7 @@ import { transformIn, transformOut } from '../../animations';
 import { GalleryImage } from '../../interfaces/gallery-image';
 import { LanguageService } from '../../services/language.service';
 import { LoadGalleryService } from '../../services/load-gallery.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-gallery',
@@ -23,10 +24,15 @@ export class GalleryComponent implements OnInit {
 
   constructor(
     private loadGalleryService: LoadGalleryService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private meta: Meta
   ) {}
 
   ngOnInit(): void {
+    this.meta.updateTag({
+      name: 'description',
+      content: 'The gallery of Imalo Education Sibiu',
+    });
     this.languageService.currentROLanguage$.subscribe((currentLang) => {
       this.languageRO = currentLang;
       this.languageDE = !currentLang;
