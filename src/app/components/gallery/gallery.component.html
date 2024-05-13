@@ -13,6 +13,8 @@
         </ng-container>
     </div>
 
+    <div class="full-view-background" *ngIf="isFullViewOpen" @fadeIn @fadeOut>
+    </div>
     <div class="full-view" *ngIf="isFullViewOpen" @transformIn @transformOut>
         <img *ngIf="currentIndex >= 0" [src]="galleryImageList[currentIndex].imagePath">
         <span (click)="closeFullView()" class="grow-to-bottom-right" id="close-view-button">&times;</span>

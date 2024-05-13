@@ -163,6 +163,24 @@ h1 h2 h3 h4 h5 h6 {
     width: 100%;
 }
 
+.full-view-background {
+    z-index: 996;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: -webkit-linear-gradient(45deg,
+            rgba(var(--cyan-main-color-for-alpha), 0.8),
+            rgba(var(--orange-main-color-for-alpha), 0.8));
+    background: linear-gradient(45deg,
+            rgba(var(--cyan-main-color-for-alpha), 0.8),
+            rgba(var(--orange-main-color-for-alpha), 0.8));
+}
+
 .description-inside-card {
     position: relative;
     text-align: center;

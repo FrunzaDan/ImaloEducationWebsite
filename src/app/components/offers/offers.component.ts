@@ -1,6 +1,6 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { transformIn, transformOut } from '../../animations';
+import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { LanguageService } from '../../services/language.service';
 import { Meta } from '@angular/platform-browser';
 
@@ -10,7 +10,7 @@ import { Meta } from '@angular/platform-browser';
   imports: [CommonModule],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css',
-  animations: [transformIn, transformOut],
+  animations: [transformIn, transformOut, fadeIn, fadeOut],
 })
 export class OffersComponent implements OnInit {
   isCourseModalOpen: boolean = false;

@@ -93,6 +93,7 @@
 /* ------------------------------------------------------------------------------------------------------------- */
 
 .get-course-modal {
+    z-index: 997;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -100,7 +101,6 @@
     padding: 1rem;
     border: 1px solid rgba(255, 255, 255, .25);
     border-radius: 1.4rem;
-    z-index: 10;
     width: 40rem;
     max-width: 80%;
     background: var(--light-main-color);

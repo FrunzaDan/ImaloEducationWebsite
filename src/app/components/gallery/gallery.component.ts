@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { transformIn, transformOut } from '../../animations';
+import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { GalleryImage } from '../../interfaces/gallery-image';
 import { LanguageService } from '../../services/language.service';
 import { LoadGalleryService } from '../../services/load-gallery.service';
@@ -12,7 +12,7 @@ import { Meta } from '@angular/platform-browser';
   imports: [CommonModule],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css',
-  animations: [transformIn, transformOut],
+  animations: [transformIn, transformOut, fadeIn, fadeOut],
 })
 export class GalleryComponent implements OnInit {
   public galleryImageList: GalleryImage[] = [];
