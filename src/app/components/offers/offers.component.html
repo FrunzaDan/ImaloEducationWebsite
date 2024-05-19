@@ -308,7 +308,7 @@
     </div>
 </div>
 
-<div class="full-view-background" *ngIf="isCourseModalOpen" @fadeIn @fadeOut>
+<div class="full-view-background" *ngIf="isCourseModalOpen" @fadeIn @fadeOut (click)="closeCourseModal()">
 </div>
 
 <div class="get-course-modal" *ngIf="isCourseModalOpen" @transformIn @transformOut>

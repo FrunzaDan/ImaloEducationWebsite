@@ -9,21 +9,21 @@
     </div>
     <div class=" container-fluid d-flex flex-wrap justify-content-around">
         <ng-container *ngFor="let galleryImage of galleryImageList; let i = index;">
-            <img src="{{galleryImage.imagePath}}" class="full-card-img" alt="sample-product" (click)="openFullView(i)">
+            <img src="{{galleryImage.imagePath}}" class="full-card-img" alt="imalo_image" (click)="openFullView(i)">
         </ng-container>
     </div>
 
-    <div class="full-view-background" *ngIf="isFullViewOpen" @fadeIn @fadeOut>
+    <div class="full-view-background" *ngIf="isFullViewOpen" @fadeIn @fadeOut @fadeIn @fadeOut
+        (click)="closeFullView()">
     </div>
-    <div class="full-view" *ngIf="isFullViewOpen" @transformIn @transformOut>
-        <img *ngIf="currentIndex >= 0" [src]="galleryImageList[currentIndex].imagePath">
-        <span (click)="closeFullView()" class="grow-to-bottom-right" id="close-view-button">&times;</span>
-        <button (click)="navigateLeft()" class="galleryNavigationButton" id="prev-button"
-            *ngIf="currentIndex > 0">&rarr;</button>
-        <button (click)="navigateRight()" class="galleryNavigationButton" id="next-button"
-            *ngIf="currentIndex < galleryImageList.length - 1">&rarr;</button>
-    </div>
-
+    <img *ngIf="isFullViewOpen && (currentIndex >= 0)" @transformIn @transformOut
+        [src]="galleryImageList[currentIndex].imagePath" class="full-view-img" alt="current-image">
+    <span *ngIf="isFullViewOpen" @fadeIn @fadeOut (click)="closeFullView()" class="grow-to-bottom-right"
+        id="close-view-button">&times;</span>
+    <button (click)="navigateLeft()" class="galleryNavigationButton" id="prev-button"
+        *ngIf="isFullViewOpen && (currentIndex > 0)" @fadeIn @fadeOut>&rarr;</button>
+    <button (click)="navigateRight()" class="galleryNavigationButton" id="next-button"
+        *ngIf="isFullViewOpen && (currentIndex < galleryImageList.length - 1)" @fadeIn @fadeOut>&rarr;</button>
 
     <div class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding">
         <div class="subtitle-1" *ngIf="languageRO">

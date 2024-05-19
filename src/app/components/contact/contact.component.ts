@@ -25,18 +25,16 @@ import { Meta } from '@angular/platform-browser';
 export class ContactComponent implements OnInit {
   languageRO: boolean = true;
   languageDE: boolean = false;
-
   emailPopUpHeader!: string;
   emailPopUpParagraph!: string;
+  submitted: boolean = false;
+  isEmailModalOpen: boolean = false;
+
   constructor(
     private sendEmailService: SendEmailService,
     private languageService: LanguageService,
     private meta: Meta
   ) {}
-
-  submitted = false;
-
-  isEmailModalOpen: boolean = false;
 
   contactMeForm = new FormGroup({
     name: new FormControl('', [Validators.required]),

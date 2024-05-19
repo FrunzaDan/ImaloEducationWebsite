@@ -24,16 +24,22 @@ import {
   ],
 })
 export class BackToTopComponent {
-  constructor(private scrollerService: ScrollerService) {}
+  private prevScrollPos: number = 0;
+  SHOW_BUTTON_THRESHOLD: number = 600;
+
+  constructor(public scrollerService: ScrollerService) {}
 
   shouldShowBackToTopButton = false;
 
   @HostListener('window:scroll', ['$event'])
-  onWindowScroll($event: any) {
-    this.shouldShowBackToTopButton = window.scrollY > 500;
-  }
-
-  topFunction(): void {
-    this.scrollerService.scrollToTop();
+  onWindowScroll($event: any): void {
+    const currentScrollPos: number = window.scrollY;
+    const scrolledEnough: boolean =
+      Math.abs(currentScrollPos - this.prevScrollPos) > 200;
+    if (scrolledEnough) {
+      this.shouldShowBackToTopButton =
+        currentScrollPos > this.SHOW_BUTTON_THRESHOLD;
+      this.prevScrollPos = currentScrollPos;
+    }
   }
 }
