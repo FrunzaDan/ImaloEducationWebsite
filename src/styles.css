@@ -10,7 +10,7 @@
     --orange-main-color-for-alpha: 255, 176, 38;
     --orange-light-color: #FFB347;
     --orange-light-color-for-alpha: 255, 179, 71;
-    --light-main-color: #F9FAF5;
+    --light-main-color: #FDF1E8;
     --dark-main-color: #394546;
     --primary-font: "QuandoRegular", sans-serif;
 }
@@ -88,6 +88,7 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 .form-switch .form-check-input {
+    background-color: var(--light-main-color);
     border-color: var(--cyan-dark-color);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(21,91,90,1.0)'/></svg>");
