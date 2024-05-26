@@ -29,7 +29,7 @@ export class BackToTopComponent {
 
   constructor(public scrollerService: ScrollerService) {}
 
-  shouldShowBackToTopButton = false;
+  shouldShowBackToTopButton: boolean = false;
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event: any): void {

@@ -19,11 +19,14 @@ export class AboutUsComponent implements OnInit {
   ngOnInit(): void {
     this.meta.updateTag({
       name: 'description',
-      content: 'The about-us info of Imalo Education Sibiu',
+      content:
+        'Imalo Education este un centru educativ în limba germană dedicat elevilor din clasele primare - de la clasa pregătitoare până la clasa a IV-a. Imalo Education oferă copilului tău un mediu sigur și relaxant în care să învețe, să se dezvolte și să se exprime liber. Activitățile se desfășoară exclusiv în limba germană, pentru a-i îmbogăți vocabularul și exprimarea.',
     });
-    this.languageService.currentROLanguage$.subscribe((currentLang) => {
-      this.languageRO = currentLang;
-      this.languageDE = !currentLang;
-    });
+    this.languageService.currentROLanguage$.subscribe(
+      (currentLang: boolean) => {
+        this.languageRO = currentLang;
+        this.languageDE = !currentLang;
+      }
+    );
   }
 }

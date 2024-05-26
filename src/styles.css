@@ -184,8 +184,8 @@ h1 h2 h3 h4 h5 h6 {
 
 .description-inside-card {
     position: relative;
-    text-align: center;
-    font-size: 1.4rem;
+    text-align: left;
+    font-size: 1.6rem;
 }
 
 .fixed-Size-Container-600x300 {
@@ -393,7 +393,7 @@ h1 h2 h3 h4 h5 h6 {
     }
 
     .description-inside-card {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .diagonal-1::after {
@@ -438,7 +438,7 @@ h1 h2 h3 h4 h5 h6 {
     }
 
     .description-inside-card {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .diagonal-1::after {

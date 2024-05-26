@@ -20,7 +20,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.meta.updateTag({
       name: 'description',
-      content: 'The home page of Imalo Education Sibiu',
+      content:
+        'Imalo Education este un program tip after-school din Sibiu unde copilul Dvs. va fi întâmpinat cu toată căldura și atenția noastră. Viziunea noastră este de a ne asigura că fiecare copil primește atenția și îngrijirea pe care o merită cu adevărat. ',
     });
     this.languageService.currentROLanguage$.subscribe((currentLang) => {
       this.languageRO = currentLang;
