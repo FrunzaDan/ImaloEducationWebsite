@@ -5,6 +5,7 @@ import { GalleryImage } from '../../interfaces/gallery-image';
 import { LanguageService } from '../../services/language.service';
 import { LoadGalleryService } from '../../services/load-gallery.service';
 import { Meta } from '@angular/platform-browser';
+import { SEOService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-gallery',
@@ -25,10 +26,12 @@ export class GalleryComponent implements OnInit {
   constructor(
     private loadGalleryService: LoadGalleryService,
     private languageService: LanguageService,
-    private meta: Meta
+    private meta: Meta,
+    private seoService: SEOService
   ) {}
 
   ngOnInit(): void {
+    this.seoService.createLinkForCanonicalURL();
     this.meta.updateTag({
       name: 'description',
       content: 'The gallery of Imalo Education Sibiu',

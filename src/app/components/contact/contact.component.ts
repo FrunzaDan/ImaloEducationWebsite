@@ -13,6 +13,7 @@ import { ContactMeForm } from '../../interfaces/contact-me-form';
 import { LanguageService } from '../../services/language.service';
 import { SendEmailService } from '../../services/send-email.service';
 import { Meta } from '@angular/platform-browser';
+import { SEOService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-contact',
@@ -33,7 +34,8 @@ export class ContactComponent implements OnInit {
   constructor(
     private sendEmailService: SendEmailService,
     private languageService: LanguageService,
-    private meta: Meta
+    private meta: Meta,
+    private seoService: SEOService
   ) {}
 
   contactMeForm = new FormGroup({
@@ -51,6 +53,7 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.seoService.createLinkForCanonicalURL();
     this.meta.updateTag({
       name: 'description',
       content: 'The contact info of Imalo Education Sibiu',
