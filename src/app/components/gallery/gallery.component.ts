@@ -4,7 +4,6 @@ import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { GalleryImage } from '../../interfaces/gallery-image';
 import { LanguageService } from '../../services/language.service';
 import { LoadGalleryService } from '../../services/load-gallery.service';
-import { Meta } from '@angular/platform-browser';
 import { SEOService } from '../../services/seo.service';
 
 @Component({
@@ -26,16 +25,14 @@ export class GalleryComponent implements OnInit {
   constructor(
     private loadGalleryService: LoadGalleryService,
     private languageService: LanguageService,
-    private meta: Meta,
     private seoService: SEOService
   ) {}
 
   ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();
-    this.meta.updateTag({
-      name: 'description',
-      content: 'The gallery of Imalo Education Sibiu',
-    });
+    this.seoService.updateMetaDescription(
+      'Galeria Imalo Education, afterschool pe limba germana din Sibiu.'
+    );
     this.languageService.currentROLanguage$.subscribe((currentLang) => {
       this.languageRO = currentLang;
       this.languageDE = !currentLang;

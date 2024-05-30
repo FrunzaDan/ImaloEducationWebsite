@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
-import { Meta } from '@angular/platform-browser';
 import { SEOService } from '../../services/seo.service';
 
 @Component({
@@ -17,16 +16,14 @@ export class ScheduleComponent implements OnInit {
 
   constructor(
     private languageService: LanguageService,
-    private meta: Meta,
     private seoService: SEOService
   ) {}
 
   ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();
-    this.meta.updateTag({
-      name: 'description',
-      content: 'The schedule of Imalo Education Sibiu',
-    });
+    this.seoService.updateMetaDescription(
+      'Pagina cu programul Imalo Education, afterschool pe limba germana din Sibiu.'
+    );
     this.languageService.currentROLanguage$.subscribe((currentLang) => {
       this.languageRO = currentLang;
       this.languageDE = !currentLang;

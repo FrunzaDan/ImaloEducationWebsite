@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { SEOService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-privacy',
@@ -9,12 +9,11 @@ import { Meta } from '@angular/platform-browser';
   styleUrl: './privacy.component.css',
 })
 export class PrivacyComponent implements OnInit {
-  constructor(private meta: Meta) {}
+  constructor(private seoService: SEOService) {}
 
   ngOnInit(): void {
-    this.meta.updateTag({
-      name: 'description',
-      content: 'The Privacy Statement of Imalo Education Sibiu',
-    });
+    this.seoService.updateMetaDescription(
+      'Pagina termenilor Imalo Education, afterschool pe limba germana din Sibiu.'
+    );
   }
 }

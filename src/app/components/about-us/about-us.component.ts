@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
-import { Meta } from '@angular/platform-browser';
 import { SEOService } from '../../services/seo.service';
 
 @Component({
@@ -17,17 +16,14 @@ export class AboutUsComponent implements OnInit {
 
   constructor(
     private languageService: LanguageService,
-    private meta: Meta,
     private seoService: SEOService
   ) {}
 
   ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();
-    this.meta.updateTag({
-      name: 'description',
-      content:
-        'Imalo Education este un centru educativ în limba germană dedicat elevilor din clasele primare - de la clasa pregătitoare până la clasa a IV-a. Imalo Education oferă copilului tău un mediu sigur și relaxant în care să învețe, să se dezvolte și să se exprime liber. Activitățile se desfășoară exclusiv în limba germană, pentru a-i îmbogăți vocabularul și exprimarea.',
-    });
+    this.seoService.updateMetaDescription(
+      'Imalo Education este un centru educativ în limba germana dedicat elevilor din clasele primare - de la clasa pregătitoare până la clasa a IV-a. Imalo Education oferă copilului tău un mediu sigur și relaxant în care să învețe, să se dezvolte și să se exprime liber. Activitățile se desfășoară exclusiv în limba germană, pentru a-i îmbogăți vocabularul și exprimarea.'
+    );
     this.languageService.currentROLanguage$.subscribe(
       (currentLang: boolean) => {
         this.languageRO = currentLang;

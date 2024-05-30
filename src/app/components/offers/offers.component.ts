@@ -2,7 +2,6 @@ import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { LanguageService } from '../../services/language.service';
-import { Meta } from '@angular/platform-browser';
 import { SEOService } from '../../services/seo.service';
 
 @Component({
@@ -21,16 +20,14 @@ export class OffersComponent implements OnInit {
   constructor(
     private languageService: LanguageService,
     private viewportScroller: ViewportScroller,
-    private meta: Meta,
     private seoService: SEOService
   ) {}
 
   ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();
-    this.meta.updateTag({
-      name: 'description',
-      content: 'The offers of Imalo Education Sibiu',
-    });
+    this.seoService.updateMetaDescription(
+      'Pagina cu oferte Imalo Education, afterschool pe limba germana din Sibiu.'
+    );
     this.languageService.currentROLanguage$.subscribe((currentLang) => {
       this.languageRO = currentLang;
       this.languageDE = !currentLang;

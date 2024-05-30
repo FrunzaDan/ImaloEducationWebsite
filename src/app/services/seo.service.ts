@@ -1,13 +1,21 @@
-import { Injectable, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SEOService {
-  constructor(@Inject(DOCUMENT) private doc: any) {}
+  constructor(@Inject(DOCUMENT) private doc: any, private meta: Meta) {}
 
-  createLinkForCanonicalURL() {
+  updateMetaDescription(metaDescription: string): void {
+    this.meta.updateTag({
+      name: 'description',
+      content: metaDescription,
+    });
+  }
+
+  createLinkForCanonicalURL(): void {
     this.removeExistingCanonicalLink();
     let link: HTMLLinkElement = this.doc.createElement('link');
     link.setAttribute('rel', 'canonical');
@@ -15,7 +23,7 @@ export class SEOService {
     link.setAttribute('href', this.doc.URL + '/');
   }
 
-  private removeExistingCanonicalLink() {
+  private removeExistingCanonicalLink(): void {
     const existingLinks = this.doc.head.querySelectorAll(
       'link[rel="canonical"]'
     );
