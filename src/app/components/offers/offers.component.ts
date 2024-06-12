@@ -1,5 +1,5 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { LanguageService } from '../../services/language.service';
 import { SEOService } from '../../services/seo.service';
@@ -12,8 +12,9 @@ import { SEOService } from '../../services/seo.service';
   styleUrl: './offers.component.css',
   animations: [transformIn, transformOut, fadeIn, fadeOut],
 })
-export class OffersComponent implements OnInit {
+export class OffersComponent implements OnInit, OnDestroy {
   isCourseModalOpen: boolean = false;
+  courseTitle?: string;
   languageRO: boolean = true;
   languageDE: boolean = false;
 
@@ -34,12 +35,18 @@ export class OffersComponent implements OnInit {
     });
   }
 
-  openCourseModal() {
-    this.isCourseModalOpen = true;
+  ngOnDestroy(): void {
+    this.courseTitle = undefined;
   }
 
-  closeCourseModal() {
+  openCourseModal(selectedCourseTitile?: string): void {
+    this.isCourseModalOpen = true;
+    this.courseTitle = selectedCourseTitile;
+  }
+
+  closeCourseModal(): void {
     this.isCourseModalOpen = false;
+    this.courseTitle = undefined;
   }
 
   public scrollToSection(elementId: string): void {

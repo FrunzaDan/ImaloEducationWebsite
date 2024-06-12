@@ -101,9 +101,11 @@
                     </ul>
                 </div>
                 <div class="insideoffer-card pt-4 px-4 pb-4">
-                    <button (click)="openCourseModal()" class="generic-button" *ngIf="languageRO">Cere Oferta
+                    <button (click)="openCourseModal('Școala de vară')" class="generic-button" *ngIf="languageRO">Cere
+                        Oferta
                     </button>
-                    <button (click)="openCourseModal()" class="generic-button" *ngIf="languageDE">Bewerbung
+                    <button (click)="openCourseModal('Sommerschule')" class="generic-button"
+                        *ngIf="languageDE">Bewerbung
                     </button>
                 </div>
             </div>
@@ -159,9 +161,10 @@
                     </ul>
                 </div>
                 <div class="insideoffer-card pt-4 px-4 pb-4">
-                    <button (click)="openCourseModal()" class="generic-button" *ngIf="languageRO">Cere Oferta
+                    <button (click)="openCourseModal('Pachet Simplu')" class="generic-button" *ngIf="languageRO">Cere
+                        Oferta
                     </button>
-                    <button (click)="openCourseModal()" class="generic-button" *ngIf="languageDE">Bewerbung
+                    <button (click)="openCourseModal('Grund Paket')" class="generic-button" *ngIf="languageDE">Bewerbung
                     </button>
                 </div>
             </div>
@@ -203,9 +206,11 @@
                     </ul>
                 </div>
                 <div class="insideoffer-card pt-4 px-4 pb-4">
-                    <button (click)="openCourseModal()" class="generic-button" *ngIf="languageRO">Cere Oferta
+                    <button (click)="openCourseModal('Pachet Complet')" class="generic-button" *ngIf="languageRO">Cere
+                        Oferta
                     </button>
-                    <button (click)="openCourseModal()" class="generic-button" *ngIf="languageDE">Bewerbung
+                    <button (click)="openCourseModal('Komplettes Paket')" class="generic-button"
+                        *ngIf="languageDE">Bewerbung
                     </button>
                 </div>
             </div>
@@ -298,9 +303,11 @@
                     </ul>
                 </div>
                 <div class="insideoffer-card pt-4 px-4 pb-4">
-                    <button (click)="openCourseModal()" class="generic-button" *ngIf="languageRO">Cere Oferta
+                    <button (click)="openCourseModal('Activități extra')" class="generic-button" *ngIf="languageRO">Cere
+                        Oferta
                     </button>
-                    <button (click)="openCourseModal()" class="generic-button" *ngIf="languageDE">Bewerbung
+                    <button (click)="openCourseModal('Extra Aktivitäten')" class="generic-button"
+                        *ngIf="languageDE">Bewerbung
                     </button>
                 </div>
             </div>
@@ -318,6 +325,14 @@
         <button (click)="closeCourseModal()" class="close-button">&times;</button>
     </div>
     <div class="customModal-body">
+        <div class="row modalRow">
+            <p *ngIf="languageRO">
+                Oferta selectată: {{this.courseTitle}}
+            </p>
+            <p *ngIf="languageDE">
+                Ausgewähltes Angebot: {{this.courseTitle}}
+            </p>
+        </div>
         <div class="row modalRow">
             <p *ngIf="languageRO">
                 Alegeți cum să mă contactați:
