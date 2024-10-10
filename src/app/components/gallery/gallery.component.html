@@ -1,11 +1,11 @@
 <div class="generic-page-container">
     <div class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding">
-        <div class="subtitle-1" *ngIf="languageRO">
+        <h1 class="subtitle-1" *ngIf="languageRO">
             Poze din incinta Imalo Education
-        </div>
-        <div class=" subtitle-1" *ngIf="languageDE">
+        </h1>
+        <h1 class=" subtitle-1" *ngIf="languageDE">
             Bilder von Imalo Education
-        </div>
+        </h1>
     </div>
     <div class=" container-fluid d-flex flex-wrap justify-content-around">
         <ng-container *ngFor="let galleryImage of galleryImageList; let i = index;">
@@ -26,17 +26,18 @@
         *ngIf="isFullViewOpen && (currentIndex < galleryImageList.length - 1)" @fadeIn @fadeOut>&rarr;</button>
 
     <div class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding">
-        <div class="subtitle-1" *ngIf="languageRO">
+        <h1 class="subtitle-1" *ngIf="languageRO">
             Vrei să vezi mai multe poze și să afli mai multe noutăți?
-        </div>
-        <div class=" subtitle-1" *ngIf="languageDE">
+        </h1>
+        <h1 class=" subtitle-1" *ngIf="languageDE">
             Möchten Sie mehr Bilder sehen und mehr Neuigkeiten erfahren?
-        </div>
+        </h1>
     </div>
 
     <div class=" row width-100 diagonal-2 generic-row-padding py-2 my-4">
         <div class="col-sm-4 vertical-space-between-col justify-content-center align-items-center my-2 px-4">
-            <a href="https://www.facebook.com/imaloeducation/" class="height-100" target="_blank">
+            <a href="https://www.facebook.com/imaloeducation/" class="height-100" target="_blank"
+                rel="noopener noreferrer">
                 <div class="card width-100 justify-content-center align-items-center height-100 text-center mb-2 py-4">
                     <img class="card-upper-icon double-drop-shadow" src="/assets/images/social media/Facebook_svg.svg"
                         alt="Facebook">
@@ -52,7 +53,8 @@
             </a>
         </div>
         <div class="col-sm-4 vertical-space-between-col justify-content-center align-items-center my-2 px-4">
-            <a href="https://www.instagram.com/imaloeducation/" class="height-100 width-100" target="_blank">
+            <a href="https://www.instagram.com/imaloeducation/" class="height-100 width-100" target="_blank"
+                rel="noopener noreferrer">
                 <div class="card width-100 justify-content-center align-items-center height-100 text-center mb-2 py-4">
                     <img class="card-upper-icon double-drop-shadow" src="/assets/images/social media/Instagram_svg.svg"
                         alt="Instagram">
@@ -68,7 +70,7 @@
         </div>
         <div class="col-sm-4 vertical-space-between-col justify-content-center align-items-center my-2 px-4">
             <a href="https://www.linkedin.com/company/imalo-education/about/" class="height-100 width-100"
-                target="_blank">
+                target="_blank" rel="noopener noreferrer">
                 <div class="card width-100 justify-content-center align-items-center height-100 text-center mb-2 py-4">
                     <img class="card-upper-icon double-drop-shadow" src="/assets/images/social media/LinkedIn_svg.svg"
                         alt="LinkedIn">
