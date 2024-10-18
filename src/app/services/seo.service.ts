@@ -21,7 +21,7 @@ export class SEOService {
     link.setAttribute('rel', 'canonical');
     this.doc.head.appendChild(link);
 
-    link.setAttribute('href', href ? href : this.doc.URL + '/');
+    link.setAttribute('href', href ? href : this.doc.URL);
   }
 
   private removeExistingCanonicalLink(): void {
