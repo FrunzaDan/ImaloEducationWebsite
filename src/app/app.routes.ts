@@ -12,37 +12,37 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    title: 'Bine ați venit la Imalo Education - Afterschool Sibiu',
+    title: 'Bine ați venit la Imalo - Afterschool Germana Sibiu',
   },
   {
     path: '',
     component: HomeComponent,
-    title: 'Bine ați venit la Imalo Education - Afterschool Sibiu',
+    title: 'Bine ați venit la Imalo - Afterschool Germana Sibiu',
   },
   {
     path: 'gallery',
     component: GalleryComponent,
-    title: 'Galerie - Imalo Afterschool Sibiu',
+    title: 'Galerie - Imalo Afterschool Germana Sibiu',
   },
   {
     path: 'contact',
     component: ContactComponent,
-    title: 'Contact - Imalo Afterschool Sibiu',
+    title: 'Contact - Imalo Afterschool Germana Sibiu',
   },
   {
     path: 'schedule',
     component: ScheduleComponent,
-    title: 'Program - Imalo Afterschool Sibiu',
+    title: 'Program - Imalo Afterschool Germana Sibiu',
   },
   {
     path: 'offers',
     component: OffersComponent,
-    title: 'Oferte - Imalo Afterschool Sibiu',
+    title: 'Oferte - Imalo Afterschool Germana Sibiu',
   },
   {
     path: 'about-us',
     component: AboutUsComponent,
-    title: 'Despre Noi - Imalo Afterschool Sibiu',
+    title: 'Despre Noi - Imalo Afterschool Germana Sibiu',
   },
   {
     path: 'privacy',

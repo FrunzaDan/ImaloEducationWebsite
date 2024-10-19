@@ -164,6 +164,11 @@
     }
 }
 
+.legal-info-row {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
 /* VERY SMALL SCREENS: */
 @media only screen and (max-width: 576px) {
     .outerColumnFooter1 {

@@ -15,13 +15,18 @@ export class SEOService {
     });
   }
 
-  createLinkForCanonicalURL(href?: string): void {
+  createLinkForCanonicalURL(): void {
     this.removeExistingCanonicalLink();
     let link: HTMLLinkElement = this.doc.createElement('link');
     link.setAttribute('rel', 'canonical');
     this.doc.head.appendChild(link);
 
-    link.setAttribute('href', href ? href : this.doc.URL);
+    let firebaselink: string = 'https://imalo-education.web.app';
+    let canonicalURL: string = this.doc.URL;
+    if (!canonicalURL.startsWith(firebaselink)) {
+      canonicalURL = firebaselink + canonicalURL;
+    }
+    link.setAttribute('href', canonicalURL);
   }
 
   private removeExistingCanonicalLink(): void {
