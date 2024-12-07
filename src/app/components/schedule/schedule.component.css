@@ -1,0 +1,12 @@
+.scheduleContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: var(--dark-main-color);
+    height: 50%;
+    font-size: 1.4rem;
+    background-color: var(--light-main-color) !important;
+}

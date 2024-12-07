@@ -1,0 +1,234 @@
+.outerColumnFooter1 {
+    display: flex;
+    padding: 5px;
+    text-align: center;
+    /* border-style: dashed;
+  border-color: green; */
+}
+
+.outerColumnFooter2 {
+    display: flex;
+    padding: 5px;
+    text-align: center;
+    /* border-style: dashed;
+  border-color: green; */
+
+}
+
+.innerColumnFooter11 {
+    padding: 5px;
+    text-align: center;
+    /* border-style: dashed;
+  border-color: brown; */
+}
+
+.innerColumnFooter12 {
+    padding: 5px;
+    text-align: center;
+    /* border-style: dashed;
+  border-color: brown; */
+}
+
+.innerColumnFooter21 {
+    padding: 5px;
+    text-align: center;
+    /* border-style: dashed;
+  border-color: brown; */
+}
+
+.innerColumnFooter22 {
+    padding: 5px;
+    text-align: center;
+    /* border-style: dashed;
+  border-color: brown; */
+}
+
+.wrapperDeveloped {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.danfrunzaIcon {
+    background-image: url(../../../assets/images/danfrunza.ico);
+    height: 1em;
+    width: 1em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    margin-left: .25em;
+}
+
+/* VERY LARGE SCREENS: */
+@media only screen and (min-width: 1100px) {
+    .outerColumnFooter1 {
+        justify-content: start;
+    }
+
+    .outerColumnFooter2 {
+        justify-content: end;
+    }
+
+    .innerColumnFooter11 {
+        padding: 20px;
+        justify-content: start;
+    }
+
+    .innerColumnFooter12 {
+        padding: 20px;
+        justify-content: start;
+    }
+
+    .innerColumnFooter21 {
+        padding: 20px;
+        justify-content: end;
+    }
+
+    .innerColumnFooter22 {
+        padding: 20px;
+        justify-content: end;
+    }
+}
+
+/* LARGE SCREENS: */
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+    .outerColumnFooter1 {
+        justify-content: space-around;
+    }
+
+    .outerColumnFooter2 {
+        justify-content: end;
+    }
+
+    .innerColumnFooter11 {
+        padding: 8px;
+        justify-content: start;
+    }
+
+    .innerColumnFooter12 {
+        padding: 8px;
+        justify-content: start;
+    }
+
+    .innerColumnFooter21 {
+        padding: 8px;
+        justify-content: end;
+    }
+
+    .innerColumnFooter22 {
+        padding: 8px;
+        justify-content: end;
+        text-align: end;
+    }
+}
+
+/* SMALL SCREENS: */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .outerColumnFooter1 {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .outerColumnFooter2 {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .innerColumnFooter11 {
+        padding: 20px;
+        justify-content: start;
+    }
+
+    .innerColumnFooter12 {
+        padding: 20px;
+        justify-content: end;
+    }
+
+    .innerColumnFooter21 {
+        padding: 20px;
+        justify-content: start;
+    }
+
+    .innerColumnFooter22 {
+        padding: 20px;
+        justify-content: end;
+        text-align: end;
+    }
+
+    .wrapperDeveloped {
+        margin-top: 10px;
+    }
+}
+
+.legal-info-row {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* VERY SMALL SCREENS: */
+@media only screen and (max-width: 576px) {
+    .outerColumnFooter1 {
+        min-width: 100%;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .outerColumnFooter2 {
+        min-width: 100%;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .innerColumnFooter11 {
+        min-width: 100%;
+        padding: 10px;
+        margin-left: 60px;
+        margin-right: 60px;
+        justify-content: center;
+
+    }
+
+    .innerColumnFooter12 {
+        min-width: 100%;
+        padding: 10px;
+        margin-left: 60px;
+        margin-right: 60px;
+        justify-content: center;
+    }
+
+    .innerColumnFooter21 {
+        min-width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        justify-content: center;
+    }
+
+    .innerColumnFooter22 {
+        min-width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 60px;
+        margin-right: 60px;
+        justify-content: center;
+    }
+
+    .wrapperDeveloped {
+        margin-top: 10px;
+    }
+
+    .SAL-SOL {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        width: 10rem;
+    }
+}
