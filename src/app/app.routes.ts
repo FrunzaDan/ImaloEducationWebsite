@@ -32,7 +32,7 @@ export const routes: Routes = [
       import('../app/components/schedule/schedule.component').then(
         (comp) => comp.ScheduleComponent
       ),
-    title: 'Oferte - Imalo Afterschool Germana Sibiu',
+    title: 'Program - Imalo Afterschool Germana Sibiu',
   },
   {
     path: 'gallery',
@@ -48,7 +48,7 @@ export const routes: Routes = [
       import('../app/components/contact/contact.component').then(
         (comp) => comp.ContactComponent
       ),
-    title: 'Oferte - Imalo Afterschool Germana Sibiu',
+    title: 'Contact - Imalo Afterschool Germana Sibiu',
   },
   {
     path: 'privacy',

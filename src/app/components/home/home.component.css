@@ -1,6 +1,6 @@
 #background_image_home {
-    background-image: -webkit-linear-gradient(rgb(253, 241, 232, 1), rgb(253, 241, 232, 0.4)), url("/assets/images/gallery/6.webp");
-    background-image: linear-gradient(rgb(253, 241, 232, 1), rgb(253, 241, 232, 0.4)), url("/assets/images/gallery/6.webp");
+    background-image: -webkit-linear-gradient(rgb(253, 241, 232, 1), rgb(253, 241, 232, 0.4)), url("/assets/images/gallery/imalo_sibiu_5.webp");
+    background-image: linear-gradient(rgb(253, 241, 232, 1), rgb(253, 241, 232, 0.4)), url("/assets/images/gallery/imalo_sibiu_5.webp");
     background-repeat: no-repeat;
     width: 100%;
     height: 90dvh;

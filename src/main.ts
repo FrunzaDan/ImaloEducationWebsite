@@ -10,4 +10,7 @@ bootstrapApplication(AppComponent, appConfig).catch((err) =>
 );
 
 const app = initializeApp(environment.firebaseConfig);
-const analytics = getAnalytics(app);
+
+if (typeof window !== 'undefined') {
+  getAnalytics(app);
+}
