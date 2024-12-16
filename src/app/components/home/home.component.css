@@ -31,13 +31,13 @@
     width: 90%;
 }
 
-#caterpillar_1 {
+#imalo_caterpillar_1 {
     max-width: 200px;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
-#caterpillar_2 {
+#imalo_caterpillar_2 {
     max-width: 200px;
     -moz-transform: scale(-1, 1);
     -webkit-transform: scale(-1, 1);
@@ -48,7 +48,7 @@
     margin-bottom: 2rem;
 }
 
-#caterpillar_3 {
+#imalo_caterpillar_3 {
     max-width: 200px;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -183,19 +183,19 @@
 /* VERY SMALL SCREENS: */
 @media only screen and (max-width: 576px) {
 
-    #caterpillar_1 {
+    #imalo_caterpillar_1 {
         max-width: 160px;
         margin-top: 6rem;
         margin-bottom: 3rem;
     }
 
-    #caterpillar_2 {
+    #imalo_caterpillar_2 {
         max-width: 160px;
         margin-top: 3rem;
         margin-bottom: 3rem;
     }
 
-    #caterpillar_3 {
+    #imalo_caterpillar_3 {
         max-width: 160px;
         margin-top: 3rem;
         margin-bottom: 3rem;
