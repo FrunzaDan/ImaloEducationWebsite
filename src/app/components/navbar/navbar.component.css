@@ -24,14 +24,14 @@
     color: var(--dark-main-color);
 }
 
-.imaloTextNav {
+.imalo-logo-nav {
     margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     padding-top: 0.5rem;
     padding-bottom: 0.2rem;
     color: var(--cyan-main-color);
     text-align: center;
-    font-size: 100%;
+    font-size: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,8 +47,8 @@
 }
 
 
-.logoContainer {
-    width: 80px;
+.logo-container {
+    width: 60px;
 }
 
 /* VERY LARGE SCREENS: */

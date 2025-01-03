@@ -12,7 +12,7 @@
     --orange-light-color-for-alpha: 255, 179, 71;
     --light-main-color: #FDF1E8;
     --dark-main-color: #394546;
-    --primary-font: "QuandoRegular", sans-serif;
+    --primary-font: "Main", sans-serif;
 }
 
 html,
@@ -83,8 +83,8 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 @font-face {
-    font-family: "QuandoRegular";
-    src: url("./assets/fonts/Quando-Regular.ttf");
+    font-family: "Main";
+    src: url("./assets/fonts/Lora-Medium.ttf");
 }
 
 .form-switch .form-check-input {
