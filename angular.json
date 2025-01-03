@@ -46,7 +46,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "https://imalo-education.web.app/",
+              "baseHref": "/",
               "optimization": {
                 "scripts": true,
                 "styles": true,
