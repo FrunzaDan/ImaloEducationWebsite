@@ -17,16 +17,20 @@ export class SEOService {
 
   createLinkForCanonicalURL(): void {
     this.removeExistingCanonicalLink();
-    let link: HTMLLinkElement = this.doc.createElement('link');
-    link.setAttribute('rel', 'canonical');
-    this.doc.head.appendChild(link);
 
-    let firebaselink: string = 'https://imalo-education.web.app';
-    let canonicalURL: string = this.doc.URL;
-    if (!canonicalURL.startsWith(firebaselink)) {
-      canonicalURL = firebaselink + canonicalURL;
+    const link: HTMLLinkElement = this.doc.createElement('link');
+    link.setAttribute('rel', 'canonical');
+
+    const firebaselink: string = 'https://imalo-education.web.app';
+    let canonicalURL: string = this.getCurrentPath();
+
+    // If the canonical URL is root "/", remove the trailing slash.
+    if (canonicalURL === '/') {
+      canonicalURL = '';
     }
-    link.setAttribute('href', canonicalURL);
+
+    link.setAttribute('href', firebaselink + canonicalURL);
+    this.doc.head.appendChild(link);
   }
 
   private removeExistingCanonicalLink(): void {
@@ -37,5 +41,11 @@ export class SEOService {
     for (let i: number = 0; i < existingLinks.length; i++) {
       this.doc.head.removeChild(existingLinks[i]);
     }
+  }
+
+  private getCurrentPath(): string {
+    // Extracts only the path and query string, excluding the protocol and domain.
+    const url = new URL(this.doc.URL);
+    return url.pathname + url.search;
   }
 }
