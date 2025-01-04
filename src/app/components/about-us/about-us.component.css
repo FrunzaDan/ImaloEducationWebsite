@@ -6,22 +6,6 @@
     padding: 1rem;
 }
 
-#imgWhoAreWe {
-    display: block;
-    border-radius: 50%;
-    background-image: url(../../../assets/images/Imalo_education.webp);
-    width: 300px;
-    height: 300px;
-    top: 0;
-    left: 0;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: 300px 300px;
-    transition: all .2s;
-    transform-origin: 50% 50%;
-    border: 0.2rem solid var(--cyan-main-color);
-}
-
 .round-img {
     display: block;
     border-radius: 50%;
@@ -39,13 +23,6 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1150px) {
-
-    #imgWhoAreWe {
-        width: 160px;
-        height: 160px;
-        background-size: 160px 160px;
-    }
-
     .round-img {
         width: 160px;
         height: 160px;
@@ -54,12 +31,6 @@
 }
 
 @media only screen and (min-width: 650px) and (max-width: 768px) {
-    #imgWhoAreWe {
-        width: 150px;
-        height: 150px;
-        background-size: 150px 150px;
-    }
-
     .round-img {
         width: 150px;
         height: 150px;
@@ -68,12 +39,6 @@
 }
 
 @media only screen and (min-width: 576px) and (max-width: 650px) {
-    #imgWhoAreWe {
-        width: 130px;
-        height: 130px;
-        background-size: 130px 130px;
-    }
-
     .round-img {
         width: 130px;
         height: 130px;
@@ -82,12 +47,6 @@
 }
 
 @media only screen and (max-width: 576px) {
-    #imgWhoAreWe {
-        width: 200px;
-        height: 200px;
-        background-size: 200px 200px;
-    }
-
     .round-img {
         width: 200px;
         height: 200px;

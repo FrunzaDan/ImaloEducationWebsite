@@ -9,8 +9,8 @@
     </div>
     <div class="container-fluid d-flex flex-wrap justify-content-around">
         <ng-container *ngFor="let galleryImage of galleryImageList; let i = index;">
-            <img src="{{galleryImage.imagePath}}" class="full-card-img" alt="Imalo Afterschool Germana Sibiu"
-                title="Imalo Afterschool Germana Sibiu #{{i}}" (click)="openFullView(i)">
+            <img src="{{galleryImage.imagePath}}" class="full-card-img" alt="Imalo Afterschool Germana Sibiu #{{i + 1}}"
+                title="Imalo Afterschool Germana Sibiu #{{i + 1}}" (click)="openFullView(i)">
         </ng-container>
     </div>
 
