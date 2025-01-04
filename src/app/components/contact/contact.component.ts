@@ -15,12 +15,11 @@ import { SendEmailService } from '../../services/send-email.service';
 import { SEOService } from '../../services/seo.service';
 
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css',
-  animations: [transformIn, transformOut],
+    selector: 'app-contact',
+    imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
+    templateUrl: './contact.component.html',
+    styleUrl: './contact.component.css',
+    animations: [transformIn, transformOut]
 })
 export class ContactComponent implements OnInit {
   languageRO: boolean = true;

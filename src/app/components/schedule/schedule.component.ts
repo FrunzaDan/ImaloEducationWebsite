@@ -4,11 +4,10 @@ import { LanguageService } from '../../services/language.service';
 import { SEOService } from '../../services/seo.service';
 
 @Component({
-  selector: 'app-schedule',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './schedule.component.html',
-  styleUrl: './schedule.component.css',
+    selector: 'app-schedule',
+    imports: [CommonModule],
+    templateUrl: './schedule.component.html',
+    styleUrl: './schedule.component.css'
 })
 export class ScheduleComponent implements OnInit {
   languageRO: boolean = true;

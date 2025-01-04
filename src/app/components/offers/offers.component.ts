@@ -5,12 +5,11 @@ import { LanguageService } from '../../services/language.service';
 import { SEOService } from '../../services/seo.service';
 
 @Component({
-  selector: 'app-offers',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './offers.component.html',
-  styleUrl: './offers.component.css',
-  animations: [transformIn, transformOut, fadeIn, fadeOut],
+    selector: 'app-offers',
+    imports: [CommonModule],
+    templateUrl: './offers.component.html',
+    styleUrl: './offers.component.css',
+    animations: [transformIn, transformOut, fadeIn, fadeOut]
 })
 export class OffersComponent implements OnInit, OnDestroy {
   isCourseModalOpen: boolean = false;
