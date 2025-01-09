@@ -99,10 +99,10 @@
                 <li class="nav-item">
                     <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link hover-item"
                         data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
-                        <span *ngIf="languageRO">
+                        <span *ngIf="(languageRO$ | async)">
                             Acasă
                         </span>
-                        <span *ngIf="languageDE">
+                        <span *ngIf="!(languageRO$ | async)">
                             Home
                         </span>
                     </a>
@@ -110,10 +110,10 @@
                 <li class="nav-item">
                     <a routerLink="/about-us" routerLinkActive="active" ariaCurrentWhenActive="page"
                         class="nav-link hover-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
-                        <span *ngIf="languageRO">
+                        <span *ngIf="(languageRO$ | async)">
                             Despre noi
                         </span>
-                        <span *ngIf="languageDE">
+                        <span *ngIf="!(languageRO$ | async)">
                             Über uns
                         </span>
                     </a>
@@ -121,10 +121,10 @@
                 <li class="nav-item">
                     <a routerLink="/offers" routerLinkActive="active" ariaCurrentWhenActive="page"
                         class="nav-link hover-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
-                        <span *ngIf="languageRO">
+                        <span *ngIf="(languageRO$ | async)">
                             Oferte
                         </span>
-                        <span *ngIf="languageDE">
+                        <span *ngIf="!(languageRO$ | async)">
                             Angebote
                         </span>
                     </a>
@@ -132,10 +132,10 @@
                 <li class="nav-item">
                     <a routerLink="/schedule" routerLinkActive="active" ariaCurrentWhenActive="page"
                         class="nav-link hover-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
-                        <span *ngIf="languageRO">
+                        <span *ngIf="(languageRO$ | async)">
                             Program
                         </span>
-                        <span *ngIf="languageDE">
+                        <span *ngIf="!(languageRO$ | async)">
                             Programm
                         </span>
                     </a>
@@ -143,10 +143,10 @@
                 <li class="nav-item">
                     <a routerLink="/gallery" routerLinkActive="active" ariaCurrentWhenActive="page"
                         class="nav-link hover-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
-                        <span *ngIf="languageRO">
+                        <span *ngIf="(languageRO$ | async)">
                             Galerie
                         </span>
-                        <span *ngIf="languageDE">
+                        <span *ngIf="!(languageRO$ | async)">
                             Galerie
                         </span>
                     </a>
@@ -154,10 +154,10 @@
                 <li class="nav-item">
                     <a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page"
                         class="nav-link hover-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
-                        <span *ngIf="languageRO">
+                        <span *ngIf="(languageRO$ | async)">
                             Contact
                         </span>
-                        <span *ngIf="languageDE">
+                        <span *ngIf="!(languageRO$ | async)">
                             Kontakt
                         </span>
                     </a>

@@ -2,10 +2,10 @@
 
     <div class="row width-100 my-2 generic-row-padding">
         <div class="container-fluid d-flex justify-content-center align-items-center my-2">
-            <h1 class="subtitle-1" *ngIf="languageRO">
+            <h1 class="subtitle-1" *ngIf="(languageRO$ | async)">
                 Program școala de vară:
             </h1>
-            <h1 class="subtitle-1" *ngIf="languageDE">
+            <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
                 Programm während der Sommerschule:
             </h1>
         </div>
@@ -15,7 +15,7 @@
             <div class="card card-with-liquid height-100 m-2">
                 <div class=" liquid-shape-1">
                     <div class="description-inside-card">
-                        <p *ngIf="languageRO">
+                        <p *ngIf="(languageRO$ | async)">
                             În fiecare zi, micul dejun și prânzul vor fi servite la sediu. Fiecare săptămână de
                             vacanță
                             va avea o tematică
@@ -29,7 +29,7 @@
                             de vară să ofere copiilor o
                             experiență memorabilă, plină de descoperiri, prietenii noi și momente de neuitat.
                         </p>
-                        <p *ngIf="languageDE">
+                        <p *ngIf="!(languageRO$ | async)">
                             Jeden Tag werden Frühstück und Mittagessen bei Imalo serviert. Jede Ferienwoche steht
                             unter
                             einem bestimmten Thema und
@@ -52,21 +52,21 @@
         </div>
         <div class="col-sm-4 vertical-space-between-col block-2">
             <div class="card scheduleContent p-2 m-2">
-                <p *ngIf=" languageRO">
+                <p *ngIf="(languageRO$ | async)">
                     Luni - Vineri: <br>
                     07:30 - 17:30
                 </p>
-                <p *ngIf="languageDE">
+                <p *ngIf="!(languageRO$ | async)">
                     Montag - Freitag: <br>
                     07:30 - 17:30
                 </p>
             </div>
             <div class="card scheduleContent p-2 m-2">
-                <p *ngIf=" languageRO">
+                <p *ngIf="(languageRO$ | async)">
                     Sâmbătă - Duminică: <br>
                     închis
                 </p>
-                <p *ngIf="languageDE">
+                <p *ngIf="!(languageRO$ | async)">
                     Samstag - Sonntag: <br>
                     geschlossen
                 </p>
@@ -76,10 +76,10 @@
 
     <div class="row width-100 my-2 generic-row-padding">
         <div class="container-fluid d-flex justify-content-center align-items-center my-2">
-            <h1 class="subtitle-1" *ngIf="languageRO">
+            <h1 class="subtitle-1" *ngIf="(languageRO$ | async)">
                 Program în timpul anului școlar:
             </h1>
-            <h1 class="subtitle-1" *ngIf="languageDE">
+            <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
                 Programm während des Schuljahres:
             </h1>
         </div>
@@ -87,21 +87,21 @@
     <div class=" row width-100 my-2 diagonal-2 generic-row-padding">
         <div class="col-sm-4 vertical-space-between-col">
             <div class="card scheduleContent p-2 m-2">
-                <p *ngIf=" languageRO">
+                <p *ngIf="(languageRO$ | async)">
                     Luni - Vineri: <br>
                     11:30 - 17:30
                 </p>
-                <p *ngIf="languageDE">
+                <p *ngIf="!(languageRO$ | async)">
                     Montag - Freitag: <br>
                     11:30 - 17:30
                 </p>
             </div>
             <div class="card scheduleContent p-2 m-2">
-                <p *ngIf=" languageRO">
+                <p *ngIf="(languageRO$ | async)">
                     Sâmbătă - Duminică: <br>
                     închis
                 </p>
-                <p *ngIf="languageDE">
+                <p *ngIf="!(languageRO$ | async)">
                     Samstag - Sonntag: <br>
                     geschlossen
                 </p>
@@ -111,7 +111,7 @@
             <div class="card card-with-liquid height-100 m-2">
                 <div class=" liquid-shape-2">
                     <div class="description-inside-card">
-                        <p *ngIf="languageRO">
+                        <p *ngIf="(languageRO$ | async)">
                             Dupa terminarea orelor de curs, copiii vor fi preluați de la școală si vor fi adusi
                             la
                             sediu. Odată sosiți, copiii se
@@ -128,7 +128,7 @@
                             părinții vor putea să preia
                             copiii de la sediul nostru.
                         </p>
-                        <p *ngIf="languageDE">
+                        <p *ngIf="!(languageRO$ | async)">
                             Nach der Schule werden die Kinder abgeholt und zu Imalo
                             gebracht. Dort angekommen, erhalten
                             die Kinder eine abwechslungsreiche und ausgewogene Mahlzeit.

@@ -1,18 +1,14 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import { Observable } from 'rxjs/internal/Observable';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LanguageService {
-  private readonly languageROSubject: BehaviorSubject<boolean> =
-    new BehaviorSubject<boolean>(true);
+  private readonly languageSubject = new BehaviorSubject<boolean>(true);
+  readonly language$ = this.languageSubject.asObservable();
 
-  readonly currentROLanguage$: Observable<boolean> =
-    this.languageROSubject.asObservable();
-
-  changeLanguage(): void {
-    this.languageROSubject.next(!this.languageROSubject.getValue());
+  toggleLanguage(): void {
+    this.languageSubject.next(!this.languageSubject.value);
   }
 }

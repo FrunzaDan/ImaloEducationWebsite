@@ -13,27 +13,29 @@ import { ContactMeForm } from '../../interfaces/contact-me-form';
 import { LanguageService } from '../../services/language.service';
 import { SendEmailService } from '../../services/send-email.service';
 import { SEOService } from '../../services/seo.service';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
-    selector: 'app-contact',
-    imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
-    templateUrl: './contact.component.html',
-    styleUrl: './contact.component.css',
-    animations: [transformIn, transformOut]
+  selector: 'app-contact',
+  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.css',
+  animations: [transformIn, transformOut],
 })
 export class ContactComponent implements OnInit {
-  languageRO: boolean = true;
-  languageDE: boolean = false;
   emailPopUpHeader!: string;
   emailPopUpParagraph!: string;
   submitted: boolean = false;
   isEmailModalOpen: boolean = false;
+  languageRO$: Observable<boolean>;
 
   constructor(
     private sendEmailService: SendEmailService,
     private languageService: LanguageService,
     private seoService: SEOService
-  ) {}
+  ) {
+    this.languageRO$ = this.languageService.language$;
+  }
 
   contactMeForm = new FormGroup({
     name: new FormControl('', {
@@ -70,13 +72,6 @@ export class ContactComponent implements OnInit {
     this.seoService.createLinkForCanonicalURL();
     this.seoService.updateMetaDescription(
       'Pagina de contact Imalo Education, afterschool pe limba germana din Sibiu.'
-    );
-
-    this.languageService.currentROLanguage$.subscribe(
-      (currentLang: boolean): void => {
-        this.languageRO = currentLang;
-        this.languageDE = !currentLang;
-      }
     );
   }
 

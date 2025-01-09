@@ -2,10 +2,10 @@
 
     <div class="row width-100 my-2 generic-row-padding">
         <div class="container-fluid d-flex justify-content-center align-items-center my-2">
-            <h1 class="subtitle-1" *ngIf="languageRO">
+            <h1 class="subtitle-1" *ngIf="(languageRO$ | async)">
                 Avem 3 tipuri de oferte educaționale:
             </h1>
-            <h1 class="subtitle-1" *ngIf="languageDE">
+            <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
                 Wir haben 3 Arten von Bildungsangeboten:
             </h1>
         </div>
@@ -18,8 +18,8 @@
                 <img class="card-upper-icon" src="../../../assets/images/sun.svg"
                     alt="Imalo Afterschool Sibiu Summerschool">
                 <div class="card-lower-text">
-                    <h2 class="subtitle-2" *ngIf="languageRO">Școala <br>de vară</h2>
-                    <h2 class="subtitle-2" *ngIf="languageDE">Sommerschule</h2>
+                    <h2 class="subtitle-2" *ngIf="(languageRO$ | async)">Școala <br>de vară</h2>
+                    <h2 class="subtitle-2" *ngIf="!(languageRO$ | async)">Sommerschule</h2>
                 </div>
             </div>
         </div>
@@ -29,8 +29,8 @@
                 <img class="card-upper-icon" src="../../../assets/images/books.svg"
                     alt="Imalo Afterschool Sibiu School">
                 <div class="card-lower-text">
-                    <h2 class="subtitle-2" *ngIf="languageRO">În timpul <br>anului școlar <br>2024-2025</h2>
-                    <h2 class="subtitle-2" *ngIf="languageDE">Während <br>des Schuljahres<br>2024-2025</h2>
+                    <h2 class="subtitle-2" *ngIf="(languageRO$ | async)">În timpul <br>anului școlar <br>2024-2025</h2>
+                    <h2 class="subtitle-2" *ngIf="!(languageRO$ | async)">Während <br>des Schuljahres<br>2024-2025</h2>
                 </div>
 
             </div>
@@ -41,8 +41,8 @@
                 <img class="card-upper-icon" src="../../../assets/images/brush.svg"
                     alt="Imalo Afterschool Sibiu Freetime">
                 <div class="card-lower-text">
-                    <h2 class="subtitle-2" *ngIf="languageRO">Activități <br>extracuriculare</h2>
-                    <h2 class="subtitle-2" *ngIf="languageDE">Außerschulische <br>Aktivitäten</h2>
+                    <h2 class="subtitle-2" *ngIf="(languageRO$ | async)">Activități <br>extracuriculare</h2>
+                    <h2 class="subtitle-2" *ngIf="!(languageRO$ | async)">Außerschulische <br>Aktivitäten</h2>
                 </div>
             </div>
         </div>
@@ -50,10 +50,10 @@
 
     <div class="row width-100 my-2 generic-row-padding" id="offers-summerschool">
         <div class="container-fluid d-flex justify-content-center align-items-center my-2">
-            <h1 class="subtitle-1" *ngIf="languageRO">
+            <h1 class="subtitle-1" *ngIf="(languageRO$ | async)">
                 Ofertă școala de vară
             </h1>
-            <h1 class="subtitle-1" *ngIf="languageDE">
+            <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
                 Angebot für die Sommerschule
             </h1>
         </div>
@@ -63,11 +63,11 @@
         <div class="col-sm-12 flex-centered-container p-4">
             <div class="card offer-card card-main-gradient-color">
                 <div class="container offer-container p-4">
-                    <div class=" circle" *ngIf="languageRO">Școala<br> de vară</div>
-                    <div class="circle" *ngIf="languageDE">Sommer-<br>schule</div>
+                    <div class=" circle" *ngIf="(languageRO$ | async)">Școala<br> de vară</div>
+                    <div class="circle" *ngIf="!(languageRO$ | async)">Sommer-<br>schule</div>
                 </div>
                 <div class="package-description">
-                    <ul *ngIf="languageRO">
+                    <ul *ngIf="(languageRO$ | async)">
                         <li>
                             Suport in efectuarea temelor de vacanță
                         </li>
@@ -84,7 +84,7 @@
                             Curs de engleză
                         </li>
                     </ul>
-                    <ul *ngIf="languageDE">
+                    <ul *ngIf="!(languageRO$ | async)">
                         <li>
                             Unterstützung bei der Erledigung der Hausaufgaben für die Ferien
                         </li>
@@ -103,11 +103,12 @@
                     </ul>
                 </div>
                 <div class="insideoffer-card pt-4 px-4 pb-4">
-                    <button (click)="openCourseModal('Școala de vară')" class="generic-button" *ngIf="languageRO">Cere
+                    <button (click)="openCourseModal('Școala de vară')" class="generic-button"
+                        *ngIf="(languageRO$ | async)">Cere
                         Oferta
                     </button>
                     <button (click)="openCourseModal('Sommerschule')" class="generic-button"
-                        *ngIf="languageDE">Bewerbung
+                        *ngIf="!(languageRO$ | async)">Bewerbung
                     </button>
                 </div>
             </div>
@@ -116,10 +117,10 @@
 
     <div class="row width-100 my-2 generic-row-padding" id="during-schoolyear">
         <div class="container-fluid d-flex justify-content-center align-items-center my-2">
-            <h1 class="subtitle-1" *ngIf="languageRO">
+            <h1 class="subtitle-1" *ngIf="(languageRO$ | async)">
                 Oferte în timpul anului școlar
             </h1>
-            <h1 class="subtitle-1" *ngIf="languageDE">
+            <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
                 Angebote während des Schuljahres
             </h1>
         </div>
@@ -129,11 +130,11 @@
         <div class="col-sm-6 flex-centered-container p-4">
             <div class="card offer-card card-main-gradient-color">
                 <div class="container offer-container p-4">
-                    <div class=" circle" *ngIf="languageRO">Pachet<br> Simplu</div>
-                    <div class="circle" *ngIf="languageDE">Grund<br> Paket</div>
+                    <div class=" circle" *ngIf="(languageRO$ | async)">Pachet<br> Simplu</div>
+                    <div class="circle" *ngIf="!(languageRO$ | async)">Grund<br> Paket</div>
                 </div>
                 <div class="package-description">
-                    <ul *ngIf="languageRO">
+                    <ul *ngIf="(languageRO$ | async)">
                         <li>
                             Preluarea zilnică nu este inclusă
                         </li>
@@ -147,7 +148,7 @@
                             Activități educative
                         </li>
                     </ul>
-                    <ul *ngIf="languageDE">
+                    <ul *ngIf="!(languageRO$ | async)">
                         <li>
                             Tägliche Abholung nicht inklusive
                         </li>
@@ -163,10 +164,12 @@
                     </ul>
                 </div>
                 <div class="insideoffer-card pt-4 px-4 pb-4">
-                    <button (click)="openCourseModal('Pachet Simplu')" class="generic-button" *ngIf="languageRO">Cere
+                    <button (click)="openCourseModal('Pachet Simplu')" class="generic-button"
+                        *ngIf="(languageRO$ | async)">Cere
                         Oferta
                     </button>
-                    <button (click)="openCourseModal('Grund Paket')" class="generic-button" *ngIf="languageDE">Bewerbung
+                    <button (click)="openCourseModal('Grund Paket')" class="generic-button"
+                        *ngIf="!(languageRO$ | async)">Bewerbung
                     </button>
                 </div>
             </div>
@@ -174,11 +177,11 @@
         <div class="col-sm-6 flex-centered-container p-4">
             <div class="card offer-card card-main-gradient-color">
                 <div class="container offer-container p-4">
-                    <div class=" circle" *ngIf="languageRO">Pachet<br> Complet</div>
-                    <div class="circle" *ngIf="languageDE">Komplettes<br> Paket</div>
+                    <div class=" circle" *ngIf="(languageRO$ | async)">Pachet<br> Complet</div>
+                    <div class="circle" *ngIf="!(languageRO$ | async)">Komplettes<br> Paket</div>
                 </div>
                 <div class="package-description">
-                    <ul *ngIf="languageRO">
+                    <ul *ngIf="(languageRO$ | async)">
                         <li>
                             Preluarea zilnică este inclusă
                         </li>
@@ -192,7 +195,7 @@
                             Activități educative
                         </li>
                     </ul>
-                    <ul *ngIf="languageDE">
+                    <ul *ngIf="!(languageRO$ | async)">
                         <li>
                             Tägliche Abholung inklusive
                         </li>
@@ -208,11 +211,12 @@
                     </ul>
                 </div>
                 <div class="insideoffer-card pt-4 px-4 pb-4">
-                    <button (click)="openCourseModal('Pachet Complet')" class="generic-button" *ngIf="languageRO">Cere
+                    <button (click)="openCourseModal('Pachet Complet')" class="generic-button"
+                        *ngIf="(languageRO$ | async)">Cere
                         Oferta
                     </button>
                     <button (click)="openCourseModal('Komplettes Paket')" class="generic-button"
-                        *ngIf="languageDE">Bewerbung
+                        *ngIf="!(languageRO$ | async)">Bewerbung
                     </button>
                 </div>
             </div>
@@ -222,10 +226,10 @@
 
     <div class="row width-100 my-2 generic-row-padding" id="extra-activities">
         <div class="container-fluid d-flex justify-content-center align-items-center my-2">
-            <h1 class="subtitle-1" *ngIf="languageRO">
+            <h1 class="subtitle-1" *ngIf="(languageRO$ | async)">
                 Activități extracuriculare
             </h1>
-            <h1 class="subtitle-1" *ngIf="languageDE">
+            <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
                 Außerschulische Aktivitäten
             </h1>
         </div>
@@ -235,11 +239,11 @@
         <div class="col-sm-12 flex-centered-container p-4">
             <div class="card offer-card card-main-gradient-color">
                 <div class="container offer-container p-4">
-                    <div class=" circle" *ngIf="languageRO">Activități <br>extra</div>
-                    <div class="circle" *ngIf="languageDE">Extra <br>Aktivitäten</div>
+                    <div class=" circle" *ngIf="(languageRO$ | async)">Activități <br>extra</div>
+                    <div class="circle" *ngIf="!(languageRO$ | async)">Extra <br>Aktivitäten</div>
                 </div>
                 <div class="package-description">
-                    <ul *ngIf="languageRO">
+                    <ul *ngIf="(languageRO$ | async)">
                         <li>
                             Cursuri de limba engleză axate pe dezvoltarea vocabularului prin metode
                             interactive și
@@ -273,7 +277,7 @@
                             Cursuri de tir cu arcul
                         </li>
                     </ul>
-                    <ul *ngIf="languageDE">
+                    <ul *ngIf="!(languageRO$ | async)">
                         <li>
                             Englischkurse mit Fokus auf Wortschatzerweiterung durch interaktive und
                             unterhaltsame
@@ -305,11 +309,12 @@
                     </ul>
                 </div>
                 <div class="insideoffer-card pt-4 px-4 pb-4">
-                    <button (click)="openCourseModal('Activități extra')" class="generic-button" *ngIf="languageRO">Cere
+                    <button (click)="openCourseModal('Activități extra')" class="generic-button"
+                        *ngIf="(languageRO$ | async)">Cere
                         Oferta
                     </button>
                     <button (click)="openCourseModal('Extra Aktivitäten')" class="generic-button"
-                        *ngIf="languageDE">Bewerbung
+                        *ngIf="!(languageRO$ | async)">Bewerbung
                     </button>
                 </div>
             </div>
@@ -322,24 +327,24 @@
 
 <div class="get-course-modal" *ngIf="isCourseModalOpen" @transformIn @transformOut>
     <div class="customModal-header">
-        <div class="title" *ngIf="languageRO">Doriți să aplicați pentru acest pachet?</div>
-        <div class="title" *ngIf="languageDE">Möchten Sie sich für dieses Paket bewerben?</div>
+        <div class="title" *ngIf="(languageRO$ | async)">Doriți să aplicați pentru acest pachet?</div>
+        <div class="title" *ngIf="!(languageRO$ | async)">Möchten Sie sich für dieses Paket bewerben?</div>
         <button (click)="closeCourseModal()" class="close-button">&times;</button>
     </div>
     <div class="customModal-body">
         <div class="row modalRow">
-            <p *ngIf="languageRO">
+            <p *ngIf="(languageRO$ | async)">
                 Oferta selectată: {{this.courseTitle}}
             </p>
-            <p *ngIf="languageDE">
+            <p *ngIf="!(languageRO$ | async)">
                 Ausgewähltes Angebot: {{this.courseTitle}}
             </p>
         </div>
         <div class="row modalRow">
-            <p *ngIf="languageRO">
+            <p *ngIf="(languageRO$ | async)">
                 Alegeți cum să mă contactați:
             </p>
-            <p *ngIf="languageDE">
+            <p *ngIf="!(languageRO$ | async)">
                 Wählen Sie, wie Sie mich kontaktieren möchten:
             </p>
         </div>
@@ -350,10 +355,10 @@
                         <span>
                             <i class="bi bi-telephone white-icon"></i>
                         </span>
-                        <span *ngIf="languageRO">
+                        <span *ngIf="(languageRO$ | async)">
                             Sunați-mă
                         </span>
-                        <span *ngIf="languageDE">
+                        <span *ngIf="!(languageRO$ | async)">
                             Per Anruf
                         </span>
                     </button>
@@ -365,10 +370,10 @@
                         <span>
                             <i class="bi bi-envelope white-icon"></i>
                         </span>
-                        <span *ngIf="languageRO">
+                        <span *ngIf="(languageRO$ | async)">
                             Scrie-ți un E-mail
                         </span>
-                        <span *ngIf="languageDE">
+                        <span *ngIf="!(languageRO$ | async)">
                             Per E-mail
                         </span>
                     </button>

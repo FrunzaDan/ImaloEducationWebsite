@@ -8,6 +8,7 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-navbar',
@@ -16,11 +17,12 @@ import {
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent implements OnInit {
-  languageRO: boolean = true;
-  languageDE: boolean = false;
   toggleLanguageForm!: FormGroup;
 
-  constructor(private languageService: LanguageService) {}
+  languageRO$: Observable<boolean>;
+  constructor(private languageService: LanguageService) {
+    this.languageRO$ = this.languageService.language$;
+  }
 
   ngOnInit(): void {
     this.toggleLanguageForm = new FormGroup({
@@ -35,13 +37,10 @@ export class NavbarComponent implements OnInit {
   }
 
   getLanguage(): void {
-    this.languageService.currentROLanguage$.subscribe((currentLang) => {
-      this.languageRO = currentLang;
-      this.languageDE = !currentLang;
-    });
+    this.languageService.language$.subscribe(() => {});
   }
 
   changeLanguage(): void {
-    this.languageService.changeLanguage();
+    this.languageService.toggleLanguage();
   }
 }

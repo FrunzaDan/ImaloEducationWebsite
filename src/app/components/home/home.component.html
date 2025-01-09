@@ -24,10 +24,10 @@
 <div class="generic-page-container mt-2 mb-4">
     <div class="row width-100 d-flex justify-content-center align-items-center mb-2 generic-row-padding">
         <div class="container-fluid d-flex justify-content-center align-items-center my-2 py-2">
-            <h1 class="subtitle-1" *ngIf="languageRO">
+            <h1 class="subtitle-1" *ngIf="(languageRO$ | async)">
                 Ați găsit locația perfectă pentru copilul Dumneavoastră!
             </h1>
-            <h1 class="subtitle-1" *ngIf="languageDE">
+            <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
                 Sie haben den idealen Ort für Ihr Kind gefunden!
             </h1>
         </div>
@@ -36,13 +36,13 @@
         <div class="col-sm-8 d-flex justify-content-center align-items-center block1 my-2">
             <div class="liquid-shape-3">
                 <div class="textInsideHomePage">
-                    <p *ngIf=" languageRO">
+                    <p *ngIf="(languageRO$ | async)">
                         Imalo Education <br>
                         este locul unde copilul Dvs. va fi întâmpinat <br>
                         cu toată căldura și atenția
                         noastră.
                     </p>
-                    <p *ngIf="languageDE">
+                    <p *ngIf="!(languageRO$ | async)">
                         Imalo Education <br>
                         ist der Ort, an dem Ihr Kind mit all unserer <br>
                         Herzlichkeit und Aufmerksamkeit empfangen wird.
@@ -54,10 +54,10 @@
             <img class="double-drop-shadow" id="imalo_caterpillar_1"
                 src="assets/images/caterpillars/imalo_caterpillar_1.png" alt="Imalo Afterschool Sibiu Caterpillar 1"
                 title="Imalo Afterschool Sibiu">
-            <p class="triangle-right" *ngIf="languageRO">
+            <p class="triangle-right" *ngIf="(languageRO$ | async)">
                 Bine ați venit la Imalo!
             </p>
-            <p class=" triangle-right" *ngIf="languageDE">Willkommen zu Imalo!
+            <p class=" triangle-right" *ngIf="!(languageRO$ | async)">Willkommen zu Imalo!
             </p>
         </div>
     </div>
@@ -71,11 +71,11 @@
             <div class="fixed-Size-Container-600x300">
                 <div class="liquid-shape-4">
                     <div class="textInsideHomePage">
-                        <p *ngIf=" languageRO">
+                        <p *ngIf="(languageRO$ | async)">
                             Viziunea noastră este de a ne asigura că fiecare copil primește atenția și
                             îngrijirea pe care o merită cu adevărat.
                         </p>
-                        <p *ngIf="languageDE">
+                        <p *ngIf="!(languageRO$ | async)">
                             Unsere Vision ist es, dass jedes Kind die Aufmerksamkeit und Betreuung erhält,
                             die es wirklich verdient.
                         </p>
@@ -89,11 +89,11 @@
             <div class="fixed-Size-Container-600x300">
                 <div class="liquid-shape-3">
                     <div class="textInsideHomePage">
-                        <p *ngIf=" languageRO">
+                        <p *ngIf="(languageRO$ | async)">
                             Misiunea noastră este de a acorda copiilor abilitățile și încrederea necesară pentru
                             a naviga provocările de mâine.
                         </p>
-                        <p *ngIf="languageDE">
+                        <p *ngIf="!(languageRO$ | async)">
                             Unser Ziel ist es, Kindern die Fähigkeiten und das Selbstvertrauen zu
                             vermitteln, um die Herausforderungen von morgen zu meistern.
                         </p>
@@ -113,9 +113,9 @@
             <a routerLink="/about-us" class="height-100">
                 <div
                     class="card justify-content-center align-items-center height-100 text-center secondary-custom-text p-4 my-2">
-                    <p class="cyan-dark-text-with-shadow" *ngIf="languageRO">Despre noi
+                    <p class="cyan-dark-text-with-shadow" *ngIf="(languageRO$ | async)">Despre noi
                     </p>
-                    <p class="cyan-dark-text-with-shadow" *ngIf="languageDE">Über uns</p>
+                    <p class="cyan-dark-text-with-shadow" *ngIf="!(languageRO$ | async)">Über uns</p>
                 </div>
             </a>
         </div>
@@ -123,8 +123,8 @@
             <a routerLink="/offers" class="height-100">
                 <div
                     class="card justify-content-center align-items-center height-100 text-center secondary-custom-text p-4 my-2">
-                    <p class="cyan-dark-text-with-shadow" *ngIf="languageRO">Oferte educaționale</p>
-                    <p class="cyan-dark-text-with-shadow " *ngIf="languageDE">Bildungsangebote
+                    <p class="cyan-dark-text-with-shadow" *ngIf="(languageRO$ | async)">Oferte educaționale</p>
+                    <p class="cyan-dark-text-with-shadow " *ngIf="!(languageRO$ | async)">Bildungsangebote
                     </p>
                 </div>
             </a>
@@ -133,8 +133,8 @@
             <a routerLink="/schedule" class="height-100">
                 <div
                     class="card justify-content-center align-items-center height-100 text-center secondary-custom-text p-4 my-2">
-                    <p class="cyan-dark-text-with-shadow" *ngIf="languageRO">Programele noastre</p>
-                    <p class="cyan-dark-text-with-shadow " *ngIf="languageDE">Unsere Programme
+                    <p class="cyan-dark-text-with-shadow" *ngIf="(languageRO$ | async)">Programele noastre</p>
+                    <p class="cyan-dark-text-with-shadow " *ngIf="!(languageRO$ | async)">Unsere Programme
                     </p>
                 </div>
             </a>

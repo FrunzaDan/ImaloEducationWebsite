@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { LanguageService } from '../../services/language.service';
 import { SEOService } from '../../services/seo.service';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-offers',
@@ -14,24 +15,21 @@ import { SEOService } from '../../services/seo.service';
 export class OffersComponent implements OnInit, OnDestroy {
   isCourseModalOpen: boolean = false;
   courseTitle?: string;
-  languageRO: boolean = true;
-  languageDE: boolean = false;
+  languageRO$: Observable<boolean>;
 
   constructor(
     private languageService: LanguageService,
     private viewportScroller: ViewportScroller,
     private seoService: SEOService
-  ) {}
+  ) {
+    this.languageRO$ = this.languageService.language$;
+  }
 
   ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();
     this.seoService.updateMetaDescription(
       'Pagina cu oferte Imalo Education, afterschool pe limba germana din Sibiu.'
     );
-    this.languageService.currentROLanguage$.subscribe((currentLang) => {
-      this.languageRO = currentLang;
-      this.languageDE = !currentLang;
-    });
   }
 
   ngOnDestroy(): void {

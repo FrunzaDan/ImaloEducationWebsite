@@ -1,10 +1,10 @@
 <div class="generic-page-container">
     <div class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding">
         <div class="container-fluid d-flex justify-content-center align-items-center my-2">
-            <h1 class="subtitle-1" *ngIf="languageRO">
+            <h1 class="subtitle-1" *ngIf="(languageRO$ | async)">
                 Cum ne puteți contacta?
             </h1>
-            <h1 class="subtitle-1" *ngIf="languageDE">
+            <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
                 Wie können Sie uns kontaktieren?
             </h1>
         </div>
@@ -18,8 +18,8 @@
                     </div>
                     <form [formGroup]="contactMeForm" (ngSubmit)="onSubmit()">
                         <div class="mb-3">
-                            <label *ngIf="languageRO" for="name" class="form-label">Nume:</label>
-                            <label *ngIf="languageDE" for="name" class="form-label">Name:</label>
+                            <label *ngIf="(languageRO$ | async)" for="name" class="form-label">Nume:</label>
+                            <label *ngIf="!(languageRO$ | async)" for="name" class="form-label">Name:</label>
                             <input class="form-control" formControlName="name" name="name" type="text"
                                 placeholder="Numele tău" autocomplete="on"
                                 [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
@@ -28,9 +28,9 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label *ngIf="languageRO" for="email" class="form-label">Adresă de
+                            <label *ngIf="(languageRO$ | async)" for="email" class="form-label">Adresă de
                                 E-mail:</label>
-                            <label *ngIf="languageDE" for="email" class="form-label">E-mail
+                            <label *ngIf="!(languageRO$ | async)" for="email" class="form-label">E-mail
                                 Adresse:</label>
                             <input class="form-control" formControlName="email" name="email" type="email"
                                 placeholder="Adresa ta de E-mail" autocomplete="on"
@@ -41,9 +41,9 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label *ngIf="languageRO" for="phone" class="form-label">Număr de
+                            <label *ngIf="(languageRO$ | async)" for="phone" class="form-label">Număr de
                                 telefon:</label>
-                            <label *ngIf="languageDE" for="phone" class="form-label">Telefonnummer:</label>
+                            <label *ngIf="!(languageRO$ | async)" for="phone" class="form-label">Telefonnummer:</label>
                             <input class="form-control" formControlName="phone" name="email" type="tel"
                                 placeholder="Numărul tău de telefon" autocomplete="on"
                                 [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
@@ -56,8 +56,8 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label *ngIf="languageRO" for="message" class="form-label">Mesaj:</label>
-                            <label *ngIf="languageDE" for="message" class="form-label">Nachricht:</label>
+                            <label *ngIf="(languageRO$ | async)" for="message" class="form-label">Mesaj:</label>
+                            <label *ngIf="!(languageRO$ | async)" for="message" class="form-label">Nachricht:</label>
                             <textarea class="form-control" formControlName="message" name="email" type="text"
                                 placeholder="Mesajul tău" autocomplete="off"
                                 [ngClass]="{ 'is-invalid': submitted && f.message.errors }"
@@ -67,8 +67,8 @@
                             </div>
                         </div>
                         <div class="d-grid">
-                            <button *ngIf="languageRO" class="generic-button" type="submit">Trimite</button>
-                            <button *ngIf="languageDE" class="generic-button" type="submit">Senden</button>
+                            <button *ngIf="(languageRO$ | async)" class="generic-button" type="submit">Trimite</button>
+                            <button *ngIf="!(languageRO$ | async)" class="generic-button" type="submit">Senden</button>
                         </div>
                     </form>
                 </div>
@@ -83,8 +83,9 @@
             <div class="card contactCard my-2">
                 <div class="card-body">
 
-                    <p *ngIf="languageRO" class="card-title card-contact-text mt-2 mb-4">Detalii contact:</p>
-                    <p *ngIf="languageDE" class="card-title card-contact-text mt-2 mb-4">Kontaktinformationen:</p>
+                    <p *ngIf="(languageRO$ | async)" class="card-title card-contact-text mt-2 mb-4">Detalii contact:</p>
+                    <p *ngIf="!(languageRO$ | async)" class="card-title card-contact-text mt-2 mb-4">
+                        Kontaktinformationen:</p>
                     <div class="mb-2">
                         <i class="bi bi-telephone contactIconsCard me-2"></i><span
                             class="card-subtitle mb-2 card-contact-text">Telefon:</span>
@@ -135,10 +136,10 @@
 
     <div class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding">
         <div class="container-fluid d-flex justify-content-center align-items-center my-2">
-            <h1 class="subtitle-1" *ngIf="languageRO">
+            <h1 class="subtitle-1" *ngIf="(languageRO$ | async)">
                 Unde ne găsiți?
             </h1>
-            <h1 class="subtitle-1" *ngIf="languageDE">
+            <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
                 Wo können Sie uns finden?
             </h1>
         </div>
@@ -153,10 +154,10 @@
                     class="card-img-top" alt="Imalo Education Afterschool Sibiu Gutuilor 6">
                 </iframe>
                 <div class="card-lower-text py-4 px-2">
-                    <p class="cyan-dark-text-with-shadow text-center" *ngIf="languageRO">Ne
+                    <p class="cyan-dark-text-with-shadow text-center" *ngIf="(languageRO$ | async)">Ne
                         găsiți în Sibiu, strada
                         Gutuilor nr. 6</p>
-                    <p class=" cyan-dark-text-with-shadow text-center" *ngIf="languageDE">Sie
+                    <p class=" cyan-dark-text-with-shadow text-center" *ngIf="!(languageRO$ | async)">Sie
                         finden uns in Sibiu,
                         Gutuilor Straße Nr. 6</p>
                 </div>

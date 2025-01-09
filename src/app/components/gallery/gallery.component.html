@@ -1,16 +1,16 @@
 <div class="generic-page-container">
     <div class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding">
-        <h1 class="subtitle-1" *ngIf="languageRO">
+        <h1 class="subtitle-1" *ngIf="(languageRO$ | async)">
             Poze din incinta Imalo Education
         </h1>
-        <h1 class="subtitle-1" *ngIf="languageDE">
+        <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
             Bilder von Imalo Education
         </h1>
     </div>
     <div class="container-fluid d-flex flex-wrap justify-content-around">
         <ng-container *ngFor="let galleryImage of galleryImageList; let i = index;">
             <img src="{{galleryImage.imagePath}}" class="full-card-img" alt="Imalo Afterschool Germana Sibiu #{{i + 1}}"
-                title="Imalo Afterschool Germana Sibiu #{{i + 1}}" (click)="openFullView(i)">
+                title="Imalo Afterschool Germana Sibiu #{{i + 1}}" (click)="openFullView(i)" loading="lazy">
         </ng-container>
     </div>
 
@@ -27,10 +27,10 @@
         *ngIf="isFullViewOpen && (currentIndex < galleryImageList.length - 1)" @fadeIn @fadeOut>&rarr;</button>
 
     <div class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding">
-        <h1 class="subtitle-1" *ngIf="languageRO">
+        <h1 class="subtitle-1" *ngIf="(languageRO$ | async)">
             Vrei să vezi mai multe poze și să afli mai multe noutăți?
         </h1>
-        <h1 class="subtitle-1" *ngIf="languageDE">
+        <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
             Möchten Sie mehr Bilder sehen und mehr Neuigkeiten erfahren?
         </h1>
     </div>
@@ -43,10 +43,12 @@
                     <img class="card-upper-icon double-drop-shadow" src="/assets/images/social media/Facebook_svg.svg"
                         alt="Imalo Afterschool Sibiu Facebook">
                     <div class="card-lower-text">
-                        <p class="cyan-dark-text-with-shadow text-padding-1rem" *ngIf="languageRO">Nu uitați să
+                        <p class="cyan-dark-text-with-shadow text-padding-1rem" *ngIf="(languageRO$ | async)">Nu uitați
+                            să
                             ne dați
                             like pe Facebook!</p>
-                        <p class="cyan-dark-text-with-shadow text-padding-1rem" *ngIf="languageDE">Vergessen Sie
+                        <p class="cyan-dark-text-with-shadow text-padding-1rem" *ngIf="!(languageRO$ | async)">Vergessen
+                            Sie
                             nicht,
                             uns zu uns auf Facebook zu liken!</p>
                     </div>
@@ -60,9 +62,9 @@
                     <img class="card-upper-icon double-drop-shadow" src="/assets/images/social media/Instagram_svg.svg"
                         alt="Imalo Afterschool Sibiu Instagram">
                     <div class="card-lower-text">
-                        <p class="cyan-dark-text-with-shadow text-padding-1rem" *ngIf="languageRO">Și pe
+                        <p class="cyan-dark-text-with-shadow text-padding-1rem" *ngIf="(languageRO$ | async)">Și pe
                             Instagram!</p>
-                        <p class="cyan-dark-text-with-shadow text-padding-1rem" *ngIf="languageDE">Und auf
+                        <p class="cyan-dark-text-with-shadow text-padding-1rem" *ngIf="!(languageRO$ | async)">Und auf
                             Instagram!
                         </p>
                     </div>
@@ -76,9 +78,9 @@
                     <img class="card-upper-icon double-drop-shadow" src="/assets/images/social media/LinkedIn_svg.svg"
                         alt="Imalo Afterschool Sibiu LinkedIn">
                     <div class="card-lower-text">
-                        <p class="cyan-dark-text-with-shadow text-padding-1rem" *ngIf="languageRO">Și pe
+                        <p class="cyan-dark-text-with-shadow text-padding-1rem" *ngIf="(languageRO$ | async)">Și pe
                             LinkedIn!</p>
-                        <p class="cyan-dark-text-with-shadow text-padding-1rem" *ngIf="languageDE">Und auf
+                        <p class="cyan-dark-text-with-shadow text-padding-1rem" *ngIf="!(languageRO$ | async)">Und auf
                             LinkedIn!</p>
                     </div>
                 </div>
