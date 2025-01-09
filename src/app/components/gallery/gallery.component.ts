@@ -9,11 +9,11 @@ import { SubscriptionService } from '../../services/subscription.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
-    selector: 'app-gallery',
-    imports: [CommonModule],
-    templateUrl: './gallery.component.html',
-    styleUrl: './gallery.component.css',
-    animations: [transformIn, transformOut, fadeIn, fadeOut]
+  selector: 'app-gallery',
+  imports: [CommonModule],
+  templateUrl: './gallery.component.html',
+  styleUrl: './gallery.component.css',
+  animations: [transformIn, transformOut, fadeIn, fadeOut],
 })
 export class GalleryComponent implements OnInit, OnDestroy {
   public galleryImageList: GalleryImage[] = [];

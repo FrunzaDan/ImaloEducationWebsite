@@ -10,10 +10,10 @@ import {
 } from '@angular/forms';
 
 @Component({
-    selector: 'app-navbar',
-    imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
-    templateUrl: './navbar.component.html',
-    styleUrl: './navbar.component.css'
+  selector: 'app-navbar',
+  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent implements OnInit {
   languageRO: boolean = true;

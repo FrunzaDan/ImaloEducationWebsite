@@ -1,5 +1,4 @@
 import { Component, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ScrollerService } from '../../services/scroller.service';
 import {
   animate,
@@ -10,17 +9,16 @@ import {
 } from '@angular/animations';
 
 @Component({
-    selector: 'app-back-to-top',
-    imports: [CommonModule],
-    templateUrl: './back-to-top.component.html',
-    styleUrl: './back-to-top.component.css',
-    animations: [
-        trigger('slide', [
-            state('visible', style({ bottom: '1rem', right: '1rem' })),
-            state('hidden', style({ bottom: '-3rem', right: '-3rem' })),
-            transition('visible <=> hidden', animate('300ms')),
-        ]),
-    ]
+  selector: 'app-back-to-top',
+  templateUrl: './back-to-top.component.html',
+  styleUrl: './back-to-top.component.css',
+  animations: [
+    trigger('slide', [
+      state('visible', style({ bottom: '1rem', right: '1rem' })),
+      state('hidden', style({ bottom: '-3rem', right: '-3rem' })),
+      transition('visible <=> hidden', animate('300ms')),
+    ]),
+  ],
 })
 export class BackToTopComponent {
   private prevScrollPos: number = 0;

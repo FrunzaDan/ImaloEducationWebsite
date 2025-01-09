@@ -4,10 +4,10 @@ import { LanguageService } from '../../services/language.service';
 import { SEOService } from '../../services/seo.service';
 
 @Component({
-    selector: 'app-about-us',
-    imports: [CommonModule],
-    templateUrl: './about-us.component.html',
-    styleUrl: './about-us.component.css'
+  selector: 'app-about-us',
+  imports: [CommonModule],
+  templateUrl: './about-us.component.html',
+  styleUrl: './about-us.component.css',
 })
 export class AboutUsComponent implements OnInit {
   languageRO: boolean = true;
