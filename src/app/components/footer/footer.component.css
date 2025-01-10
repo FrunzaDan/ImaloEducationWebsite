@@ -50,6 +50,18 @@
   margin-left: 0.25em;
 }
 
+.SAL-SOL {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 20rem;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s;
+  transform-origin: 50% 50%;
+}
+
 /* VERY LARGE SCREENS: */
 @media only screen and (min-width: 1100px) {
   .outerColumnFooter1 {
@@ -216,5 +228,21 @@
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 10rem;
+  }
+}
+
+@media (pointer: fine) {
+  .wrapperDeveloped:hover {
+    cursor: pointer;
+  }
+
+  .SAL-SOL:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media (hover: none), (pointer: coarse), (pointer: none) {
+  .SAL-SOL:active {
+    transform: scale(1.1);
   }
 }

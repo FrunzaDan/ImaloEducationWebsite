@@ -87,25 +87,6 @@ h1 h2 h3 h4 h5 h6 {
   src: url("./assets/fonts/Lora-Medium.ttf");
 }
 
-.form-switch .form-check-input {
-  background-color: var(--light-main-color);
-  border-color: var(--cyan-dark-color);
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(21,91,90,1.0)'/></svg>");
-}
-
-.form-switch .form-check-input:focus {
-  border-color: var(--cyan-dark-color);
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(21,91,90,1.0)'/></svg>");
-}
-
-.form-switch .form-check-input:checked {
-  background-color: var(--cyan-dark-color);
-  border-color: var(--cyan-dark-color);
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(255,255,255,1.0)'/></svg>");
-}
-
 .bi {
   color: var(--dark-main-color);
 }
@@ -124,18 +105,6 @@ h1 h2 h3 h4 h5 h6 {
   display: flex;
   justify-content: left;
   align-items: center;
-}
-
-.SAL-SOL {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 20rem;
-  text-align: center;
-  position: relative;
-  transition: all 0.2s;
-  transform-origin: 50% 50%;
 }
 
 .double-drop-shadow {
@@ -226,28 +195,6 @@ h1 h2 h3 h4 h5 h6 {
   align-items: center;
   width: 100%;
   height: 100%;
-}
-
-.galleryNavigationButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: 1px solid var(--cyan-darker-color);
-  border-radius: 0.25rem;
-  background-color: var(--light-main-color);
-  color: var(--cyan-darker-color);
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin: 4px;
-  cursor: pointer;
-  height: 2rem;
-  width: 4rem;
-  font-size: 1.875rem;
-  font-weight: 900;
-  font-family: sans-serif;
-  transition: all 0.2s;
-  transform-origin: 50% 50%;
 }
 
 .generic-page-container {
@@ -556,24 +503,6 @@ h1 h2 h3 h4 h5 h6 {
   font-size: 1.2rem;
 }
 
-.contactCard {
-  display: flex;
-  justify-content: center;
-  align-items: left;
-  background: -webkit-linear-gradient(
-    135deg,
-    var(--cyan-main-color),
-    var(--orange-main-color)
-  );
-  background: linear-gradient(
-    135deg,
-    var(--cyan-main-color),
-    var(--orange-main-color)
-  );
-  height: 100%;
-  width: 100%;
-}
-
 .writeMeCard {
   display: flex;
   justify-content: center;
@@ -859,15 +788,7 @@ h1 h2 h3 h4 h5 h6 {
     transform: scale(1.06);
   }
 
-  .SAL-SOL:hover {
-    transform: scale(1.1);
-  }
-
   .round-img:hover {
-    transform: scale(1.06);
-  }
-
-  #imgWhoAreWe:hover {
     transform: scale(1.06);
   }
 
@@ -876,36 +797,6 @@ h1 h2 h3 h4 h5 h6 {
       drop-shadow(6px 6px 0px var(--orange-main-color));
     filter: drop-shadow(6px 6px 0px var(--cyan-main-color))
       drop-shadow(6px 6px 0px var(--orange-main-color));
-  }
-
-  .nav-link:hover {
-    transform: scale(1.1);
-    -webkit-text-shadow: 2px 2px var(--orange-main-color);
-    text-shadow: 2px 2px var(--orange-main-color);
-  }
-
-  .nav-link:active {
-    transform: scale(1.2);
-    -webkit-text-shadow: 4px 4px var(--orange-main-color);
-    text-shadow: 4px 4px var(--orange-main-color);
-  }
-
-  .galleryNavigationButton:hover {
-    border: 1px solid var(--light-main-color);
-    background-color: var(--cyan-darker-color);
-    color: var(--light-main-color);
-    transform: scale(1.02);
-  }
-
-  .galleryNavigationButton:active {
-    border: 1px solid var(--cyan-darker-color);
-    background-color: var(--light-main-color);
-    color: var(--cyan-darker-color);
-    transform: scale(1.04);
-  }
-
-  .wrapperDeveloped:hover {
-    cursor: pointer;
   }
 
   .generic-button:hover {
@@ -954,31 +845,8 @@ h1 h2 h3 h4 h5 h6 {
       drop-shadow(6px 6px 0px var(--orange-main-color));
   }
 
-  .SAL-SOL:active {
-    transform: scale(1.1);
-  }
-
   .round-img:active {
     transform: scale(1.06);
-  }
-
-  #imgWhoAreWe:active {
-    transform: scale(1.06);
-  }
-
-  .nav-link:active {
-    transform: scale(1.1);
-  }
-
-  .galleryNavigationButton:active {
-    border: 1px solid var(--light-main-color);
-    background-color: var(--cyan-darker-color);
-    color: var(--light-main-color);
-    transform: scale(1.02);
-  }
-
-  .wrapperDeveloped:active {
-    cursor: pointer;
   }
 
   .generic-button:active {

@@ -3,6 +3,24 @@
   font-size: 1.2rem;
 }
 
+.contactCard {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  background: -webkit-linear-gradient(
+    135deg,
+    var(--cyan-main-color),
+    var(--orange-main-color)
+  );
+  background: linear-gradient(
+    135deg,
+    var(--cyan-main-color),
+    var(--orange-main-color)
+  );
+  height: 100%;
+  width: 100%;
+}
+
 #googleMapsIframe {
   height: 300px;
   width: 100%;
