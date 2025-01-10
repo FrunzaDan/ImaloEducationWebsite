@@ -8,7 +8,7 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-navbar',
