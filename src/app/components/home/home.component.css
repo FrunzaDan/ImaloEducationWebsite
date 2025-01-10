@@ -1,247 +1,256 @@
 #background_image_home {
-    background-image: -webkit-linear-gradient(rgb(253, 241, 232, 1), rgb(253, 241, 232, 0.4)), url("/assets/images/gallery/imalo_sibiu_5.webp");
-    background-image: linear-gradient(rgb(253, 241, 232, 1), rgb(253, 241, 232, 0.6)), url("/assets/images/gallery/imalo_sibiu_5.webp");
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 90dvh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-image: -webkit-linear-gradient(
+      rgb(253, 241, 232, 1),
+      rgb(253, 241, 232, 0.4)
+    ),
+    url("/assets/images/gallery/imalo_sibiu_5.webp");
+  background-image: linear-gradient(
+      rgb(253, 241, 232, 1),
+      rgb(253, 241, 232, 0.6)
+    ),
+    url("/assets/images/gallery/imalo_sibiu_5.webp");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 90dvh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #background_image_home::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40%;
-    background: linear-gradient(to bottom, transparent, var(--light-main-color));
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent, var(--light-main-color));
+  pointer-events: none;
 }
 
 .hero-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
 }
 
 .centere-hero-div {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
 }
 
 #imalo_caterpillar_1 {
-    max-width: 200px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  max-width: 200px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 #imalo_caterpillar_2 {
-    max-width: 200px;
-    -moz-transform: scale(-1, 1);
-    -webkit-transform: scale(-1, 1);
-    -o-transform: scale(-1, 1);
-    -ms-transform: scale(-1, 1);
-    transform: scale(-1, 1);
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  max-width: 200px;
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 #imalo_caterpillar_3 {
-    max-width: 200px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  max-width: 200px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .textInsideHomePage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--dark-main-color);
-    font-size: 1.25rem;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--dark-main-color);
+  font-size: 1.25rem;
+  position: relative;
 }
 
 .motto-container {
-    position: relative;
-    width: 40rem;
-    height: 20rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  position: relative;
+  width: 40rem;
+  height: 20rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .motto-text {
-    font-size: 6rem;
-    color: var(--light-main-color);
-    font-weight: bold;
-    letter-spacing: 1px;
-    -webkit-text-shadow: -1px 0 var(--cyan-darker-color), 0 1px var(--cyan-darker-color), 1px 0 var(--cyan-darker-color), 0 -1px var(--cyan-darker-color);
-    text-shadow: -1px 0 var(--cyan-darker-color), 0 1px var(--cyan-darker-color), 1px 0 var(--cyan-darker-color), 0 -1px var(--cyan-darker-color);
+  font-size: 6rem;
+  color: var(--light-main-color);
+  font-weight: bold;
+  letter-spacing: 1px;
+  -webkit-text-shadow: -1px 0 var(--cyan-darker-color),
+    0 1px var(--cyan-darker-color), 1px 0 var(--cyan-darker-color),
+    0 -1px var(--cyan-darker-color);
+  text-shadow: -1px 0 var(--cyan-darker-color), 0 1px var(--cyan-darker-color),
+    1px 0 var(--cyan-darker-color), 0 -1px var(--cyan-darker-color);
 }
 
 #upper-text-motto {
-    position: absolute;
-    top: 100%;
-    left: 100%;
-    transform: translate(-90%, -114%);
-    z-index: 15;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-90%, -114%);
+  z-index: 15;
 }
 
 #middle-text-motto {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 14;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 14;
 }
 
 #lower-text-motto {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    transform: translate(-10%, 14%);
-    z-index: 13;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(-10%, 14%);
+  z-index: 13;
 }
 
 #upper-layer-motto {
-    position: absolute;
-    top: 20px;
-    left: 60px;
-    z-index: 12;
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  z-index: 12;
 }
 
 #middle-layer-motto {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 11;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 11;
 }
 
 #lower-layer-motto {
-    position: absolute;
-    top: -20px;
-    left: -60px;
-    z-index: 10;
+  position: absolute;
+  top: -20px;
+  left: -60px;
+  z-index: 10;
 }
 
 .triangle-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    transform: translate(-20px, -100px);
-    padding: 0.6rem;
-    color: var(--light-main-color);
-    background: var(--cyan-main-color);
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    text-align: center;
-    z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transform: translate(-20px, -100px);
+  padding: 0.6rem;
+  color: var(--light-main-color);
+  background: var(--cyan-main-color);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 9;
 }
 
 .triangle-right:after {
-    content: "";
-    position: absolute;
-    bottom: -20px;
-    left: 50px;
-    border-width: 20px 0 0 20px;
-    border-style: solid;
-    border-color: var(--cyan-main-color) transparent;
-    display: block;
-    width: 0;
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50px;
+  border-width: 20px 0 0 20px;
+  border-style: solid;
+  border-color: var(--cyan-main-color) transparent;
+  display: block;
+  width: 0;
 }
 
 /* LARGE SCREENS: */
-@media only screen and (min-width: 768px) {}
-
+@media only screen and (min-width: 768px) {
+}
 
 /* SMALL SCREENS: */
 @media only screen and (min-width: 576px) and (max-width: 768px) {
+  .textInsideHomePage {
+    font-size: 1rem;
+  }
 
-    .textInsideHomePage {
-        font-size: 1rem;
-    }
+  .motto-container {
+    position: relative;
+    width: 26rem;
+    height: 13rem;
+  }
 
-    .motto-container {
-        position: relative;
-        width: 26rem;
-        height: 13rem;
-    }
+  .motto-text {
+    font-size: 4rem;
+  }
 
-    .motto-text {
-        font-size: 4rem;
-    }
-
-    .triangle-right {
-        transform: translate(-30px, -110px);
-    }
+  .triangle-right {
+    transform: translate(-30px, -110px);
+  }
 }
 
 /* VERY SMALL SCREENS: */
 @media only screen and (max-width: 576px) {
+  #imalo_caterpillar_1 {
+    max-width: 160px;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+  }
 
-    #imalo_caterpillar_1 {
-        max-width: 160px;
-        margin-top: 6rem;
-        margin-bottom: 3rem;
-    }
+  #imalo_caterpillar_2 {
+    max-width: 160px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 
-    #imalo_caterpillar_2 {
-        max-width: 160px;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-    }
+  #imalo_caterpillar_3 {
+    max-width: 160px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 
-    #imalo_caterpillar_3 {
-        max-width: 160px;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-    }
+  .textInsideHomePage {
+    font-size: 1rem;
+  }
 
-    .textInsideHomePage {
-        font-size: 1rem;
-    }
+  #upper-layer-motto {
+    top: 20px;
+    left: 20px;
+  }
 
-    #upper-layer-motto {
-        top: 20px;
-        left: 20px;
-    }
+  #lower-layer-motto {
+    top: -20px;
+    left: -20px;
+  }
 
-    #lower-layer-motto {
-        top: -20px;
-        left: -20px;
-    }
+  #upper-text-motto {
+    transform: translate(-100%, -134%);
+  }
 
-    #upper-text-motto {
-        transform: translate(-100%, -134%);
-    }
+  #lower-text-motto {
+    transform: translate(0%, 34%);
+  }
 
-    #lower-text-motto {
-        transform: translate(0%, 34%);
-    }
+  .motto-container {
+    width: 20rem;
+    height: 10rem;
+  }
 
-    .motto-container {
-        width: 20rem;
-        height: 10rem;
-    }
+  .motto-text {
+    font-size: 2.5rem;
+  }
 
-    .motto-text {
-        font-size: 2.5rem;
-    }
-
-    .triangle-right {
-        transform: translate(-10px, -60px);
-    }
+  .triangle-right {
+    transform: translate(-10px, -60px);
+  }
 }

@@ -1,155 +1,154 @@
 .circle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: var(--light-main-color);
-    border-radius: 50%;
-    color: var(--cyan-darker-color);
-    font-size: 2.2rem;
-    position: relative;
-    transition: all .2s;
-    transform-origin: 50% 50%;
-    border: 0.2rem solid var(--cyan-darker-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--light-main-color);
+  border-radius: 50%;
+  color: var(--cyan-darker-color);
+  font-size: 2.2rem;
+  position: relative;
+  transition: all 0.2s;
+  transform-origin: 50% 50%;
+  border: 0.2rem solid var(--cyan-darker-color);
 }
 
 .offer-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .insideoffer-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .package-description {
-    display: flex;
-    justify-content: left;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: var(--light-main-color);
-    font-size: 1.4rem;
+  display: flex;
+  justify-content: left;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: var(--light-main-color);
+  font-size: 1.4rem;
 }
 
 /* VERY LARGE SCREENS: */
 @media only screen and (min-width: 992px) {
-    .circle {
-        width: 250px;
-        height: 250px;
-    }
+  .circle {
+    width: 250px;
+    height: 250px;
+  }
 }
 
 /* LARGE SCREENS: */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .offer-cards-icons {
-        width: 6rem;
-    }
+  .offer-cards-icons {
+    width: 6rem;
+  }
 
-    .circle {
-        width: 180px;
-        height: 180px;
-    }
+  .circle {
+    width: 180px;
+    height: 180px;
+  }
 
-    .package-description {
-        font-size: 1.2rem;
-    }
+  .package-description {
+    font-size: 1.2rem;
+  }
 }
 
 /* SMALL SCREENS: */
 @media only screen and (min-width: 576px) and (max-width: 768px) {
+  .package-description {
+    font-size: 1.2rem;
+  }
 
-    .package-description {
-        font-size: 1.2rem;
-    }
+  .offer-cards-icons {
+    width: 4rem;
+  }
 
-    .offer-cards-icons {
-        width: 4rem;
-    }
+  .circle {
+    width: 200px;
+    height: 200px;
+  }
 
-    .circle {
-        width: 200px;
-        height: 200px;
-    }
-
-    .packageTitle {
-        font-size: 1.4rem;
-    }
+  .packageTitle {
+    font-size: 1.4rem;
+  }
 }
 
 /* VERY SMALL SCREENS: */
 @media only screen and (min-width: 271px) and (max-width: 576px) {
-    .circle {
-        width: 200px;
-        height: 200px;
-    }
+  .circle {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 /* VERY SMALL SCREENS: */
 @media only screen and (max-width: 270px) {
-    .circle {
-        width: 150px;
-        height: 150px;
-    }
+  .circle {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------------------- */
 
 .get-course-modal {
-    z-index: 997;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1rem;
-    border-radius: 1.4rem;
-    width: 40rem;
-    max-width: 80%;
-    background: var(--light-main-color);
-    -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
-    color: var(--cyan-darker-color);
-    border: 0.2rem solid var(--cyan-main-color);
+  z-index: 997;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 1.4rem;
+  width: 40rem;
+  max-width: 80%;
+  background: var(--light-main-color);
+  -webkit-box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
+  color: var(--cyan-darker-color);
+  border: 0.2rem solid var(--cyan-main-color);
 }
 
 .customModal-header {
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--cyan-darker-color);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--cyan-darker-color);
 }
 
 .customModal-header .title {
-    font-size: 1.25rem;
-    font-weight: bold;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .customModal-header .close-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: var(--cyan-darker-color);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--cyan-darker-color);
 }
 
 .customModal-body {
-    padding: 20px 25px;
+  padding: 20px 25px;
 }
 
 .modalRow {
-    padding-top: 10px;
-    padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .modalCol {
-    padding: 6px;
+  padding: 6px;
 }

@@ -1,29 +1,29 @@
 #scroll-to-top-btn {
-    display: block;
-    position: fixed;
-    z-index: 99;
-    font-size: 200%;
-    font-weight: 900;
-    border: none;
-    outline: none;
-    background-color: var(--cyan-main-color);
-    color: var(--dark-main-color);
-    cursor: pointer;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 6px;
-    padding-right: 6px;
-    border-radius: 8px;
-    transition: all .2s;
-    -webkit-box-shadow: 4px 4px var(--dark-main-color);
-    box-shadow: 4px 4px var(--dark-main-color);
-    border: 0.1px solid var(--dark-main-color);
-    text-align: center;
-    pointer-events: auto;
+  display: block;
+  position: fixed;
+  z-index: 99;
+  font-size: 200%;
+  font-weight: 900;
+  border: none;
+  outline: none;
+  background-color: var(--cyan-main-color);
+  color: var(--dark-main-color);
+  cursor: pointer;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  -webkit-box-shadow: 4px 4px var(--dark-main-color);
+  box-shadow: 4px 4px var(--dark-main-color);
+  border: 0.1px solid var(--dark-main-color);
+  text-align: center;
+  pointer-events: auto;
 }
 
 #scroll-to-top-btn:active {
-    -webkit-box-shadow: 0 6px var(--dark-main-color);
-    box-shadow: 0 6px var(--dark-main-color);
-    transform: translateY(4px);
+  -webkit-box-shadow: 0 6px var(--dark-main-color);
+  box-shadow: 0 6px var(--dark-main-color);
+  transform: translateY(4px);
 }

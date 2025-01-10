@@ -1,147 +1,146 @@
 .nav-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px !important;
-    padding: 0px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px !important;
+  padding: 0px !important;
 }
 
 .nav-link {
-    color: var(--cyan-dark-color) !important;
-    text-align: center;
-    font-size: 2rem;
-    position: relative;
-    transition: all .2s;
-    transform-origin: 50% 50%;
-    margin: 0px !important;
+  color: var(--cyan-dark-color) !important;
+  text-align: center;
+  font-size: 2rem;
+  position: relative;
+  transition: all 0.2s;
+  transform-origin: 50% 50%;
+  margin: 0px !important;
 }
 
 .nav-link:active {
-    color: var(--dark-main-color);
+  color: var(--dark-main-color);
 }
 
 .nav-link:visited {
-    color: var(--dark-main-color);
+  color: var(--dark-main-color);
 }
 
 .imalo-logo-nav {
-    margin-top: 0.5rem;
-    margin-bottom: 0.2rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.2rem;
-    color: var(--cyan-main-color);
-    text-align: center;
-    font-size: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.2rem;
+  color: var(--cyan-main-color);
+  text-align: center;
+  font-size: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .navbar-toggler-icon {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .navbar-toggler {
-    justify-content: center;
+  justify-content: center;
 }
 
-
 .logo-container {
-    width: 60px;
+  width: 60px;
 }
 
 /* VERY LARGE SCREENS: */
 @media only screen and (min-width: 1300px) {
-    .nav-link {
-        font-size: 2.8rem;
-    }
+  .nav-link {
+    font-size: 2.8rem;
+  }
 }
 
 /* LARGE SCREENS: */
 @media only screen and (min-width: 1100px) and (max-width: 1300px) {
-    .nav-link {
-        font-size: 2.4rem;
-    }
+  .nav-link {
+    font-size: 2.4rem;
+  }
 }
 
 /* LARGE SCREENS: */
 @media only screen and (min-width: 900px) and (max-width: 1100px) {
-    .nav-link {
-        font-size: 1.8rem;
-    }
+  .nav-link {
+    font-size: 1.8rem;
+  }
 }
 
 /* LARGE SCREENS: */
 @media only screen and (min-width: 768px) and (max-width: 900px) {
-    .nav-link {
-        font-size: 1.4rem;
-    }
+  .nav-link {
+    font-size: 1.4rem;
+  }
 }
 
 /* SMALL SCREENS: */
 @media only screen and (min-width: 576px) and (max-width: 768px) {
-    .nav-link {
-        font-size: 1.2rem;
-    }
+  .nav-link {
+    font-size: 1.2rem;
+  }
 }
 
 /* VERY SMALL SCREENS: */
 @media only screen and (max-width: 576px) {
-    #logo {
-        width: 50px;
-    }
+  #logo {
+    width: 50px;
+  }
 
-    .nav-link {
-        font-size: 2.4rem;
-    }
+  .nav-link {
+    font-size: 2.4rem;
+  }
 }
 
 /* Define the shape and color of the hamburger lines */
 .navbar-toggler span {
-    display: block;
-    background-color: var(--cyan-main-color);
-    height: 4px;
-    width: 120px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    position: relative;
-    left: 0;
-    opacity: 1;
-    transition: all 0.35s ease-out;
-    transform-origin: center left;
+  display: block;
+  background-color: var(--cyan-main-color);
+  height: 4px;
+  width: 120px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  left: 0;
+  opacity: 1;
+  transition: all 0.35s ease-out;
+  transform-origin: center left;
 }
 
 .navbar-toggler span:nth-child(1) {
-    margin-top: 0.3em;
+  margin-top: 0.3em;
 }
 
 /* Animate collapse into X. */
 
 .navbar-toggler:not(.collapsed) span:nth-child(1) {
-    width: 60px;
-    transform: translate(65%, -160%) rotate(45deg);
+  width: 60px;
+  transform: translate(65%, -160%) rotate(45deg);
 }
 
 .navbar-toggler:not(.collapsed) span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .navbar-toggler:not(.collapsed) span:nth-child(3) {
-    width: 60px;
-    transform: translate(65%, 160%) rotate(-45deg);
+  width: 60px;
+  transform: translate(65%, 160%) rotate(-45deg);
 }
 
 /* Animate collapse open into hamburger menu */
 
 .navbar-toggler span:nth-child(1) {
-    transform: translate(0%, 0%) rotate(0deg);
+  transform: translate(0%, 0%) rotate(0deg);
 }
 
 .navbar-toggler span:nth-child(2) {
-    opacity: 1;
+  opacity: 1;
 }
 
 .navbar-toggler span:nth-child(3) {
-    transform: translate(0%, 0%) rotate(0deg);
+  transform: translate(0%, 0%) rotate(0deg);
 }
