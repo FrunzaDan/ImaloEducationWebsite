@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 import { SEOService } from '../../services/seo.service';
-import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +11,12 @@ import { Observable } from 'rxjs/internal/Observable';
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-  languageRO$: Observable<boolean>;
+  languageRO: Signal<boolean>;
   constructor(
     private languageService: LanguageService,
     private seoService: SEOService
   ) {
-    this.languageRO$ = this.languageService.language$;
+    this.languageRO = this.languageService.language;
   }
 
   ngOnInit(): void {

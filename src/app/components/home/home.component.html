@@ -23,10 +23,10 @@
     <div
       class="container-fluid d-flex justify-content-center align-items-center my-2 py-2"
     >
-      <h1 class="subtitle-1" *ngIf="languageRO$ | async">
+      <h1 class="subtitle-1" *ngIf="languageRO()">
         Ați găsit locația perfectă pentru copilul Dumneavoastră!
       </h1>
-      <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
+      <h1 class="subtitle-1" *ngIf="!languageRO()">
         Sie haben den idealen Ort für Ihr Kind gefunden!
       </h1>
     </div>
@@ -39,12 +39,12 @@
     >
       <div class="liquid-shape-3">
         <div class="textInsideHomePage">
-          <p *ngIf="languageRO$ | async">
+          <p *ngIf="languageRO()">
             Imalo Education <br />
             este locul unde copilul Dvs. va fi întâmpinat <br />
             cu toată căldura și atenția noastră.
           </p>
-          <p *ngIf="!(languageRO$ | async)">
+          <p *ngIf="!languageRO()">
             Imalo Education <br />
             ist der Ort, an dem Ihr Kind mit all unserer <br />
             Herzlichkeit und Aufmerksamkeit empfangen wird.
@@ -62,12 +62,10 @@
         alt="Imalo Afterschool Sibiu Caterpillar 1"
         title="Imalo Afterschool Sibiu"
       />
-      <p class="triangle-right" *ngIf="languageRO$ | async">
+      <p class="triangle-right" *ngIf="languageRO()">
         Bine ați venit la Imalo!
       </p>
-      <p class="triangle-right" *ngIf="!(languageRO$ | async)">
-        Willkommen zu Imalo!
-      </p>
+      <p class="triangle-right" *ngIf="!languageRO()">Willkommen zu Imalo!</p>
     </div>
   </div>
   <div
@@ -90,11 +88,11 @@
       <div class="fixed-Size-Container-600x300">
         <div class="liquid-shape-4">
           <div class="textInsideHomePage">
-            <p *ngIf="languageRO$ | async">
+            <p *ngIf="languageRO()">
               Viziunea noastră este de a ne asigura că fiecare copil primește
               atenția și îngrijirea pe care o merită cu adevărat.
             </p>
-            <p *ngIf="!(languageRO$ | async)">
+            <p *ngIf="!languageRO()">
               Unsere Vision ist es, dass jedes Kind die Aufmerksamkeit und
               Betreuung erhält, die es wirklich verdient.
             </p>
@@ -110,11 +108,11 @@
       <div class="fixed-Size-Container-600x300">
         <div class="liquid-shape-3">
           <div class="textInsideHomePage">
-            <p *ngIf="languageRO$ | async">
+            <p *ngIf="languageRO()">
               Misiunea noastră este de a acorda copiilor abilitățile și
               încrederea necesară pentru a naviga provocările de mâine.
             </p>
-            <p *ngIf="!(languageRO$ | async)">
+            <p *ngIf="!languageRO()">
               Unser Ziel ist es, Kindern die Fähigkeiten und das Selbstvertrauen
               zu vermitteln, um die Herausforderungen von morgen zu meistern.
             </p>
@@ -139,10 +137,10 @@
         <div
           class="card justify-content-center align-items-center height-100 text-center secondary-custom-text p-4 my-2"
         >
-          <p class="cyan-dark-text-with-shadow" *ngIf="languageRO$ | async">
+          <p class="cyan-dark-text-with-shadow" *ngIf="languageRO()">
             Despre noi
           </p>
-          <p class="cyan-dark-text-with-shadow" *ngIf="!(languageRO$ | async)">
+          <p class="cyan-dark-text-with-shadow" *ngIf="!languageRO()">
             Über uns
           </p>
         </div>
@@ -153,10 +151,10 @@
         <div
           class="card justify-content-center align-items-center height-100 text-center secondary-custom-text p-4 my-2"
         >
-          <p class="cyan-dark-text-with-shadow" *ngIf="languageRO$ | async">
+          <p class="cyan-dark-text-with-shadow" *ngIf="languageRO()">
             Oferte educaționale
           </p>
-          <p class="cyan-dark-text-with-shadow" *ngIf="!(languageRO$ | async)">
+          <p class="cyan-dark-text-with-shadow" *ngIf="!languageRO()">
             Bildungsangebote
           </p>
         </div>
@@ -167,10 +165,10 @@
         <div
           class="card justify-content-center align-items-center height-100 text-center secondary-custom-text p-4 my-2"
         >
-          <p class="cyan-dark-text-with-shadow" *ngIf="languageRO$ | async">
+          <p class="cyan-dark-text-with-shadow" *ngIf="languageRO()">
             Programele noastre
           </p>
-          <p class="cyan-dark-text-with-shadow" *ngIf="!(languageRO$ | async)">
+          <p class="cyan-dark-text-with-shadow" *ngIf="!languageRO()">
             Unsere Programme
           </p>
         </div>

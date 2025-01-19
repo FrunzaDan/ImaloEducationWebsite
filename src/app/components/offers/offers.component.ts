@@ -1,9 +1,8 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Signal } from '@angular/core';
 import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { LanguageService } from '../../services/language.service';
 import { SEOService } from '../../services/seo.service';
-import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-offers',
@@ -15,14 +14,14 @@ import { Observable } from 'rxjs/internal/Observable';
 export class OffersComponent implements OnInit, OnDestroy {
   isCourseModalOpen: boolean = false;
   courseTitle?: string;
-  languageRO$: Observable<boolean>;
+  languageRO: Signal<boolean>;
 
   constructor(
     private languageService: LanguageService,
     private viewportScroller: ViewportScroller,
     private seoService: SEOService
   ) {
-    this.languageRO$ = this.languageService.language$;
+    this.languageRO = this.languageService.language;
   }
 
   ngOnInit(): void {

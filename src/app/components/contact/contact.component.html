@@ -5,10 +5,8 @@
     <div
       class="container-fluid d-flex justify-content-center align-items-center my-2"
     >
-      <h1 class="subtitle-1" *ngIf="languageRO$ | async">
-        Cum ne puteți contacta?
-      </h1>
-      <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
+      <h1 class="subtitle-1" *ngIf="languageRO()">Cum ne puteți contacta?</h1>
+      <h1 class="subtitle-1" *ngIf="!languageRO()">
         Wie können Sie uns kontaktieren?
       </h1>
     </div>
@@ -22,13 +20,10 @@
           </div>
           <form [formGroup]="contactMeForm" (ngSubmit)="onSubmit()">
             <div class="mb-3">
-              <label *ngIf="languageRO$ | async" for="name" class="form-label"
+              <label *ngIf="languageRO()" for="name" class="form-label"
                 >Nume:</label
               >
-              <label
-                *ngIf="!(languageRO$ | async)"
-                for="name"
-                class="form-label"
+              <label *ngIf="!languageRO()" for="name" class="form-label"
                 >Name:</label
               >
               <input
@@ -47,13 +42,10 @@
               </div>
             </div>
             <div class="mb-3">
-              <label *ngIf="languageRO$ | async" for="email" class="form-label"
+              <label *ngIf="languageRO()" for="email" class="form-label"
                 >Adresă de E-mail:</label
               >
-              <label
-                *ngIf="!(languageRO$ | async)"
-                for="email"
-                class="form-label"
+              <label *ngIf="!languageRO()" for="email" class="form-label"
                 >E-mail Adresse:</label
               >
               <input
@@ -75,13 +67,10 @@
               </div>
             </div>
             <div class="mb-3">
-              <label *ngIf="languageRO$ | async" for="phone" class="form-label"
+              <label *ngIf="languageRO()" for="phone" class="form-label"
                 >Număr de telefon:</label
               >
-              <label
-                *ngIf="!(languageRO$ | async)"
-                for="phone"
-                class="form-label"
+              <label *ngIf="!languageRO()" for="phone" class="form-label"
                 >Telefonnummer:</label
               >
               <input
@@ -103,16 +92,10 @@
               </div>
             </div>
             <div class="mb-3">
-              <label
-                *ngIf="languageRO$ | async"
-                for="message"
-                class="form-label"
+              <label *ngIf="languageRO()" for="message" class="form-label"
                 >Mesaj:</label
               >
-              <label
-                *ngIf="!(languageRO$ | async)"
-                for="message"
-                class="form-label"
+              <label *ngIf="!languageRO()" for="message" class="form-label"
                 >Nachricht:</label
               >
               <textarea
@@ -135,15 +118,11 @@
               </div>
             </div>
             <div class="d-grid">
-              <button
-                *ngIf="languageRO$ | async"
-                class="generic-button"
-                type="submit"
-              >
+              <button *ngIf="languageRO()" class="generic-button" type="submit">
                 Trimite
               </button>
               <button
-                *ngIf="!(languageRO$ | async)"
+                *ngIf="!languageRO()"
                 class="generic-button"
                 type="submit"
               >
@@ -174,13 +153,13 @@
       <div class="card contactCard my-2">
         <div class="card-body">
           <p
-            *ngIf="languageRO$ | async"
+            *ngIf="languageRO()"
             class="card-title card-contact-text mt-2 mb-4"
           >
             Detalii contact:
           </p>
           <p
-            *ngIf="!(languageRO$ | async)"
+            *ngIf="!languageRO()"
             class="card-title card-contact-text mt-2 mb-4"
           >
             Kontaktinformationen:
@@ -267,8 +246,8 @@
     <div
       class="container-fluid d-flex justify-content-center align-items-center my-2"
     >
-      <h1 class="subtitle-1" *ngIf="languageRO$ | async">Unde ne găsiți?</h1>
-      <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
+      <h1 class="subtitle-1" *ngIf="languageRO()">Unde ne găsiți?</h1>
+      <h1 class="subtitle-1" *ngIf="!languageRO()">
         Wo können Sie uns finden?
       </h1>
     </div>
@@ -292,13 +271,13 @@
         <div class="card-lower-text py-4 px-2">
           <p
             class="cyan-dark-text-with-shadow text-center"
-            *ngIf="languageRO$ | async"
+            *ngIf="languageRO()"
           >
             Ne găsiți în Sibiu, strada Gutuilor nr. 6
           </p>
           <p
             class="cyan-dark-text-with-shadow text-center"
-            *ngIf="!(languageRO$ | async)"
+            *ngIf="!languageRO()"
           >
             Sie finden uns in Sibiu, Gutuilor Straße Nr. 6
           </p>

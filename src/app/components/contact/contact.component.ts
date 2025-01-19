@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Signal } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -13,7 +13,6 @@ import { ContactMeForm } from '../../interfaces/contact-me-form';
 import { LanguageService } from '../../services/language.service';
 import { SendEmailService } from '../../services/send-email.service';
 import { SEOService } from '../../services/seo.service';
-import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-contact',
@@ -27,14 +26,14 @@ export class ContactComponent implements OnInit {
   emailPopUpParagraph!: string;
   submitted: boolean = false;
   isEmailModalOpen: boolean = false;
-  languageRO$: Observable<boolean>;
+  languageRO: Signal<boolean>;
 
   constructor(
     private sendEmailService: SendEmailService,
     private languageService: LanguageService,
     private seoService: SEOService
   ) {
-    this.languageRO$ = this.languageService.language$;
+    this.languageRO = this.languageService.language;
   }
 
   contactMeForm = new FormGroup({

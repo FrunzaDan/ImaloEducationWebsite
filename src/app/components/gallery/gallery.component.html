@@ -2,12 +2,10 @@
   <div
     class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding"
   >
-    <h1 class="subtitle-1" *ngIf="languageRO$ | async">
+    <h1 class="subtitle-1" *ngIf="languageRO()">
       Poze din incinta Imalo Education
     </h1>
-    <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
-      Bilder von Imalo Education
-    </h1>
+    <h1 class="subtitle-1" *ngIf="!languageRO()">Bilder von Imalo Education</h1>
   </div>
   <div class="container-fluid d-flex flex-wrap justify-content-around">
     <ng-container *ngFor="let galleryImage of galleryImageList; let i = index">
@@ -70,10 +68,10 @@
   <div
     class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding"
   >
-    <h1 class="subtitle-1" *ngIf="languageRO$ | async">
+    <h1 class="subtitle-1" *ngIf="languageRO()">
       Vrei să vezi mai multe poze și să afli mai multe noutăți?
     </h1>
-    <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">
+    <h1 class="subtitle-1" *ngIf="!languageRO()">
       Möchten Sie mehr Bilder sehen und mehr Neuigkeiten erfahren?
     </h1>
   </div>
@@ -100,13 +98,13 @@
           <div class="card-lower-text">
             <p
               class="cyan-dark-text-with-shadow text-padding-1rem"
-              *ngIf="languageRO$ | async"
+              *ngIf="languageRO()"
             >
               Nu uitați să ne dați like pe Facebook!
             </p>
             <p
               class="cyan-dark-text-with-shadow text-padding-1rem"
-              *ngIf="!(languageRO$ | async)"
+              *ngIf="!languageRO()"
             >
               Vergessen Sie nicht, uns zu uns auf Facebook zu liken!
             </p>
@@ -135,13 +133,13 @@
           <div class="card-lower-text">
             <p
               class="cyan-dark-text-with-shadow text-padding-1rem"
-              *ngIf="languageRO$ | async"
+              *ngIf="languageRO()"
             >
               Și pe Instagram!
             </p>
             <p
               class="cyan-dark-text-with-shadow text-padding-1rem"
-              *ngIf="!(languageRO$ | async)"
+              *ngIf="!languageRO()"
             >
               Und auf Instagram!
             </p>
@@ -170,13 +168,13 @@
           <div class="card-lower-text">
             <p
               class="cyan-dark-text-with-shadow text-padding-1rem"
-              *ngIf="languageRO$ | async"
+              *ngIf="languageRO()"
             >
               Și pe LinkedIn!
             </p>
             <p
               class="cyan-dark-text-with-shadow text-padding-1rem"
-              *ngIf="!(languageRO$ | async)"
+              *ngIf="!languageRO()"
             >
               Und auf LinkedIn!
             </p>

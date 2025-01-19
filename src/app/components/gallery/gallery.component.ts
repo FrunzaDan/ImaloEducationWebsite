@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Signal } from '@angular/core';
 import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { GalleryImage } from '../../interfaces/gallery-image';
 import { LanguageService } from '../../services/language.service';
@@ -7,7 +7,6 @@ import { LoadGalleryService } from '../../services/load-gallery.service';
 import { SEOService } from '../../services/seo.service';
 import { SubscriptionService } from '../../services/subscription.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-gallery',
@@ -19,7 +18,7 @@ import { Observable } from 'rxjs/internal/Observable';
 export class GalleryComponent implements OnInit, OnDestroy {
   public galleryImageList: GalleryImage[] = [];
   private gallerySubscription?: Subscription;
-  languageRO$: Observable<boolean>;
+  languageRO: Signal<boolean>;
 
   currentIndex: number = -1;
   isFullViewOpen: boolean = false;
@@ -30,7 +29,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
     private seoService: SEOService,
     private subscriptionService: SubscriptionService
   ) {
-    this.languageRO$ = this.languageService.language$;
+    this.languageRO = this.languageService.language;
   }
 
   async ngOnInit(): Promise<void> {

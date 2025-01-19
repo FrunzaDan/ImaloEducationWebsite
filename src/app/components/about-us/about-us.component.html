@@ -5,8 +5,8 @@
     <div
       class="container-fluid d-flex justify-content-center align-items-center my-2"
     >
-      <h1 class="subtitle-1" *ngIf="languageRO$ | async">Despre noi</h1>
-      <h1 class="subtitle-1" *ngIf="!(languageRO$ | async)">Über uns</h1>
+      <h1 class="subtitle-1" *ngIf="languageRO()">Despre noi</h1>
+      <h1 class="subtitle-1" *ngIf="!languageRO()">Über uns</h1>
     </div>
   </div>
   <div class="row width-100 my-2 diagonal-1 generic-row-padding">
@@ -14,7 +14,7 @@
       <div class="card card-with-liquid height-100 my-2">
         <div class="liquid-shape-1">
           <div class="description-inside-card">
-            <p *ngIf="languageRO$ | async">
+            <p *ngIf="languageRO()">
               Imalo Education este un centru educativ în limba germană dedicat
               elevilor din clasele primare - de la clasa pregătitoare până la
               clasa a IV-a.
@@ -23,7 +23,7 @@
               <br />Activitățile se desfășoară exclusiv în limba germană, pentru
               a-i îmbogăți vocabularul și exprimarea.
             </p>
-            <p *ngIf="!(languageRO$ | async)">
+            <p *ngIf="!languageRO()">
               Imalo Education ist ein deutschsprachiges Bildungszentrum für
               Grundschüler - von der Vorschule bis zur vierten Klasse.
               <br />Imalo Education bietet Ihrem Kind eine sichere und
@@ -53,14 +53,10 @@
     <div
       class="container-fluid d-flex justify-content-center align-items-center my-2"
     >
-      <h1 class="subtitle-1" id="who-am-I-Section" *ngIf="languageRO$ | async">
+      <h1 class="subtitle-1" id="who-am-I-Section" *ngIf="languageRO()">
         Cine sunt
       </h1>
-      <h1
-        class="subtitle-1"
-        id="who-am-I-Section"
-        *ngIf="!(languageRO$ | async)"
-      >
+      <h1 class="subtitle-1" id="who-am-I-Section" *ngIf="!languageRO()">
         Wer bin ich
       </h1>
     </div>
@@ -80,7 +76,7 @@
       <div class="card card-with-liquid height-100 my-2">
         <div class="liquid-shape-2">
           <div class="description-inside-card">
-            <p *ngIf="languageRO$ | async">
+            <p *ngIf="languageRO()">
               Numele meu este Maria și am început acest proiect din pasiunea de
               a preda și dragul pentru copii.
               <br />
@@ -100,7 +96,7 @@
               Prin intermediul unor activități interactive și variate, copiii se
               vor bucura să descopere limba germană sub toate formele sale.
             </p>
-            <p *ngIf="!(languageRO$ | async)">
+            <p *ngIf="!languageRO()">
               Mein Name ist Maria und ich habe dieses Projekt aus Leidenschaft
               für das Unterrichten und aus Liebe zu den Kindern ins Leben
               gerufen.

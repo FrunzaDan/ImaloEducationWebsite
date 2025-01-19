@@ -7,7 +7,6 @@
           <input
             class="form-check-input cursor-pointer"
             type="checkbox"
-            role="switch"
             formControlName="isGermanLang"
           />
         </span>
@@ -166,8 +165,8 @@
             data-bs-toggle="collapse"
             data-bs-target=".navbar-collapse.show"
           >
-            <span *ngIf="languageRO$ | async"> Acasă </span>
-            <span *ngIf="!(languageRO$ | async)"> Home </span>
+            <span *ngIf="languageRO()"> Acasă </span>
+            <span *ngIf="!languageRO()"> Home </span>
           </a>
         </li>
         <li class="nav-item">
@@ -179,8 +178,8 @@
             data-bs-toggle="collapse"
             data-bs-target=".navbar-collapse.show"
           >
-            <span *ngIf="languageRO$ | async"> Despre noi </span>
-            <span *ngIf="!(languageRO$ | async)"> Über uns </span>
+            <span *ngIf="languageRO()"> Despre noi </span>
+            <span *ngIf="!languageRO()"> Über uns </span>
           </a>
         </li>
         <li class="nav-item">
@@ -192,8 +191,8 @@
             data-bs-toggle="collapse"
             data-bs-target=".navbar-collapse.show"
           >
-            <span *ngIf="languageRO$ | async"> Oferte </span>
-            <span *ngIf="!(languageRO$ | async)"> Angebote </span>
+            <span *ngIf="languageRO()"> Oferte </span>
+            <span *ngIf="!languageRO()"> Angebote </span>
           </a>
         </li>
         <li class="nav-item">
@@ -205,8 +204,8 @@
             data-bs-toggle="collapse"
             data-bs-target=".navbar-collapse.show"
           >
-            <span *ngIf="languageRO$ | async"> Program </span>
-            <span *ngIf="!(languageRO$ | async)"> Programm </span>
+            <span *ngIf="languageRO()"> Program </span>
+            <span *ngIf="!languageRO()"> Programm </span>
           </a>
         </li>
         <li class="nav-item">
@@ -218,8 +217,8 @@
             data-bs-toggle="collapse"
             data-bs-target=".navbar-collapse.show"
           >
-            <span *ngIf="languageRO$ | async"> Galerie </span>
-            <span *ngIf="!(languageRO$ | async)"> Galerie </span>
+            <span *ngIf="languageRO()"> Galerie </span>
+            <span *ngIf="!languageRO()"> Galerie </span>
           </a>
         </li>
         <li class="nav-item">
@@ -231,8 +230,8 @@
             data-bs-toggle="collapse"
             data-bs-target=".navbar-collapse.show"
           >
-            <span *ngIf="languageRO$ | async"> Contact </span>
-            <span *ngIf="!(languageRO$ | async)"> Kontakt </span>
+            <span *ngIf="languageRO()"> Contact </span>
+            <span *ngIf="!languageRO()"> Kontakt </span>
           </a>
         </li>
       </ul>
