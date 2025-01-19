@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit, Signal } from '@angular/core';
+import { Component, OnInit, Signal } from '@angular/core';
 import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { GalleryImage } from '../../interfaces/gallery-image';
 import { LanguageService } from '../../services/language.service';
@@ -28,13 +28,13 @@ export class GalleryComponent implements OnInit {
     this.languageRO = this.languageService.language;
   }
 
-  async ngOnInit(): Promise<void> {
+  ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();
     this.seoService.updateMetaDescription(
       'Galeria Imalo Education, afterschool pe limba germana din Sibiu.'
     );
 
-    this.galleryImageList = await this.loadGalleryService.loadGallery();
+    this.galleryImageList = this.loadGalleryService.loadGallery(); // Load images directly
   }
 
   readonly openFullView = (index: number) => {

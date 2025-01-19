@@ -1,18 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, Signal, effect } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {
-  FormControl,
-  FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
@@ -29,21 +24,20 @@ export class NavbarComponent {
 
     effect(() => {
       const isRomanian = this.languageRO();
-      this.toggleLanguageForm
-        .get('isGermanLang')
-        ?.setValue(!isRomanian, { emitEvent: false });
+      const isGerman = !isRomanian;
+      if (this.toggleLanguageForm.get('isGermanLang')?.value !== isGerman) {
+        this.toggleLanguageForm.get('isGermanLang')?.setValue(isGerman, {
+          emitEvent: false,
+        });
+      }
     });
 
     this.toggleLanguageForm
       .get('isGermanLang')
       ?.valueChanges.subscribe((val) => {
         if (val !== !this.languageRO()) {
-          this.toggleLanguage();
+          this.languageService.toggleLanguage();
         }
       });
-  }
-
-  toggleLanguage(): void {
-    this.languageService.toggleLanguage();
   }
 }
