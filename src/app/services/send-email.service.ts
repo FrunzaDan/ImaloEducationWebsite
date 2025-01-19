@@ -23,7 +23,7 @@ export class SendEmailService {
         environment.emailJSConfig.serviceID,
         environment.emailJSConfig.templateID,
         params,
-        environment.emailJSConfig.publicKey
+        environment.emailJSConfig.publicKey,
       )
       .then(
         (success: EmailJSResponseStatus): number => {
@@ -33,7 +33,7 @@ export class SendEmailService {
         (error): number => {
           responseCode = error.status;
           return responseCode;
-        }
+        },
       );
   }
 }

@@ -19,7 +19,7 @@ export class OffersComponent implements OnInit, OnDestroy {
   constructor(
     private languageService: LanguageService,
     private viewportScroller: ViewportScroller,
-    private seoService: SEOService
+    private seoService: SEOService,
   ) {
     this.languageRO = this.languageService.language;
   }
@@ -27,7 +27,7 @@ export class OffersComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();
     this.seoService.updateMetaDescription(
-      'Pagina cu oferte Imalo Education, afterschool pe limba germana din Sibiu.'
+      'Pagina cu oferte Imalo Education, afterschool pe limba germana din Sibiu.',
     );
   }
 

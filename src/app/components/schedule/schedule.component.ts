@@ -14,7 +14,7 @@ export class ScheduleComponent implements OnInit {
 
   constructor(
     private languageService: LanguageService,
-    private seoService: SEOService
+    private seoService: SEOService,
   ) {
     this.languageRO = this.languageService.language;
   }
@@ -22,7 +22,7 @@ export class ScheduleComponent implements OnInit {
   ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();
     this.seoService.updateMetaDescription(
-      'Pagina cu programul Imalo Education, afterschool pe limba germana din Sibiu.'
+      'Pagina cu programul Imalo Education, afterschool pe limba germana din Sibiu.',
     );
   }
 }

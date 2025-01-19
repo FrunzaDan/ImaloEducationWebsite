@@ -27,7 +27,7 @@ export class GalleryComponent implements OnInit {
   constructor(
     private loadGalleryService: LoadGalleryService,
     private languageService: LanguageService,
-    private seoService: SEOService
+    private seoService: SEOService,
   ) {
     this.languageRO = this.languageService.language;
   }
@@ -35,7 +35,7 @@ export class GalleryComponent implements OnInit {
   ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();
     this.seoService.updateMetaDescription(
-      'Galeria Imalo Education, afterschool pe limba germana din Sibiu.'
+      'Galeria Imalo Education, afterschool pe limba germana din Sibiu.',
     );
 
     this.galleryImageList = this.loadGalleryService.loadGallery(); // Load images directly

@@ -35,7 +35,7 @@ export class SEOService {
 
   private removeExistingCanonicalLink(): void {
     const existingLinks: NodeListOf<Element> = this.doc.head.querySelectorAll(
-      'link[rel="canonical"]'
+      'link[rel="canonical"]',
     );
 
     for (let i: number = 0; i < existingLinks.length; i++) {

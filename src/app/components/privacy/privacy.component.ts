@@ -13,7 +13,7 @@ export class PrivacyComponent implements OnInit {
   ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();
     this.seoService.updateMetaDescription(
-      'Pagina termenilor Imalo Education, afterschool pe limba germana din Sibiu.'
+      'Pagina termenilor Imalo Education, afterschool pe limba germana din Sibiu.',
     );
   }
 }

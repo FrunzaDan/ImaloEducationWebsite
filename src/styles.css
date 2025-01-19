@@ -12,7 +12,7 @@
   --orange-light-color-for-alpha: 255, 179, 71;
   --light-main-color: #fdf1e8;
   --dark-main-color: #394546;
-  --primary-font: "Main", sans-serif;
+  --primary-font: 'Main', sans-serif;
 }
 
 html,
@@ -83,8 +83,8 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 @font-face {
-  font-family: "Main";
-  src: url("./assets/fonts/Lora-Medium.ttf");
+  font-family: 'Main';
+  src: url('./assets/fonts/Lora-Medium.ttf');
 }
 
 .bi {
@@ -259,7 +259,7 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 .diagonal-1::after {
-  content: "";
+  content: '';
   background: var(--background);
   position: absolute;
   z-index: -9;
@@ -288,7 +288,7 @@ h1 h2 h3 h4 h5 h6 {
 }
 
 .diagonal-2::after {
-  content: "";
+  content: '';
   background: var(--background);
   position: absolute;
   z-index: -9;

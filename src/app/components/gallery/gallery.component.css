@@ -46,7 +46,7 @@
 
 #prev-button {
   z-index: 999;
-  font-family: "Gill Sans", sans-serif;
+  font-family: 'Gill Sans', sans-serif;
   position: fixed;
   bottom: 1rem;
   left: 2rem;

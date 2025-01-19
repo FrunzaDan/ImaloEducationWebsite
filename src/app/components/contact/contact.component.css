@@ -43,7 +43,7 @@
 }
 
 .loader1:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -55,7 +55,7 @@
 }
 
 .loader1:after {
-  content: "";
+  content: '';
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -102,7 +102,7 @@
 }
 
 .loader2:before {
-  content: "";
+  content: '';
   position: absolute;
   left: calc(100% + 14px);
   bottom: -6px;

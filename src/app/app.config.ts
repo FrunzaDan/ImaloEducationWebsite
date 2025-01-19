@@ -2,7 +2,6 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import {
   ApplicationConfig,
   provideExperimentalZonelessChangeDetection,
-  provideZoneChangeDetection,
 } from '@angular/core';
 import { getAnalytics, provideAnalytics } from '@angular/fire/analytics';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -28,7 +27,7 @@ export const appConfig: ApplicationConfig = {
         scrollPositionRestoration: 'top',
         anchorScrolling: 'enabled',
       }),
-      withViewTransitions()
+      withViewTransitions(),
     ),
     provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch()),
