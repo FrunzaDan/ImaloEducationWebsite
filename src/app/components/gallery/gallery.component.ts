@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, Signal } from '@angular/core';
+import { Component, HostListener, OnInit, Signal } from '@angular/core';
 import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { GalleryImage } from '../../interfaces/gallery-image';
 import { LanguageService } from '../../services/language.service';
@@ -19,6 +19,10 @@ export class GalleryComponent implements OnInit {
 
   currentIndex: number = -1;
   isFullViewOpen: boolean = false;
+
+  // Variables for swipe detection
+  private touchStartX: number = 0;
+  private touchEndX: number = 0;
 
   constructor(
     private loadGalleryService: LoadGalleryService,
@@ -57,4 +61,39 @@ export class GalleryComponent implements OnInit {
       this.currentIndex++;
     }
   };
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    if (this.isFullViewOpen) {
+      if (event.key === 'ArrowLeft') {
+        this.navigateLeft();
+      } else if (event.key === 'ArrowRight') {
+        this.navigateRight();
+      }
+    }
+  }
+
+  // Handle touch events for swipe navigation
+  @HostListener('touchstart', ['$event'])
+  onTouchStart(event: TouchEvent): void {
+    this.touchStartX = event.changedTouches[0].screenX;
+  }
+
+  @HostListener('touchend', ['$event'])
+  onTouchEnd(event: TouchEvent): void {
+    this.touchEndX = event.changedTouches[0].screenX;
+    this.handleSwipe();
+  }
+
+  private handleSwipe(): void {
+    if (this.touchStartX - this.touchEndX > 50) {
+      // Swipe Left
+      this.navigateRight();
+    }
+
+    if (this.touchEndX - this.touchStartX > 50) {
+      // Swipe Right
+      this.navigateLeft();
+    }
+  }
 }
