@@ -5,8 +5,6 @@ import { GalleryImage } from '../../interfaces/gallery-image';
 import { LanguageService } from '../../services/language.service';
 import { LoadGalleryService } from '../../services/load-gallery.service';
 import { SEOService } from '../../services/seo.service';
-import { SubscriptionService } from '../../services/subscription.service';
-import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-gallery',
@@ -15,9 +13,8 @@ import { Subscription } from 'rxjs/internal/Subscription';
   styleUrl: './gallery.component.css',
   animations: [transformIn, transformOut, fadeIn, fadeOut],
 })
-export class GalleryComponent implements OnInit, OnDestroy {
+export class GalleryComponent implements OnInit {
   public galleryImageList: GalleryImage[] = [];
-  private gallerySubscription?: Subscription;
   languageRO: Signal<boolean>;
 
   currentIndex: number = -1;
@@ -26,8 +23,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
   constructor(
     private loadGalleryService: LoadGalleryService,
     private languageService: LanguageService,
-    private seoService: SEOService,
-    private subscriptionService: SubscriptionService
+    private seoService: SEOService
   ) {
     this.languageRO = this.languageService.language;
   }
@@ -61,8 +57,4 @@ export class GalleryComponent implements OnInit, OnDestroy {
       this.currentIndex++;
     }
   };
-
-  ngOnDestroy(): void {
-    this.subscriptionService.unsubscribeIfActive(this.gallerySubscription);
-  }
 }

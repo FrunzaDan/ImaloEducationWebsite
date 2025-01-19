@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Signal } from '@angular/core';
+import { Component, OnInit, Signal } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { SEOService } from '../../services/seo.service';
 
@@ -10,7 +10,7 @@ import { SEOService } from '../../services/seo.service';
   templateUrl: './about-us.component.html',
   styleUrl: './about-us.component.css',
 })
-export class AboutUsComponent {
+export class AboutUsComponent implements OnInit {
   languageRO: Signal<boolean>;
 
   constructor(
@@ -18,6 +18,9 @@ export class AboutUsComponent {
     private seoService: SEOService
   ) {
     this.languageRO = this.languageService.language;
+  }
+
+  ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();
     this.seoService.updateMetaDescription(
       'Imalo Education este un centru educativ în limba germana dedicat elevilor din clasele primare - de la clasa pregătitoare până la clasa a IV-a. Imalo Education oferă copilului tău un mediu sigur și relaxant în care să învețe, să se dezvolte și să se exprime liber. Activitățile se desfășoară exclusiv în limba germană, pentru a-i îmbogăți vocabularul și exprimarea.'

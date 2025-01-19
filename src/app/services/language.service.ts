@@ -4,13 +4,13 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class LanguageService {
-  private readonly languageSignal = signal(true);
+  private readonly languageROSignal = signal(true);
 
   get language() {
-    return this.languageSignal;
+    return this.languageROSignal;
   }
 
   toggleLanguage(): void {
-    this.languageSignal.set(!this.languageSignal());
+    this.languageROSignal.set(!this.languageROSignal());
   }
 }
