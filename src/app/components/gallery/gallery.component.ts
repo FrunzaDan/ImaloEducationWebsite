@@ -14,15 +14,13 @@ import { SEOService } from '../../services/seo.service';
   animations: [transformIn, transformOut, fadeIn, fadeOut],
 })
 export class GalleryComponent implements OnInit {
-  public galleryImageList: GalleryImage[] = [];
+  galleryImageList: GalleryImage[] = [];
   languageRO: Signal<boolean>;
+  currentIndex = -1;
+  isFullViewOpen = false;
 
-  currentIndex: number = -1;
-  isFullViewOpen: boolean = false;
-
-  // Variables for swipe detection
-  private touchStartX: number = 0;
-  private touchEndX: number = 0;
+  private touchStartX = 0;
+  private touchEndX = 0;
 
   constructor(
     private loadGalleryService: LoadGalleryService,
@@ -41,26 +39,25 @@ export class GalleryComponent implements OnInit {
     this.galleryImageList = this.loadGalleryService.loadGallery(); // Load images directly
   }
 
-  readonly openFullView = (index: number) => {
+  openFullView(index: number): void {
     this.currentIndex = index;
     this.isFullViewOpen = true;
-  };
+  }
 
-  readonly closeFullView = () => {
+  closeFullView(): void {
     this.isFullViewOpen = false;
-  };
+  }
 
-  readonly navigateLeft = () => {
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-    }
-  };
+  navigateLeft(): void {
+    this.currentIndex = Math.max(0, this.currentIndex - 1);
+  }
 
-  readonly navigateRight = () => {
-    if (this.currentIndex < this.galleryImageList.length - 1) {
-      this.currentIndex++;
-    }
-  };
+  navigateRight(): void {
+    this.currentIndex = Math.min(
+      this.galleryImageList.length - 1,
+      this.currentIndex + 1,
+    );
+  }
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent): void {
