@@ -65,10 +65,16 @@ export class GalleryComponent implements OnInit {
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent): void {
     if (this.isFullViewOpen) {
-      if (event.key === 'ArrowLeft') {
-        this.navigateLeft();
-      } else if (event.key === 'ArrowRight') {
-        this.navigateRight();
+      switch (event.key) {
+        case 'ArrowLeft':
+          this.navigateLeft();
+          break;
+        case 'ArrowRight':
+          this.navigateRight();
+          break;
+        case 'Escape':
+          this.closeFullView();
+          break;
       }
     }
   }

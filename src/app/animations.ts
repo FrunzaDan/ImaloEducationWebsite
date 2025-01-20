@@ -4,44 +4,71 @@ import {
   style,
   transition,
   trigger,
+  animation,
+  useAnimation,
 } from '@angular/animations';
+
+const fadeAnimation = animation(
+  [
+    style({ opacity: '{{ start }}' }),
+    animate('{{ duration }} {{ timing }}', style({ opacity: '{{ end }}' })),
+  ],
+  {
+    params: {
+      start: '0',
+      end: '1',
+      duration: '400ms',
+      timing: 'ease-in',
+    },
+  },
+);
+
+const transformAnimation = animation(
+  [
+    style({ transform: 'translate(-50%, -50%) scale({{ start }})' }),
+    animate(
+      '{{ duration }} {{ timing }}',
+      style({ transform: 'translate(-50%, -50%) scale({{ end }})' }),
+    ),
+  ],
+  {
+    params: {
+      start: '0',
+      end: '1',
+      duration: '400ms',
+      timing: 'ease-in',
+    },
+  },
+);
 
 export const fadeIn: AnimationTriggerMetadata = trigger('fadeIn', [
   transition(':enter', [
-    style({
-      opacity: 0,
+    useAnimation(fadeAnimation, {
+      params: { start: '0', end: '1', timing: 'ease-in' },
     }),
-    animate('500ms ease-in', style({ opacity: 1 })),
   ]),
 ]);
+
 export const fadeOut: AnimationTriggerMetadata = trigger('fadeOut', [
   transition(':leave', [
-    style({
-      opacity: 1,
+    useAnimation(fadeAnimation, {
+      params: { start: '1', end: '0', timing: 'ease-out' },
     }),
-    animate('500ms ease-out', style({ opacity: 0 })),
   ]),
 ]);
 
 export const transformIn: AnimationTriggerMetadata = trigger('transformIn', [
   transition(':enter', [
-    style({
-      transform: 'translate(-50%, -50%) scale(0)',
+    useAnimation(transformAnimation, {
+      params: { start: '0', end: '1', timing: 'ease-in' },
     }),
-    animate(
-      '300ms ease-in',
-      style({ transform: 'translate(-50%, -50%) scale(1)' }),
-    ),
   ]),
 ]);
+
 export const transformOut: AnimationTriggerMetadata = trigger('transformOut', [
   transition(':leave', [
-    style({
-      transform: 'translate(-50%, -50%) scale(1)',
+    useAnimation(transformAnimation, {
+      params: { start: '1', end: '0', timing: 'ease-out' },
     }),
-    animate(
-      '300ms ease-out',
-      style({ transform: 'translate(-50%, -50%) scale(0)' }),
-    ),
   ]),
 ]);
