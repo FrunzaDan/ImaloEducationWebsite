@@ -1,4 +1,4 @@
-import { CommonModule, ViewportScroller } from '@angular/common';
+import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit, Signal, inject } from '@angular/core';
 import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { LanguageService } from '../../services/language.service';
@@ -6,7 +6,7 @@ import { SEOService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-offers',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css',
   animations: [transformIn, transformOut, fadeIn, fadeOut],

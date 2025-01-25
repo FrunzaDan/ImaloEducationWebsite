@@ -1,14 +1,18 @@
 <div class="generic-page-container">
   <div
     class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding"
-  >
-    <h1 class="subtitle-1" *ngIf="languageRO()">
-      Poze din incinta Imalo Education
-    </h1>
-    <h1 class="subtitle-1" *ngIf="!languageRO()">Bilder von Imalo Education</h1>
+    >
+    @if (languageRO()) {
+      <h1 class="subtitle-1">
+        Poze din incinta Imalo Education
+      </h1>
+    }
+    @if (!languageRO()) {
+      <h1 class="subtitle-1">Bilder von Imalo Education</h1>
+    }
   </div>
   <div class="container-fluid d-flex flex-wrap justify-content-around">
-    <ng-container *ngFor="let galleryImage of galleryImageList; let i = index">
+    @for (galleryImage of galleryImageList; track galleryImage; let i = $index) {
       <img
         src="{{ galleryImage.imagePath }}"
         class="full-card-img"
@@ -16,171 +20,186 @@
         title="Imalo Afterschool Germana Sibiu #{{ i + 1 }}"
         (click)="openFullView(i)"
         loading="lazy"
+        />
+    }
+  </div>
+
+  @if (isFullViewOpen) {
+    <div
+      class="full-view-background"
+      @fadeIn
+      @fadeOut
+      (click)="closeFullView()"
+    ></div>
+  }
+  @if (isFullViewOpen && currentIndex >= 0) {
+    <img
+      @transformIn
+      @transformOut
+      [src]="galleryImageList[currentIndex].imagePath"
+      class="full-view-img"
+      alt="Imalo Afterschool Germana Sibiu"
       />
-    </ng-container>
-  </div>
-
-  <div
-    class="full-view-background"
-    *ngIf="isFullViewOpen"
-    @fadeIn
-    @fadeOut
-    (click)="closeFullView()"
-  ></div>
-  <img
-    *ngIf="isFullViewOpen && currentIndex >= 0"
-    @transformIn
-    @transformOut
-    [src]="galleryImageList[currentIndex].imagePath"
-    class="full-view-img"
-    alt="Imalo Afterschool Germana Sibiu"
-  />
-  <span
-    *ngIf="isFullViewOpen"
-    @fadeIn
-    @fadeOut
-    (click)="closeFullView()"
-    class="grow-to-bottom-right"
-    id="close-view-button"
-    >&times;</span
-  >
-  <button
-    (click)="navigateLeft()"
-    class="galleryNavigationButton"
-    id="prev-button"
-    *ngIf="isFullViewOpen && currentIndex > 0"
-    @fadeIn
-    @fadeOut
-  >
-    &rarr;
-  </button>
-  <button
-    (click)="navigateRight()"
-    class="galleryNavigationButton"
-    id="next-button"
-    *ngIf="isFullViewOpen && currentIndex < galleryImageList.length - 1"
-    @fadeIn
-    @fadeOut
-  >
-    &rarr;
-  </button>
-
-  <div
-    class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding"
-  >
-    <h1 class="subtitle-1" *ngIf="languageRO()">
-      Vrei să vezi mai multe poze și să afli mai multe noutăți?
-    </h1>
-    <h1 class="subtitle-1" *ngIf="!languageRO()">
-      Möchten Sie mehr Bilder sehen und mehr Neuigkeiten erfahren?
-    </h1>
-  </div>
-
-  <div class="row width-100 diagonal-2 generic-row-padding py-2 my-4">
-    <div
-      class="col-sm-4 vertical-space-between-col justify-content-center align-items-center my-2 px-4"
-    >
-      <a
-        href="https://www.facebook.com/imaloeducation"
-        class="height-100"
-        target="_blank"
-        rel="me"
-        aria-label="Imalo Facebook"
+  }
+  @if (isFullViewOpen) {
+    <span
+      @fadeIn
+      @fadeOut
+      (click)="closeFullView()"
+      class="grow-to-bottom-right"
+      id="close-view-button"
+      >&times;</span
       >
-        <div
-          class="card width-100 justify-content-center align-items-center height-100 text-center mb-2 py-4"
+    }
+    @if (isFullViewOpen && currentIndex > 0) {
+      <button
+        (click)="navigateLeft()"
+        class="galleryNavigationButton"
+        id="prev-button"
+        @fadeIn
+        @fadeOut
         >
-          <img
-            class="card-upper-icon double-drop-shadow"
-            src="/assets/images/social media/Facebook_svg.svg"
-            alt="Imalo Afterschool Sibiu Facebook"
-          />
-          <div class="card-lower-text">
-            <p
-              class="cyan-dark-text-with-shadow text-padding-1rem"
-              *ngIf="languageRO()"
-            >
-              Nu uitați să ne dați like pe Facebook!
-            </p>
-            <p
-              class="cyan-dark-text-with-shadow text-padding-1rem"
-              *ngIf="!languageRO()"
-            >
-              Vergessen Sie nicht, uns zu uns auf Facebook zu liken!
-            </p>
-          </div>
-        </div>
-      </a>
+        &rarr;
+      </button>
+    }
+    @if (isFullViewOpen && currentIndex < galleryImageList.length - 1) {
+      <button
+        (click)="navigateRight()"
+        class="galleryNavigationButton"
+        id="next-button"
+        @fadeIn
+        @fadeOut
+        >
+        &rarr;
+      </button>
+    }
+
+    <div
+      class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding"
+      >
+      @if (languageRO()) {
+        <h1 class="subtitle-1">
+          Vrei să vezi mai multe poze și să afli mai multe noutăți?
+        </h1>
+      }
+      @if (!languageRO()) {
+        <h1 class="subtitle-1">
+          Möchten Sie mehr Bilder sehen und mehr Neuigkeiten erfahren?
+        </h1>
+      }
     </div>
-    <div
-      class="col-sm-4 vertical-space-between-col justify-content-center align-items-center my-2 px-4"
-    >
-      <a
-        href="https://www.instagram.com/imaloeducation"
-        class="height-100 width-100"
-        target="_blank"
-        rel="me"
-        aria-label="Imalo Instagram"
-      >
-        <div
-          class="card width-100 justify-content-center align-items-center height-100 text-center mb-2 py-4"
+
+    <div class="row width-100 diagonal-2 generic-row-padding py-2 my-4">
+      <div
+        class="col-sm-4 vertical-space-between-col justify-content-center align-items-center my-2 px-4"
         >
-          <img
-            class="card-upper-icon double-drop-shadow"
-            src="/assets/images/social media/Instagram_svg.svg"
-            alt="Imalo Afterschool Sibiu Instagram"
-          />
-          <div class="card-lower-text">
-            <p
-              class="cyan-dark-text-with-shadow text-padding-1rem"
-              *ngIf="languageRO()"
+        <a
+          href="https://www.facebook.com/imaloeducation"
+          class="height-100"
+          target="_blank"
+          rel="me"
+          aria-label="Imalo Facebook"
+          >
+          <div
+            class="card width-100 justify-content-center align-items-center height-100 text-center mb-2 py-4"
             >
-              Și pe Instagram!
-            </p>
-            <p
-              class="cyan-dark-text-with-shadow text-padding-1rem"
-              *ngIf="!languageRO()"
-            >
-              Und auf Instagram!
-            </p>
+            <img
+              class="card-upper-icon double-drop-shadow"
+              src="/assets/images/social media/Facebook_svg.svg"
+              alt="Imalo Afterschool Sibiu Facebook"
+              />
+            <div class="card-lower-text">
+              @if (languageRO()) {
+                <p
+                  class="cyan-dark-text-with-shadow text-padding-1rem"
+                  >
+                  Nu uitați să ne dați like pe Facebook!
+                </p>
+              }
+              @if (!languageRO()) {
+                <p
+                  class="cyan-dark-text-with-shadow text-padding-1rem"
+                  >
+                  Vergessen Sie nicht, uns zu uns auf Facebook zu liken!
+                </p>
+              }
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
-    <div
-      class="col-sm-4 vertical-space-between-col justify-content-center align-items-center my-2 px-4"
-    >
-      <a
-        href="https://www.linkedin.com/company/imalo-education"
-        class="height-100 width-100"
-        target="_blank"
-        rel="me"
-        aria-label="Imalo LinkedIn"
-      >
-        <div
-          class="card width-100 justify-content-center align-items-center height-100 text-center mb-2 py-4"
+        </a>
+      </div>
+      <div
+        class="col-sm-4 vertical-space-between-col justify-content-center align-items-center my-2 px-4"
         >
-          <img
-            class="card-upper-icon double-drop-shadow"
-            src="/assets/images/social media/LinkedIn_svg.svg"
-            alt="Imalo Afterschool Sibiu LinkedIn"
-          />
-          <div class="card-lower-text">
-            <p
-              class="cyan-dark-text-with-shadow text-padding-1rem"
-              *ngIf="languageRO()"
+        <a
+          href="https://www.instagram.com/imaloeducation"
+          class="height-100 width-100"
+          target="_blank"
+          rel="me"
+          aria-label="Imalo Instagram"
+          >
+          <div
+            class="card width-100 justify-content-center align-items-center height-100 text-center mb-2 py-4"
             >
-              Și pe LinkedIn!
-            </p>
-            <p
-              class="cyan-dark-text-with-shadow text-padding-1rem"
-              *ngIf="!languageRO()"
-            >
-              Und auf LinkedIn!
-            </p>
+            <img
+              class="card-upper-icon double-drop-shadow"
+              src="/assets/images/social media/Instagram_svg.svg"
+              alt="Imalo Afterschool Sibiu Instagram"
+              />
+            <div class="card-lower-text">
+              @if (languageRO()) {
+                <p
+                  class="cyan-dark-text-with-shadow text-padding-1rem"
+                  >
+                  Și pe Instagram!
+                </p>
+              }
+              @if (!languageRO()) {
+                <p
+                  class="cyan-dark-text-with-shadow text-padding-1rem"
+                  >
+                  Und auf Instagram!
+                </p>
+              }
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
+      <div
+        class="col-sm-4 vertical-space-between-col justify-content-center align-items-center my-2 px-4"
+        >
+        <a
+          href="https://www.linkedin.com/company/imalo-education"
+          class="height-100 width-100"
+          target="_blank"
+          rel="me"
+          aria-label="Imalo LinkedIn"
+          >
+          <div
+            class="card width-100 justify-content-center align-items-center height-100 text-center mb-2 py-4"
+            >
+            <img
+              class="card-upper-icon double-drop-shadow"
+              src="/assets/images/social media/LinkedIn_svg.svg"
+              alt="Imalo Afterschool Sibiu LinkedIn"
+              />
+            <div class="card-lower-text">
+              @if (languageRO()) {
+                <p
+                  class="cyan-dark-text-with-shadow text-padding-1rem"
+                  >
+                  Și pe LinkedIn!
+                </p>
+              }
+              @if (!languageRO()) {
+                <p
+                  class="cyan-dark-text-with-shadow text-padding-1rem"
+                  >
+                  Und auf LinkedIn!
+                </p>
+              }
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
-</div>

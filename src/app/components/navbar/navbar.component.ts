@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Signal, effect, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -7,7 +7,7 @@ import { LanguageService } from '../../services/language.service';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [RouterModule, ReactiveFormsModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })

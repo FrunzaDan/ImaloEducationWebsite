@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, HostListener, OnInit, Signal, inject } from '@angular/core';
 import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { GalleryImage } from '../../interfaces/gallery-image';
@@ -8,7 +8,7 @@ import { SEOService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-gallery',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css',
   animations: [transformIn, transformOut, fadeIn, fadeOut],

@@ -1,14 +1,18 @@
 <div class="generic-page-container">
   <div
     class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding"
-  >
+    >
     <div
       class="container-fluid d-flex justify-content-center align-items-center my-2"
-    >
-      <h1 class="subtitle-1" *ngIf="languageRO()">Cum ne puteți contacta?</h1>
-      <h1 class="subtitle-1" *ngIf="!languageRO()">
-        Wie können Sie uns kontaktieren?
-      </h1>
+      >
+      @if (languageRO()) {
+        <h1 class="subtitle-1">Cum ne puteți contacta?</h1>
+      }
+      @if (!languageRO()) {
+        <h1 class="subtitle-1">
+          Wie können Sie uns kontaktieren?
+        </h1>
+      }
     </div>
   </div>
   <div class="row width-100 my-2 diagonal-1 generic-row-padding">
@@ -20,270 +24,317 @@
           </div>
           <form [formGroup]="contactMeForm" (ngSubmit)="onSubmit()">
             <div class="mb-3">
-              <label *ngIf="languageRO()" for="name" class="form-label"
-                >Nume:</label
-              >
-              <label *ngIf="!languageRO()" for="name" class="form-label"
-                >Name:</label
-              >
-              <input
-                class="form-control"
-                formControlName="name"
-                name="name"
-                type="text"
-                placeholder="Numele tău"
-                autocomplete="on"
-                [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
-              />
-              <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-                <div *ngIf="f['name'].errors['required']">
-                  Numele este necesar.
+              @if (languageRO()) {
+                <label for="name" class="form-label"
+                  >Nume:</label
+                  >
+                }
+                @if (!languageRO()) {
+                  <label for="name" class="form-label"
+                    >Name:</label
+                    >
+                  }
+                  <input
+                    class="form-control"
+                    formControlName="name"
+                    name="name"
+                    type="text"
+                    placeholder="Numele tău"
+                    autocomplete="on"
+                    [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+                    />
+                  @if (submitted && f.name.errors) {
+                    <div class="invalid-feedback">
+                      @if (f['name'].errors['required']) {
+                        <div>
+                          Numele este necesar.
+                        </div>
+                      }
+                    </div>
+                  }
                 </div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <label *ngIf="languageRO()" for="email" class="form-label"
-                >Adresă de E-mail:</label
-              >
-              <label *ngIf="!languageRO()" for="email" class="form-label"
-                >E-mail Adresse:</label
-              >
-              <input
-                class="form-control"
-                formControlName="email"
-                name="email"
-                type="email"
-                placeholder="Adresa ta de E-mail"
-                autocomplete="on"
-                [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
-              />
-              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                <div *ngIf="f['email'].errors['required']">
-                  E-mail-ul este necesar.
-                </div>
-                <div *ngIf="f['email'].errors['email']">
-                  Un E-mail valid este necesar.
-                </div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <label *ngIf="languageRO()" for="phone" class="form-label"
-                >Număr de telefon:</label
-              >
-              <label *ngIf="!languageRO()" for="phone" class="form-label"
-                >Telefonnummer:</label
-              >
-              <input
-                class="form-control"
-                formControlName="phone"
-                name="email"
-                type="tel"
-                placeholder="Numărul tău de telefon"
-                autocomplete="on"
-                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
-              />
-              <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-                <div *ngIf="f['phone'].errors['required']">
-                  Numărul de telefon este necesar.
-                </div>
-                <div *ngIf="f['phone'].errors['pattern']">
-                  Un număr de telefon mobil valid este necesar.
-                </div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <label *ngIf="languageRO()" for="message" class="form-label"
-                >Mesaj:</label
-              >
-              <label *ngIf="!languageRO()" for="message" class="form-label"
-                >Nachricht:</label
-              >
-              <textarea
-                class="form-control"
-                formControlName="message"
-                name="email"
-                type="text"
-                placeholder="Mesajul tău"
-                autocomplete="off"
-                [ngClass]="{ 'is-invalid': submitted && f.message.errors }"
-                style="height: 10rem"
-              ></textarea>
-              <div
-                *ngIf="submitted && f.message.errors"
-                class="invalid-feedback"
-              >
-                <div *ngIf="f['message'].errors['required']">
-                  Un mesaj este necesar.
-                </div>
-              </div>
-            </div>
-            <div class="d-grid">
-              <button *ngIf="languageRO()" class="generic-button" type="submit">
-                Trimite
-              </button>
-              <button
-                *ngIf="!languageRO()"
-                class="generic-button"
-                type="submit"
-              >
-                Senden
-              </button>
-            </div>
-          </form>
-        </div>
-        <div
-          class="send-email-modal"
-          *ngIf="isEmailModalOpen"
-          @transformIn
-          @transformOut
-        >
-          <h2 id="email-popup-text-header">{{ emailPopUpHeader }}</h2>
-          <p id="email-popup-text-paragraph">{{ emailPopUpParagraph }}</p>
-          <button
-            type="submit"
-            class="generic-button"
-            (click)="closeEmailModal()"
-          >
-            OK
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 vertical-space-between-col my-2 px-2">
-      <div class="card contactCard my-2">
-        <div class="card-body">
-          <p
-            *ngIf="languageRO()"
-            class="card-title card-contact-text mt-2 mb-4"
-          >
-            Detalii contact:
-          </p>
-          <p
-            *ngIf="!languageRO()"
-            class="card-title card-contact-text mt-2 mb-4"
-          >
-            Kontaktinformationen:
-          </p>
-          <div class="mb-2">
-            <i class="bi bi-telephone contactIconsCard me-2"></i
-            ><span class="card-subtitle mb-2 card-contact-text">Telefon:</span>
-          </div>
-          <p class="card-text card-contact-text mb-4">
-            <a href="tel:+40741711006">+40741711006</a>
-          </p>
+                <div class="mb-3">
+                  @if (languageRO()) {
+                    <label for="email" class="form-label"
+                      >Adresă de E-mail:</label
+                      >
+                    }
+                    @if (!languageRO()) {
+                      <label for="email" class="form-label"
+                        >E-mail Adresse:</label
+                        >
+                      }
+                      <input
+                        class="form-control"
+                        formControlName="email"
+                        name="email"
+                        type="email"
+                        placeholder="Adresa ta de E-mail"
+                        autocomplete="on"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                        />
+                      @if (submitted && f.email.errors) {
+                        <div class="invalid-feedback">
+                          @if (f['email'].errors['required']) {
+                            <div>
+                              E-mail-ul este necesar.
+                            </div>
+                          }
+                          @if (f['email'].errors['email']) {
+                            <div>
+                              Un E-mail valid este necesar.
+                            </div>
+                          }
+                        </div>
+                      }
+                    </div>
+                    <div class="mb-3">
+                      @if (languageRO()) {
+                        <label for="phone" class="form-label"
+                          >Număr de telefon:</label
+                          >
+                        }
+                        @if (!languageRO()) {
+                          <label for="phone" class="form-label"
+                            >Telefonnummer:</label
+                            >
+                          }
+                          <input
+                            class="form-control"
+                            formControlName="phone"
+                            name="email"
+                            type="tel"
+                            placeholder="Numărul tău de telefon"
+                            autocomplete="on"
+                            [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
+                            />
+                          @if (submitted && f.phone.errors) {
+                            <div class="invalid-feedback">
+                              @if (f['phone'].errors['required']) {
+                                <div>
+                                  Numărul de telefon este necesar.
+                                </div>
+                              }
+                              @if (f['phone'].errors['pattern']) {
+                                <div>
+                                  Un număr de telefon mobil valid este necesar.
+                                </div>
+                              }
+                            </div>
+                          }
+                        </div>
+                        <div class="mb-3">
+                          @if (languageRO()) {
+                            <label for="message" class="form-label"
+                              >Mesaj:</label
+                              >
+                            }
+                            @if (!languageRO()) {
+                              <label for="message" class="form-label"
+                                >Nachricht:</label
+                                >
+                              }
+                              <textarea
+                                class="form-control"
+                                formControlName="message"
+                                name="email"
+                                type="text"
+                                placeholder="Mesajul tău"
+                                autocomplete="off"
+                                [ngClass]="{ 'is-invalid': submitted && f.message.errors }"
+                                style="height: 10rem"
+                              ></textarea>
+                              @if (submitted && f.message.errors) {
+                                <div
+                                  class="invalid-feedback"
+                                  >
+                                  @if (f['message'].errors['required']) {
+                                    <div>
+                                      Un mesaj este necesar.
+                                    </div>
+                                  }
+                                </div>
+                              }
+                            </div>
+                            <div class="d-grid">
+                              @if (languageRO()) {
+                                <button class="generic-button" type="submit">
+                                  Trimite
+                                </button>
+                              }
+                              @if (!languageRO()) {
+                                <button
+                                  class="generic-button"
+                                  type="submit"
+                                  >
+                                  Senden
+                                </button>
+                              }
+                            </div>
+                          </form>
+                        </div>
+                        @if (isEmailModalOpen) {
+                          <div
+                            class="send-email-modal"
+                            @transformIn
+                            @transformOut
+                            >
+                            <h2 id="email-popup-text-header">{{ emailPopUpHeader }}</h2>
+                            <p id="email-popup-text-paragraph">{{ emailPopUpParagraph }}</p>
+                            <button
+                              type="submit"
+                              class="generic-button"
+                              (click)="closeEmailModal()"
+                              >
+                              OK
+                            </button>
+                          </div>
+                        }
+                      </div>
+                    </div>
+                    <div class="col-md-4 vertical-space-between-col my-2 px-2">
+                      <div class="card contactCard my-2">
+                        <div class="card-body">
+                          @if (languageRO()) {
+                            <p
+                              class="card-title card-contact-text mt-2 mb-4"
+                              >
+                              Detalii contact:
+                            </p>
+                          }
+                          @if (!languageRO()) {
+                            <p
+                              class="card-title card-contact-text mt-2 mb-4"
+                              >
+                              Kontaktinformationen:
+                            </p>
+                          }
+                          <div class="mb-2">
+                            <i class="bi bi-telephone contactIconsCard me-2"></i
+                              ><span class="card-subtitle mb-2 card-contact-text">Telefon:</span>
+                            </div>
+                            <p class="card-text card-contact-text mb-4">
+                              <a href="tel:+40741711006">+40741711006</a>
+                            </p>
 
-          <div class="mb-2">
-            <i class="bi bi-envelope contactIconsCard me-2"></i
-            ><span class="card-subtitle mb-2 card-contact-text">E-mail:</span>
-          </div>
-          <p class="card-text card-contact-text mb-4">
-            <a href="mailto:imaloeducation@gmail.com"
-              >imaloeducation&#64;gmail.com</a
-            >
-          </p>
+                            <div class="mb-2">
+                              <i class="bi bi-envelope contactIconsCard me-2"></i
+                                ><span class="card-subtitle mb-2 card-contact-text">E-mail:</span>
+                              </div>
+                              <p class="card-text card-contact-text mb-4">
+                                <a href="mailto:imaloeducation@gmail.com"
+                                  >imaloeducation&#64;gmail.com</a
+                                  >
+                                </p>
 
-          <div class="mb-2">
-            <i class="bi bi-facebook contactIconsCard me-2"></i
-            ><span class="card-subtitle mb-2 card-contact-text">Facebook:</span>
-          </div>
-          <p class="card-text card-contact-text mb-4">
-            <a
-              href="https://www.facebook.com/imaloeducation"
-              class="height-100"
-              target="_blank"
-              rel="me"
-              aria-label="Imalo Facebook"
-              >facebook.com/imaloeducation</a
-            >
-          </p>
+                                <div class="mb-2">
+                                  <i class="bi bi-facebook contactIconsCard me-2"></i
+                                    ><span class="card-subtitle mb-2 card-contact-text">Facebook:</span>
+                                  </div>
+                                  <p class="card-text card-contact-text mb-4">
+                                    <a
+                                      href="https://www.facebook.com/imaloeducation"
+                                      class="height-100"
+                                      target="_blank"
+                                      rel="me"
+                                      aria-label="Imalo Facebook"
+                                      >facebook.com/imaloeducation</a
+                                      >
+                                    </p>
 
-          <div class="mb-2">
-            <i class="bi bi-instagram contactIconsCard me-2"></i
-            ><span class="card-subtitle mb-2 card-contact-text"
-              >Instagram:</span
-            >
-          </div>
-          <p class="card-text card-contact-text mb-4">
-            <a
-              href="https://www.instagram.com/imaloeducation"
-              class="height-100"
-              target="_blank"
-              rel="me"
-              aria-label="Imalo Instagram"
-              >instagram.com/imaloeducation</a
-            >
-          </p>
+                                    <div class="mb-2">
+                                      <i class="bi bi-instagram contactIconsCard me-2"></i
+                                        ><span class="card-subtitle mb-2 card-contact-text"
+                                        >Instagram:</span
+                                        >
+                                      </div>
+                                      <p class="card-text card-contact-text mb-4">
+                                        <a
+                                          href="https://www.instagram.com/imaloeducation"
+                                          class="height-100"
+                                          target="_blank"
+                                          rel="me"
+                                          aria-label="Imalo Instagram"
+                                          >instagram.com/imaloeducation</a
+                                          >
+                                        </p>
 
-          <div class="mb-2">
-            <i class="bi bi-linkedin contactIconsCard me-2"></i
-            ><span class="card-subtitle mb-2 card-contact-text">LinkedIn:</span>
-          </div>
-          <p class="card-text card-contact-text mb-4">
-            <a
-              href="https://www.linkedin.com/company/imalo-education"
-              class="height-100"
-              target="_blank"
-              rel="me"
-              aria-label="Imalo LinkedIn"
-              >linkedin.com/imalo-education</a
-            >
-          </p>
-        </div>
-        <div>
-          <div
-            class="container d-flex justify-content-center align-items-center p-4"
-          >
-            <div class="loader1 my-2 p-2"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+                                        <div class="mb-2">
+                                          <i class="bi bi-linkedin contactIconsCard me-2"></i
+                                            ><span class="card-subtitle mb-2 card-contact-text">LinkedIn:</span>
+                                          </div>
+                                          <p class="card-text card-contact-text mb-4">
+                                            <a
+                                              href="https://www.linkedin.com/company/imalo-education"
+                                              class="height-100"
+                                              target="_blank"
+                                              rel="me"
+                                              aria-label="Imalo LinkedIn"
+                                              >linkedin.com/imalo-education</a
+                                              >
+                                            </p>
+                                          </div>
+                                          <div>
+                                            <div
+                                              class="container d-flex justify-content-center align-items-center p-4"
+                                              >
+                                              <div class="loader1 my-2 p-2"></div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
 
-  <div
-    class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding"
-  >
-    <div
-      class="container-fluid d-flex justify-content-center align-items-center my-2"
-    >
-      <h1 class="subtitle-1" *ngIf="languageRO()">Unde ne găsiți?</h1>
-      <h1 class="subtitle-1" *ngIf="!languageRO()">
-        Wo können Sie uns finden?
-      </h1>
-    </div>
-  </div>
+                                    <div
+                                      class="row width-100 d-flex justify-content-center align-items-center my-2 generic-row-padding"
+                                      >
+                                      <div
+                                        class="container-fluid d-flex justify-content-center align-items-center my-2"
+                                        >
+                                        @if (languageRO()) {
+                                          <h1 class="subtitle-1">Unde ne găsiți?</h1>
+                                        }
+                                        @if (!languageRO()) {
+                                          <h1 class="subtitle-1">
+                                            Wo können Sie uns finden?
+                                          </h1>
+                                        }
+                                      </div>
+                                    </div>
 
-  <div
-    class="row width-100 d-flex justify-content-center align-items-center my-2 diagonal-2 generic-row-padding"
-  >
-    <div class="col vertical-space-between-col my-2 px-2">
-      <div class="card my-2">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.8948754800153!2d24.145391576370393!3d45.81336371007396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474c67c5ebc88d4b%3A0x494481146e1aac81!2sImalo%20Education!5e0!3m2!1sro!2sro!4v1715603852133!5m2!1sro!2sro"
-          id="googleMapsIframe"
-          allowfullscreen
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          class="card-img-top"
-          title="Imalo Education Afterschool Sibiu Gutuilor 6"
-          alt="Imalo Education Afterschool Sibiu Gutuilor 6"
-        >
-        </iframe>
-        <div class="card-lower-text py-4 px-2">
-          <p
-            class="cyan-dark-text-with-shadow text-center"
-            *ngIf="languageRO()"
-          >
-            Ne găsiți în Sibiu, strada Gutuilor nr. 6
-          </p>
-          <p
-            class="cyan-dark-text-with-shadow text-center"
-            *ngIf="!languageRO()"
-          >
-            Sie finden uns in Sibiu, Gutuilor Straße Nr. 6
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                                    <div
+                                      class="row width-100 d-flex justify-content-center align-items-center my-2 diagonal-2 generic-row-padding"
+                                      >
+                                      <div class="col vertical-space-between-col my-2 px-2">
+                                        <div class="card my-2">
+                                          <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.8948754800153!2d24.145391576370393!3d45.81336371007396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474c67c5ebc88d4b%3A0x494481146e1aac81!2sImalo%20Education!5e0!3m2!1sro!2sro!4v1715603852133!5m2!1sro!2sro"
+                                            id="googleMapsIframe"
+                                            allowfullscreen
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"
+                                            class="card-img-top"
+                                            title="Imalo Education Afterschool Sibiu Gutuilor 6"
+                                            alt="Imalo Education Afterschool Sibiu Gutuilor 6"
+                                            >
+                                          </iframe>
+                                          <div class="card-lower-text py-4 px-2">
+                                            @if (languageRO()) {
+                                              <p
+                                                class="cyan-dark-text-with-shadow text-center"
+                                                >
+                                                Ne găsiți în Sibiu, strada Gutuilor nr. 6
+                                              </p>
+                                            }
+                                            @if (!languageRO()) {
+                                              <p
+                                                class="cyan-dark-text-with-shadow text-center"
+                                                >
+                                                Sie finden uns in Sibiu, Gutuilor Straße Nr. 6
+                                              </p>
+                                            }
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>

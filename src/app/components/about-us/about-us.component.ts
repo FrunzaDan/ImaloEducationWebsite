@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit, Signal, inject } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { SEOService } from '../../services/seo.service';
@@ -6,7 +6,7 @@ import { SEOService } from '../../services/seo.service';
 @Component({
   selector: 'app-about-us',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './about-us.component.html',
   styleUrl: './about-us.component.css',
 })

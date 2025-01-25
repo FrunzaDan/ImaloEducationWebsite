@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit, Signal, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
@@ -6,7 +6,7 @@ import { SEOService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
