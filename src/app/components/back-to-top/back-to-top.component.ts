@@ -1,5 +1,3 @@
-import { Component, HostListener } from '@angular/core';
-import { ScrollerService } from '../../services/scroller.service';
 import {
   animate,
   state,
@@ -7,6 +5,8 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { Component, HostListener } from '@angular/core';
+import { ScrollerService } from '../../services/scroller.service';
 
 @Component({
   selector: 'app-back-to-top',

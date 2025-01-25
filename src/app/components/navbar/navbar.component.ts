@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Signal, effect } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 
 @Component({

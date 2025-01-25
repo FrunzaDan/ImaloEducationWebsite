@@ -1,10 +1,10 @@
 import {
   animate,
+  animation,
   AnimationTriggerMetadata,
   style,
   transition,
   trigger,
-  animation,
   useAnimation,
 } from '@angular/animations';
 
