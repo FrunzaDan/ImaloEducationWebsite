@@ -5,7 +5,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { ScrollerService } from '../../services/scroller.service';
 
 @Component({
@@ -21,10 +21,10 @@ import { ScrollerService } from '../../services/scroller.service';
   ],
 })
 export class BackToTopComponent {
+  scrollerService = inject(ScrollerService);
+
   private prevScrollPos: number = 0;
   SHOW_BUTTON_THRESHOLD: number = 600;
-
-  constructor(public scrollerService: ScrollerService) {}
 
   shouldShowBackToTopButton: boolean = false;
 

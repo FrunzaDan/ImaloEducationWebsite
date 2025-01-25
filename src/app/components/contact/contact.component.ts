@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, Signal } from '@angular/core';
+import { Component, OnInit, Signal, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -22,17 +22,17 @@ import { SEOService } from '../../services/seo.service';
   animations: [transformIn, transformOut],
 })
 export class ContactComponent implements OnInit {
+  private sendEmailService = inject(SendEmailService);
+  private languageService = inject(LanguageService);
+  private seoService = inject(SEOService);
+
   emailPopUpHeader!: string;
   emailPopUpParagraph!: string;
   submitted: boolean = false;
   isEmailModalOpen: boolean = false;
   languageRO: Signal<boolean>;
 
-  constructor(
-    private sendEmailService: SendEmailService,
-    private languageService: LanguageService,
-    private seoService: SEOService
-  ) {
+  constructor() {
     this.languageRO = this.languageService.language;
   }
 

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Signal, effect } from '@angular/core';
+import { Component, Signal, effect, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
@@ -12,10 +12,12 @@ import { LanguageService } from '../../services/language.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
+  private languageService = inject(LanguageService);
+
   toggleLanguageForm: FormGroup;
   languageRO: Signal<boolean>;
 
-  constructor(private languageService: LanguageService) {
+  constructor() {
     this.languageRO = this.languageService.language;
 
     this.toggleLanguageForm = new FormGroup({

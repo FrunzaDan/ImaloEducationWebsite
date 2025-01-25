@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, OnInit, Signal } from '@angular/core';
+import { Component, HostListener, OnInit, Signal, inject } from '@angular/core';
 import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { GalleryImage } from '../../interfaces/gallery-image';
 import { LanguageService } from '../../services/language.service';
@@ -14,6 +14,10 @@ import { SEOService } from '../../services/seo.service';
   animations: [transformIn, transformOut, fadeIn, fadeOut],
 })
 export class GalleryComponent implements OnInit {
+  private loadGalleryService = inject(LoadGalleryService);
+  private languageService = inject(LanguageService);
+  private seoService = inject(SEOService);
+
   galleryImageList: GalleryImage[] = [];
   languageRO: Signal<boolean>;
   currentIndex = -1;
@@ -22,11 +26,7 @@ export class GalleryComponent implements OnInit {
   private touchStartX = 0;
   private touchEndX = 0;
 
-  constructor(
-    private loadGalleryService: LoadGalleryService,
-    private languageService: LanguageService,
-    private seoService: SEOService,
-  ) {
+  constructor() {
     this.languageRO = this.languageService.language;
   }
 

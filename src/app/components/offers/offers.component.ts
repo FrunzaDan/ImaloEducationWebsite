@@ -1,5 +1,5 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { Component, OnDestroy, OnInit, Signal } from '@angular/core';
+import { Component, OnDestroy, OnInit, Signal, inject } from '@angular/core';
 import { fadeIn, fadeOut, transformIn, transformOut } from '../../animations';
 import { LanguageService } from '../../services/language.service';
 import { SEOService } from '../../services/seo.service';
@@ -12,15 +12,15 @@ import { SEOService } from '../../services/seo.service';
   animations: [transformIn, transformOut, fadeIn, fadeOut],
 })
 export class OffersComponent implements OnInit, OnDestroy {
+  private languageService = inject(LanguageService);
+  private viewportScroller = inject(ViewportScroller);
+  private seoService = inject(SEOService);
+
   isCourseModalOpen: boolean = false;
   courseTitle?: string;
   languageRO: Signal<boolean>;
 
-  constructor(
-    private languageService: LanguageService,
-    private viewportScroller: ViewportScroller,
-    private seoService: SEOService,
-  ) {
+  constructor() {
     this.languageRO = this.languageService.language;
   }
 

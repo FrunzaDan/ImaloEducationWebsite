@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { SEOService } from '../../services/seo.service';
 
 @Component({
@@ -8,7 +8,8 @@ import { SEOService } from '../../services/seo.service';
   styleUrl: './privacy.component.css',
 })
 export class PrivacyComponent implements OnInit {
-  constructor(private seoService: SEOService) {}
+  private seoService = inject(SEOService);
+
 
   ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();

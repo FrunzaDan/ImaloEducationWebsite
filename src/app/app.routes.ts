@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+
 
 export const routes: Routes = [
   {
@@ -61,7 +61,7 @@ export const routes: Routes = [
   {
     path: '**',
     pathMatch: 'full',
-    component: PageNotFoundComponent,
+    loadComponent: () => import('./components/page-not-found/page-not-found.component').then(m => m.PageNotFoundComponent),
     title: '404',
   },
 ];

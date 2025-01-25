@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, Signal } from '@angular/core';
+import { Component, OnInit, Signal, inject } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { SEOService } from '../../services/seo.service';
 
@@ -10,12 +10,12 @@ import { SEOService } from '../../services/seo.service';
   styleUrl: './schedule.component.css',
 })
 export class ScheduleComponent implements OnInit {
+  private languageService = inject(LanguageService);
+  private seoService = inject(SEOService);
+
   languageRO: Signal<boolean>;
 
-  constructor(
-    private languageService: LanguageService,
-    private seoService: SEOService,
-  ) {
+  constructor() {
     this.languageRO = this.languageService.language;
   }
 
