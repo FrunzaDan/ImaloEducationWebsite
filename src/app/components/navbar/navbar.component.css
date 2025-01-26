@@ -57,10 +57,6 @@
   flex-direction: column;
 }
 
-.navbar-toggler-icon {
-  font-size: 30px;
-}
-
 .navbar-toggler {
   justify-content: center;
 }
