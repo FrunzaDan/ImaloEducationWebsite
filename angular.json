@@ -103,24 +103,6 @@
           "options": {
             "buildTarget": "Imalo_Education:build"
           }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              },
-              "src/sitemap.xml",
-              "src/robots.txt",
-              "src/google829ea8c08fad9b84.html"
-            ],
-            "styles": ["src/styles.css"],
-            "scripts": []
-          }
         }
       }
     }
