@@ -84,7 +84,7 @@ h1 h2 h3 h4 h5 h6 {
 
 @font-face {
   font-family: 'Main';
-  src: url('../public/assets/fonts/Lora-Medium.ttf');
+  src: url('/assets/fonts/Lora-Medium.ttf');
 }
 
 .bi {
