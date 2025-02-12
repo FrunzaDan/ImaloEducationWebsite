@@ -33,11 +33,11 @@
                 type="text"
                 placeholder="Numele tău"
                 autocomplete="on"
-                [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+                [class.is-invalid]="isNameInvalid"
               />
-              @if (submitted && f.name.errors) {
+              @if (isNameInvalid) {
               <div class="invalid-feedback">
-                @if (f['name'].errors['required']) {
+                @if (name?.errors?.['required']) {
                 <div>Numele este necesar.</div>
                 }
               </div>
@@ -56,13 +56,13 @@
                 type="email"
                 placeholder="Adresa ta de E-mail"
                 autocomplete="on"
-                [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                [class.is-invalid]="isEmailInvalid"
               />
-              @if (submitted && f.email.errors) {
+              @if (isEmailInvalid) {
               <div class="invalid-feedback">
-                @if (f['email'].errors['required']) {
+                @if (email?.errors?.['required']) {
                 <div>E-mail-ul este necesar.</div>
-                } @if (f['email'].errors['email']) {
+                } @if (email?.errors?.['email']) {
                 <div>Un E-mail valid este necesar.</div>
                 }
               </div>
@@ -81,13 +81,13 @@
                 type="tel"
                 placeholder="Numărul tău de telefon"
                 autocomplete="on"
-                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
+                [class.is-invalid]="isPhoneInvalid"
               />
-              @if (submitted && f.phone.errors) {
+              @if (isPhoneInvalid) {
               <div class="invalid-feedback">
-                @if (f['phone'].errors['required']) {
+                @if (phone?.errors?.['required']) {
                 <div>Numărul de telefon este necesar.</div>
-                } @if (f['phone'].errors['pattern']) {
+                } @if (phone?.errors?.['pattern']) {
                 <div>Un număr de telefon mobil valid este necesar.</div>
                 }
               </div>
@@ -106,12 +106,12 @@
                 type="text"
                 placeholder="Mesajul tău"
                 autocomplete="off"
-                [ngClass]="{ 'is-invalid': submitted && f.message.errors }"
+                [class.is-invalid]="isMessageInvalid"
                 style="height: 10rem"
               ></textarea>
-              @if (submitted && f.message.errors) {
+              @if (isMessageInvalid) {
               <div class="invalid-feedback">
-                @if (f['message'].errors['required']) {
+                @if (message?.errors?.['required']) {
                 <div>Un mesaj este necesar.</div>
                 }
               </div>

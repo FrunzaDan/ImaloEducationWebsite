@@ -142,6 +142,8 @@ h1 h2 h3 h4 h5 h6 {
     rgba(var(--cyan-main-color-for-alpha), 0.8),
     rgba(var(--orange-main-color-for-alpha), 0.8)
   );
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .description-inside-card {

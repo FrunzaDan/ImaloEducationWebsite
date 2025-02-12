@@ -1,13 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit, Signal, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
-  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { transformIn, transformOut } from '../../animations';
 import { ContactMeForm } from '../../interfaces/contact-me-form';
 import { LanguageService } from '../../services/language.service';
@@ -16,7 +13,7 @@ import { SEOService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
   animations: [transformIn, transformOut],
@@ -38,7 +35,7 @@ export class ContactComponent implements OnInit {
 
   contactMeForm = new FormGroup({
     name: new FormControl('', {
-      validators: [Validators.required, Validators.minLength(2)],
+      validators: [Validators.required],
       nonNullable: true,
     }),
     email: new FormControl('', {
@@ -56,54 +53,102 @@ export class ContactComponent implements OnInit {
     message: new FormControl('', {
       validators: [
         Validators.required,
-        Validators.minLength(10),
+        Validators.minLength(2),
         Validators.maxLength(1000),
       ],
       nonNullable: true,
     }),
   });
 
-  get f() {
-    return this.contactMeForm.controls;
+  get name() {
+    return this.contactMeForm.get('name');
+  }
+
+  get email() {
+    return this.contactMeForm.get('email');
+  }
+
+  get phone() {
+    return this.contactMeForm.get('phone');
+  }
+
+  get message() {
+    return this.contactMeForm.get('message');
+  }
+
+  get isNameInvalid(): boolean {
+    return !!(this.submitted && this.name?.errors);
+  }
+
+  get isEmailInvalid(): boolean {
+    return !!(this.submitted && this.email?.errors);
+  }
+
+  get isPhoneInvalid(): boolean {
+    return !!(this.submitted && this.phone?.errors);
+  }
+
+  get isMessageInvalid(): boolean {
+    return !!(this.submitted && this.message?.errors);
   }
 
   ngOnInit(): void {
     this.seoService.createLinkForCanonicalURL();
     this.seoService.updateMetaDescription(
-      'Pagina de contact Imalo Education, afterschool pe limba germana din Sibiu.'
+      'Pagina de contact Imalo Education, afterschool pe limba germana din Sibiu.',
     );
   }
 
-  onSubmit(): void {
+  async onSubmit() {
     this.submitted = true;
+
     if (this.contactMeForm.invalid) {
+      // Mark all fields as touched to trigger validation display
+      Object.keys(this.contactMeForm.controls).forEach((key) => {
+        const control = this.contactMeForm.get(key);
+        control?.markAsTouched();
+      });
       return;
     }
 
     this.isEmailModalOpen = true;
-
     this.emailPopUpHeader = 'Bună, ' + this.contactMeForm.value.name;
     this.emailPopUpParagraph = 'Se trimite...';
 
-    let responseCodePromise: Promise<number> =
-      this.sendEmailService.sendEmailJS(
-        this.contactMeForm.value as ContactMeForm
+    try {
+      const responseCode = await this.sendEmailService.sendEmailJS(
+        this.contactMeForm.value as ContactMeForm,
       );
-    responseCodePromise.then((responseCode: number): void => {
+
       if (responseCode === 200) {
-        this.contactMeForm.reset();
-        this.contactMeForm.controls.name.setErrors(null);
-        this.contactMeForm.controls.email.setErrors(null);
-        this.contactMeForm.controls.phone.setErrors(null);
-        this.contactMeForm.controls.message.setErrors(null);
-        this.emailPopUpParagraph = 'Mesajul tău a fost trimis cu succes! ';
+        this.handleSuccessfulSubmission();
       } else {
-        this.emailPopUpParagraph =
-          '(' +
-          responseCode +
-          ') ' +
-          'Serverele noastre sunt pline, te rog să trimiți un E-mail către imaloeducation@gmail.com. ';
+        this.handleFailedSubmission(responseCode);
       }
+    } catch (error) {
+      this.handleFailedSubmission(500);
+      console.error('Error sending email:', error);
+    }
+    this.resetForm();
+  }
+
+  private handleSuccessfulSubmission(): void {
+    this.emailPopUpParagraph = 'Mesajul tău a fost trimis cu succes! ';
+  }
+
+  private handleFailedSubmission(responseCode: number): void {
+    this.emailPopUpParagraph = `(${responseCode}) Serverele noastre sunt pline, te rog să trimiți un E-mail către imaloeducation@gmail.com. `;
+  }
+
+  private resetForm(): void {
+    this.submitted = false;
+    this.contactMeForm.reset();
+    Object.keys(this.contactMeForm.controls).forEach((key) => {
+      const control = this.contactMeForm.get(key);
+      control?.setErrors(null);
+      control?.markAsUntouched();
+      control?.markAsPristine();
+      control?.updateValueAndValidity();
     });
   }
 
