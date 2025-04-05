@@ -1,7 +1,7 @@
 <div class="container-fluid pt-2 px-3">
   <div class="row d-flex justify-content-between">
     <div class="col-6 d-flex justify-content-start">
-      <span class="pe-2 cyan-dark-color">RO</span>
+      <span class="cyan-dark-color">RO</span>
       <form [formGroup]="toggleLanguageForm">
         <span class="form-check form-switch">
           <input
@@ -65,20 +65,11 @@
 </div>
 <nav class="navbar navbar-expand-sm">
   <div class="container-fluid justify-content-center">
-    <div
-      class="navbar-toggler collapsed border-0"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#main-nav"
-    >
-      <span> </span>
-      <span> </span>
-      <span> </span>
-    </div>
-    <div
-      class="collapse navbar-collapse container-fluid justify-content-between"
-      id="main-nav"
-    >
+    <app-hamburger-button
+      [isOpen]="isMenuOpen"
+      (toggleMenu)="onToggleMenu($event)"
+    ></app-hamburger-button>
+    <div class="navbar-collapse" [class.show]="isMenuOpen" id="main-nav">
       <ul class="navbar-nav container-fluid justify-content-between">
         <li class="nav-item">
           <a
@@ -86,8 +77,7 @@
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
             class="nav-link hover-item"
-            data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show"
+            (click)="closeMenu()"
           >
             @if (languageRO()) {
             <span> Acasă </span>
@@ -102,8 +92,7 @@
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
             class="nav-link hover-item"
-            data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show"
+            (click)="closeMenu()"
           >
             @if (languageRO()) {
             <span> Despre noi </span>
@@ -118,8 +107,7 @@
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
             class="nav-link hover-item"
-            data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show"
+            (click)="closeMenu()"
           >
             @if (languageRO()) {
             <span> Oferte </span>
@@ -134,8 +122,7 @@
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
             class="nav-link hover-item"
-            data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show"
+            (click)="closeMenu()"
           >
             @if (languageRO()) {
             <span> Program </span>
@@ -150,8 +137,7 @@
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
             class="nav-link hover-item"
-            data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show"
+            (click)="closeMenu()"
           >
             @if (languageRO()) {
             <span> Galerie </span>
@@ -166,8 +152,7 @@
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
             class="nav-link hover-item"
-            data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show"
+            (click)="closeMenu()"
           >
             @if (languageRO()) {
             <span> Contact </span>
