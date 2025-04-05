@@ -1,4 +1,4 @@
-<footer px-1>
+<footer role="contentinfo">
   <div
     class="row d-flex flex-wrap align-items-center justify-content-between px-4 border-top"
   >
@@ -15,38 +15,41 @@
 
     <div class="outerColumnFooter2 col-md-6 d-flex flex-wrap">
       <div class="innerColumnFooter21 col d-flex">
-        <ul class="nav gap-3 list-unstyled">
+        <ul
+          class="nav gap-3 list-unstyled"
+          aria-label="Imalo social media links"
+        >
           <li class="d-flex align-items-center hovericon">
             <a
               href="https://www.facebook.com/imaloeducation"
-              aria-label="Imalo Facebook"
+              aria-label="Visit Imalo Education on Facebook"
               target="_blank"
-              rel="me"
+              rel="me noopener"
               ><i class="bi bi-facebook hovericon"></i>
             </a>
           </li>
           <li class="d-flex align-items-center hovericon">
             <a
               href="https://www.instagram.com/imaloeducation"
-              aria-label="Imalo Instagram"
+              aria-label="Visit Imalo Education on Instagram"
               target="_blank"
-              rel="me"
+              rel="me noopener"
               ><i class="bi bi-instagram hovericon"></i>
             </a>
           </li>
           <li class="d-flex align-items-center hovericon">
             <a
               href="https://www.linkedin.com/company/imalo-education"
-              aria-label="Imalo LinkedIn"
+              aria-label="Visit Imalo Education on LinkedIn"
               target="_blank"
-              rel="me"
+              rel="me noopener"
               ><i class="bi bi-linkedin hovericon"></i>
             </a>
           </li>
         </ul>
       </div>
       <div class="innerColumnFooter22 col d-flex text-muted">
-        <span class="hoverlink">©2024</span>
+        <span class="hoverlink" aria-label="Copyright 2024">©2024</span>
       </div>
     </div>
   </div>
@@ -54,23 +57,37 @@
     class="row w-100 generic-row-padding d-flex justify-content-center align-items-center"
   >
     <div class="col-md-6 px-2 my-1">
-      <div class="card p-2">
+      <div class="card p-2" role="region" aria-label="Company Information">
         <p>
           IMALO PROGRAM SRL
-          <br />CUI 49232070 <br />Nr. Înmatriculare J32/2315/2023 <br />EUID
-          ROONRC.J32/2315/2023
+          <br />
+          CUI 49232070
+          <br />
+          Nr. Înmatriculare J32/2315/2023
+          <br />
+          EUID ROONRC.J32/2315/2023
         </p>
       </div>
     </div>
     <div class="col-md-6 px-2 my-1">
-      <div class="card p-2">
+      <div class="card p-2" role="region" aria-label="Contact Information">
         <p>
           CONTACT
-          <br />Adresă: Sibiu, Str. Gutuilor, Nr. 6, Cod 550092 <br /><a
+          <br />
+          <span aria-labelledby="contact-info"
+            >Adresă: Sibiu, Str. Gutuilor, Nr. 6, Cod 550092</span
+          >
+          <br />
+          <a
             href="mailto:imaloeducation@gmail.com"
+            aria-label="Send email to imaloeducation@gmail.com"
             >E-Mail: imaloeducation&#64;gmail.com</a
           >
-          <br />Telefon: <a href="tel:+40741711006">+40741711006</a>
+          <br />
+          Telefon:
+          <a href="tel:+40741711006" aria-label="Call +40741711006"
+            >+40741711006</a
+          >
         </p>
       </div>
     </div>

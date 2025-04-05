@@ -1,4 +1,11 @@
-<div class="navbar-toggler" [class.open]="isOpen" (click)="toggleNavbar()">
+<div
+  class="navbar-toggler"
+  [class.open]="isOpen"
+  (click)="toggleNavbar()"
+  type="button"
+  aria-label="Toggle navigation menu"
+  [attr.aria-expanded]="isOpen"
+>
   <span></span>
   <span></span>
   <span></span>

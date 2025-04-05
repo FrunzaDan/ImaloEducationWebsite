@@ -11,6 +11,8 @@
             class="form-check-input cursor-pointer"
             type="checkbox"
             formControlName="isGermanLang"
+            aria-labelledby="lang-ro-label lang-de-label"
+            aria-describedby="language-switcher-desc"
           />
         </span>
       </form>
@@ -22,19 +24,21 @@
     <div class="col-6 d-flex flex-row-reverse">
       <ul class="nav gap-3 list-unstyled">
         <li class="d-flex align-items-center hovericon">
-          <a href="tel:+40741711006" aria-label="Imalo Telephone"
+          <a href="tel:+40741711006" aria-label="Call Imalo at +40741711006"
             ><i class="bi bi-telephone cyan-dark-color hovericon"></i>
           </a>
         </li>
         <li class="d-flex align-items-center hovericon">
-          <a href="mailto:imaloeducation@gmail.com" aria-label="Imalo Mail"
+          <a
+            href="mailto:imaloeducation@gmail.com"
+            aria-label="Email Imalo at imaloeducation@gmail.com"
             ><i class="bi bi-envelope cyan-dark-color hovericon"></i>
           </a>
         </li>
         <li class="d-flex align-items-center hovericon">
           <a
             href="https://www.facebook.com/imaloeducation"
-            aria-label="Imalo Facebook"
+            aria-label="Visit Imalo's Facebook page"
             target="_blank"
             rel="noopener noreferrer"
             ><i class="bi bi-facebook cyan-dark-color hovericon"></i>
@@ -43,7 +47,7 @@
         <li class="d-flex align-items-center hovericon">
           <a
             href="https://www.instagram.com/imaloeducation"
-            aria-label="Imalo Instagram"
+            aria-label="Visit Imalo's Instagram profile"
             target="_blank"
             rel="noopener noreferrer"
             ><i class="bi bi-instagram cyan-dark-color hovericon"></i>
@@ -52,7 +56,7 @@
         <li class="d-flex align-items-center hovericon">
           <a
             href="https://www.linkedin.com/company/imalo-education"
-            aria-label="Imalo LinkedIn"
+            aria-label="Visit Imalo's LinkedIn page"
             target="_blank"
             rel="noopener noreferrer"
             ><i class="bi bi-linkedin cyan-dark-color hovericon"></i>
@@ -69,13 +73,14 @@
   </div>
   Imalo Education
 </div>
-<nav class="navbar navbar-expand-sm">
+<nav class="navbar navbar-expand-sm" aria-label="Main navigation">
   <div class="container-fluid justify-content-center">
     <app-hamburger-button
-      [isOpen]="isMenuOpen"
+      [isOpen]="isMenuOpen()"
       (toggleMenu)="onToggleMenu($event)"
+      aria-controls="main-nav"
     ></app-hamburger-button>
-    <div class="navbar-collapse" [class.show]="isMenuOpen" id="main-nav">
+    <div class="navbar-collapse" [class.show]="isMenuOpen()" id="main-nav">
       <ul class="navbar-nav container-fluid justify-content-between">
         <li class="nav-item">
           <a

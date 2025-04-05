@@ -1,4 +1,11 @@
-import { Component, Signal, effect, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Signal,
+  effect,
+  inject,
+  signal,
+} from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
@@ -10,12 +17,13 @@ import { HamburgerButtonComponent } from '../hamburger-button/hamburger-button.c
   imports: [RouterModule, ReactiveFormsModule, HamburgerButtonComponent],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
   private languageService = inject(LanguageService);
 
   toggleLanguageForm: FormGroup;
-  isMenuOpen = false;
+  isMenuOpen = signal(false);
   languageRO: Signal<boolean>;
 
   constructor() {
@@ -44,11 +52,11 @@ export class NavbarComponent {
       });
   }
 
-  onToggleMenu(_: boolean) {
-    this.isMenuOpen = !this.isMenuOpen;
+  onToggleMenu(isOpen: boolean) {
+    this.isMenuOpen.set(isOpen);
   }
 
   closeMenu() {
-    this.isMenuOpen = false;
+    this.isMenuOpen.set(false);
   }
 }
