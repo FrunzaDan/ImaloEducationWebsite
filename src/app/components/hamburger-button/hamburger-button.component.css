@@ -21,9 +21,10 @@
     position: absolute;
     background-color: var(--cyan-main-color);
     height: 4px;
-    width: 30px;
-    left: 5px;
+    width: 60px;
+    left: -10px;
     transition: all 0.35s ease-out;
+    border-radius: 6px;
   }
 
   /* Position each span */

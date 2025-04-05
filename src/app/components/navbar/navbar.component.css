@@ -72,10 +72,6 @@
   flex-direction: column;
 }
 
-.navbar-toggler {
-  justify-content: center;
-}
-
 .logo-container {
   width: 60px;
 }

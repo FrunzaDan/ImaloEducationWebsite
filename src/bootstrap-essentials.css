@@ -2012,6 +2012,18 @@ ul ul {
   display: flex !important;
 }
 
+.text-start {
+  text-align: left !important;
+}
+
+.text-end {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
 .form-check {
   display: block;
   min-height: 1.5rem;
@@ -2133,14 +2145,17 @@ ul ul {
 
 textarea.form-control {
   min-height: calc(1.5em + 0.75rem + calc(var(--bs-border-width) * 2));
+  resize: vertical;
 }
 
 textarea.form-control-sm {
   min-height: calc(1.5em + 0.5rem + calc(var(--bs-border-width) * 2));
+  resize: vertical;
 }
 
 textarea.form-control-lg {
   min-height: calc(1.5em + 1rem + calc(var(--bs-border-width) * 2));
+  resize: vertical;
 }
 
 .form-control-plaintext {
