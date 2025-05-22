@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "/dist/imalo-education/browser",
+    "public": "dist/imalo-education/browser",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
