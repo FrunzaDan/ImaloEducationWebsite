@@ -2,12 +2,10 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { getAnalytics } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
 import { environment } from '../src/environments/environment';
-import { AppComponent } from './app/app.component';
+import { App } from './app/app';
 import { appConfig } from './app/app.config';
 
-bootstrapApplication(AppComponent, appConfig).catch((err) =>
-  console.error(err),
-);
+bootstrapApplication(App, appConfig).catch((err) => console.error(err));
 
 const app = initializeApp(environment.firebaseConfig);
 
